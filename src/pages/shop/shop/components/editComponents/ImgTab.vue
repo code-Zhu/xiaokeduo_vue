@@ -1,44 +1,19 @@
 <template>
-  <div class="img-ad-box">
-    <div v-if="style.showType === 'banner'">
-      <div class="img-ad default" >
-        <span>Banner轮播图</span>
-        <div class="point" v-show="img_list.length>1">
-          <i v-for="v in img_list" :key="v.id"></i>
-        </div>
-      </div>
-    </div>
-    <div v-else>
-      <div class="img-ad default" v-if="img_list.length<1">
-        <span>Banner轮播图</span>
-      </div>
-      <div class="img-ad default" :style="{marginBottom: img_margin + 'px'}" v-for="v in img_list" :key="v.id">
-        <span>Banner轮播图</span>
-      </div>
-    </div>
+  <div class="img-tab-box">
+    <ul class="img-tab" v-if="img_list.length===0">
+      <li v-for="v in 4" :key="v.id">
+        <img src="11">
+        <span>导航文字</span>
+      </li>
+    </ul>
+    <ul class="img-tab" v-else>
+      <li v-for="v in img_list" :key="v.id">
+        <img :src="v.img">
+        <span>{{v.title}}</span>
+      </li>
+    </ul>
     <div class="edit-right-ctr" v-if="righEdit">
       <div class="ctr-form">
-        <div class="ctr-form-item">
-          <span class="label choose-good">显示形式：</span>
-          <div>
-            <label for="banner">
-              <input v-model="style.showType" type="radio" name="showType" id="banner" value="banner">
-              <span>折叠轮播</span>
-            </label>
-            <label for="list">
-              <input v-model="style.showType" type="radio" name="showType" id="list" value="list">
-              <span>上下平铺</span>
-            </label>
-          </div>
-        </div>
-        <div class="ctr-form-item">
-          <span class="label">设置图片：<span class="tip">建议图片最大宽度不超过640px</span></span>
-        </div>
-        <div class="ctr-form-item" v-show="style.showType === 'list'">
-          <span class="label">图片上下距离：</span>
-          <el-slider v-model="img_margin" :max="20" style="width: 250px" :show-tooltip="false"></el-slider>
-          <span style="margin-left:15px">{{img_margin}}px</span>
-        </div>
         <div class="ctr-form-item">
           <ul class="img-ad-list">
             <li class="img-ad-item" v-for="(v, index) in img_list" :key="v.key">
@@ -49,7 +24,9 @@
               </div>
               <div class="ad-item-body">
                 <div class="img-box">
-                  <span>选择图片</span>
+                  <span>
+                    <img :src="v.img">
+                  </span>
                   <span data-reset="data-reset">重新选择</span>
                 </div>
                 <div class="img-form">
@@ -69,9 +46,9 @@
                 </div>
               </div>
             </li>
-            <li class="add-img-ad-item" @click="adImgList">
+            <li class="add-img-ad-item" @click="adImgList" v-show="img_list.length<4">
               <i class="el-icon-circle-plus"></i>
-              <span>增加一个广告</span>
+              <span>增加一个导航</span>
             </li>
           </ul>
         </div>
@@ -84,18 +61,35 @@ export default {
   props: ['righEdit'],
   data () {
     return {
-      style: {
-        showType: 'banner'
-      },
-      img_margin: 10,
-      img_list: []
+      img_list: [
+        {
+          img: 'static/img/waitupload.png',
+          title: '导航名称',
+          ad_url: ''
+        },
+        {
+          img: 'static/img/waitupload.png',
+          title: '导航名称',
+          ad_url: ''
+        },
+        {
+          img: 'static/img/waitupload.png',
+          title: '导航名称',
+          ad_url: ''
+        },
+        {
+          img: 'static/img/waitupload.png',
+          title: '导航名称',
+          ad_url: ''
+        }
+      ]
     }
   },
   methods: {
     adImgList () {
       this.img_list.push({
-        img: '',
-        title: '',
+        img: 'static/img/waitupload.png',
+        title: '导航名称',
         ad_url: ''
       })
     },
@@ -106,57 +100,28 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.img-ad-box{
-  .img-ad{
-    background-color: #4E6488;
-    height: 120px;
-    &.default{
+.img-tab-box{
+  .img-tab{
+    display: flex;
+    padding: 0 10px;
+    li{
       text-align: center;
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      align-items: center;
+      flex: 1;
+      overflow: hidden;
+      img{
+        width: 100%
+      }
       span{
-        margin-top: 35px;
-        color: #fff;
-        width: 200px;
-        font-size: 26px;
-        border: 1px solid #fff;
-        padding: 15px;
-        opacity: .7;
+        font-size: 12px;
+        color: #646464;
       }
-      .point{
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-        i{
-          width: 5px;
-          height: 5px;
-          background: #898989;
-          border-radius: 50%;
-          margin-left: 5px;
-          &:first-child{
-            background: #ff0000;
-          }
-        }
-      }
-    }
-  }
-  .edit-right-ctr{
-    .ctr-form{
-      padding-left: 40px;
-      .ctr-form-item{
-        .tip{
-          color: #999;
-          font-size: 12px;
-          margin-left: 5px;
-        }
+      &+li{
+        margin-left: 2px
       }
     }
   }
   .img-ad-list{
-    width: 398px;
+    width: 100%;
     .img-ad-item{
       height: 140px;
       box-sizing: border-box;
@@ -207,6 +172,10 @@ export default {
           margin-right: 10px;
           position: relative;
           cursor: pointer;
+          overflow: hidden;
+          img{
+            width: 80px
+          }
           span[data-reset]{
             display: none;
             position: absolute;

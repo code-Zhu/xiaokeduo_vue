@@ -28,6 +28,9 @@
                 <cut-line v-if="item.name==='cut_line'" :righEdit="index === edit_focus_index"/>
                 <blank v-if="item.name==='blank'" :righEdit="index === edit_focus_index"/>
                 <img-ad v-if="item.name==='img_ad'" :righEdit="index === edit_focus_index"/>
+                <img-tab v-if="item.name==='img_tab'" :righEdit="index === edit_focus_index"/>
+                <window v-if="item.name==='window'" :righEdit="index === edit_focus_index"/>
+                <item-video v-if="item.name==='video'" :righEdit="index === edit_focus_index"/>
               </div>
               <div class="ctr">
                 <span v-if="index !== 0 && list.length !== 1">上移</span>
@@ -53,9 +56,12 @@ const GoodSearch = () => import('../components/editComponents/GoodSearch')
 const CutLine = () => import('../components/editComponents/CutLine')
 const Blank = () => import('../components/editComponents/Blank')
 const ImgAd = () => import('../components/editComponents/ImgAd')
+const ImgTab = () => import('../components/editComponents/ImgTab')
+const Window = () => import('../components/editComponents/Window')
+const ItemVideo = () => import('../components/editComponents/Video')
 export default {
   components: {
-    draggable, Good, GoodSearch, GoodList, CutLine, Blank, ImgAd
+    draggable, Good, GoodSearch, GoodList, CutLine, Blank, ImgAd, ImgTab, Window, ItemVideo
   },
   data () {
     return {
