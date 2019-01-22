@@ -31,6 +31,7 @@
                 <img-tab v-if="item.name==='img_tab'" :righEdit="index === edit_focus_index"/>
                 <window v-if="item.name==='window'" :righEdit="index === edit_focus_index"/>
                 <item-video v-if="item.name==='video'" :righEdit="index === edit_focus_index"/>
+                <top-menu v-if="item.name==='topmenu'" :righEdit="index === edit_focus_index"/>
               </div>
               <div class="ctr">
                 <span v-if="index !== 0 && list.length !== 1">上移</span>
@@ -59,9 +60,10 @@ const ImgAd = () => import('../components/editComponents/ImgAd')
 const ImgTab = () => import('../components/editComponents/ImgTab')
 const Window = () => import('../components/editComponents/Window')
 const ItemVideo = () => import('../components/editComponents/Video')
+const TopMenu = () => import('../components/editComponents/TopMenu')
 export default {
   components: {
-    draggable, Good, GoodSearch, GoodList, CutLine, Blank, ImgAd, ImgTab, Window, ItemVideo
+    draggable, Good, GoodSearch, GoodList, CutLine, Blank, ImgAd, ImgTab, Window, ItemVideo, TopMenu
   },
   data () {
     return {
