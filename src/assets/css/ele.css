@@ -1,0 +1,8 @@
+.el-table th{
+  background-color: #F2F8FC;
+  color: #333;
+  font-weight: 600;
+}
+.el-checkbox{
+  margin-left: 30px;
+}
