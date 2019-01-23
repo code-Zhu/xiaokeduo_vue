@@ -32,6 +32,8 @@
                 <window v-if="item.name==='window'" :righEdit="index === edit_focus_index"/>
                 <item-video v-if="item.name==='video'" :righEdit="index === edit_focus_index"/>
                 <top-menu v-if="item.name==='topmenu'" :righEdit="index === edit_focus_index"/>
+                <edit-title v-if="item.name==='title'" :righEdit="index === edit_focus_index"/>
+                <text-bar v-if="item.name==='textbar'" :righEdit="index === edit_focus_index"/>
               </div>
               <div class="ctr">
                 <span v-if="index !== 0 && list.length !== 1">上移</span>
@@ -61,9 +63,11 @@ const ImgTab = () => import('../components/editComponents/ImgTab')
 const Window = () => import('../components/editComponents/Window')
 const ItemVideo = () => import('../components/editComponents/Video')
 const TopMenu = () => import('../components/editComponents/TopMenu')
+const EditTitle = () => import('../components/editComponents/Title')
+const TextBar = () => import('../components/editComponents/TextBar')
 export default {
   components: {
-    draggable, Good, GoodSearch, GoodList, CutLine, Blank, ImgAd, ImgTab, Window, ItemVideo, TopMenu
+    draggable, Good, GoodSearch, GoodList, CutLine, Blank, ImgAd, ImgTab, Window, ItemVideo, TopMenu, EditTitle, TextBar
   },
   data () {
     return {
@@ -129,7 +133,7 @@ export default {
           icon: 'iconfont icon-fuwenben'
         },
         {
-          name: 'testbar',
+          name: 'textbar',
           label: '文本导航',
           icon: 'iconfont icon-textbar'
         }
@@ -234,8 +238,9 @@ export default {
       .list{
         flex: 1;
         height: 100%;
-        margin: 0 13px 13px;
-        border: 1px solid#ddd;
+        margin: -1px 13px 13px;
+        border: 1px solid #ddd;
+        border-top: none;
         .list-item{
           position: relative;
           cursor: move;

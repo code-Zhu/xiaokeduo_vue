@@ -221,22 +221,10 @@ export default {
           span[data-icon-box]{
             width: 26px;
             height: 26px;
-            // background: #ddd;
             margin-top: 5px;
             img{
               width: 100%;
               height: 100%;
-            }
-            &~.btn{
-              cursor: pointer;
-              background-color: #009DD9;
-              color: #fff;
-              padding: 0 10px;
-              border-radius: 5px;
-              height: 20px;
-              line-height: 20px;
-              margin-top: 8px;
-              margin-left: 10px;
             }
           }
           span[data-label]{

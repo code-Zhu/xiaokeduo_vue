@@ -112,6 +112,17 @@ export default {
     .ctr-form-item{
       display: flex;
       line-height: 34px;
+      span.btn{
+        cursor: pointer;
+        background-color: #009DD9;
+        color: #fff;
+        padding: 2px 10px;
+        border-radius: 5px;
+        height: 20px;
+        line-height: 20px;
+        margin-top: 5px;
+        margin-left: 10px;
+      }
     }
   }
 }
