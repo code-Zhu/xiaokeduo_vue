@@ -34,6 +34,7 @@
                 <top-menu v-if="item.name==='topmenu'" :righEdit="index === edit_focus_index"/>
                 <edit-title v-if="item.name==='title'" :righEdit="index === edit_focus_index"/>
                 <text-bar v-if="item.name==='textbar'" :righEdit="index === edit_focus_index"/>
+                <rich-txt v-if="item.name==='richtxt'" :righEdit="index === edit_focus_index"/>
               </div>
               <div class="ctr">
                 <span v-if="index !== 0 && list.length !== 1">上移</span>
@@ -65,9 +66,10 @@ const ItemVideo = () => import('../components/editComponents/Video')
 const TopMenu = () => import('../components/editComponents/TopMenu')
 const EditTitle = () => import('../components/editComponents/Title')
 const TextBar = () => import('../components/editComponents/TextBar')
+const RichTxt = () => import('../components/editComponents/RichTxt')
 export default {
   components: {
-    draggable, Good, GoodSearch, GoodList, CutLine, Blank, ImgAd, ImgTab, Window, ItemVideo, TopMenu, EditTitle, TextBar
+    draggable, Good, GoodSearch, GoodList, CutLine, Blank, ImgAd, ImgTab, Window, ItemVideo, TopMenu, EditTitle, TextBar, RichTxt
   },
   data () {
     return {
@@ -235,6 +237,7 @@ export default {
       flex: 1;
       display: flex;
       flex-direction: column;
+      background-color: #F9F9F9;
       .list{
         flex: 1;
         height: 100%;
