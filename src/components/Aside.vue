@@ -17,15 +17,16 @@
   </div>
 </template>
 <script>
-import asideList from '../config/asides'
+// import asideList from '../config/asides'
 export default {
+  props: ['asides'],
   data () {
     return {
-      asides: []
+      // asides: []
     }
   },
   created () {
-    this.asides = asideList.aside_shop
+    // this.asides = asideList.aside_shop
   }
 }
 </script>

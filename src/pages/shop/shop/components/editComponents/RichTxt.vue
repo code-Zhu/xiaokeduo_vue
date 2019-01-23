@@ -24,7 +24,7 @@ export default {
         autoHeightEnabled: true,
         initialFrameHeight: 500, // 初始容器高度
         initialFrameWidth: '100%', // 初始容器宽度
-        UEDITOR_HOME_URL: '/static/UEditor/',
+        UEDITOR_HOME_URL: './static/UEditor/',
         serverUrl: 'http://35.201.165.105:8000/controller.php'// 上传文件接口
       }
     }
