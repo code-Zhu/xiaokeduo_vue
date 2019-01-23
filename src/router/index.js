@@ -1,19 +1,25 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import shop from '@/pages/shop/index'
-import shopDefault from '@/pages/shop/default'
-import shopSetting from '@/pages/shop/setting'
-import shopConfig from '@/pages/shop/shop/config'
-import shopIndex from '@/pages/shop/shop/shopIndex/index'
-import shopEdit from '@/pages/shop/shop/shopIndex/editShopIndex'
-import pageManage from '@/pages/shop/shop/pageManage'
-import shopMenu from '@/pages/shop/shop/shopMenu'
-import meiQia from '@/pages/shop/shop/meiQia'
-import noticeList from '@/pages/shop/shop/noticeList'
-import articles from '@/pages/shop/shop/articles'
-import manageImages from '@/pages/shop/shop/manageImages'
-import imageLib from '@/pages/shop/imgLib/imageLib'
-import imageType from '@/pages/shop/imgLib/imageType'
+
+const shop = () => import('@/pages/shop/index')
+const shopDefault = () => import('@/pages/shop/default')
+const shopSetting = () => import('@/pages/shop/setting')
+const shopConfig = () => import('@/pages/shop/shop/config')
+const shopIndex = () => import('@/pages/shop/shop/shopIndex/index')
+const shopEdit = () => import('@/pages/shop/shop/shopIndex/editShopIndex')
+const pageManage = () => import('@/pages/shop/shop/pageManage')
+const shopMenu = () => import('@/pages/shop/shop/shopMenu')
+const meiQia = () => import('@/pages/shop/shop/meiQia')
+const noticeList = () => import('@/pages/shop/shop/noticeList')
+const articles = () => import('@/pages/shop/shop/articles')
+const manageImages = () => import('@/pages/shop/shop/manageImages')
+const imageLib = () => import('@/pages/shop/imgLib/imageLib')
+const imageType = () => import('@/pages/shop/imgLib/imageType')
+
+const goods = () => import('@/pages/goods/index')
+const selectCategory = () => import('@/pages/goods/selectCategory')
+const onSaleGoods = () => import('@/pages/goods/goodsManage/onSaleGoods')
+const onStockGoods = () => import('@/pages/goods/goodsManage/onStockGoods')
 
 Vue.use(Router)
 
@@ -82,6 +88,24 @@ export default new Router({
         {
           path: '/shop/image_type',
           component: imageType
+        }
+      ]
+    },
+    {
+      path: '/goods',
+      component: goods,
+      children: [
+        {
+          path: '/goods/select_category',
+          component: selectCategory
+        },
+        {
+          path: '/goods/onsale_goods',
+          component: onSaleGoods
+        },
+        {
+          path: '/goods/onstock_goods',
+          component: onStockGoods
         }
       ]
     }

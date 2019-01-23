@@ -67,6 +67,85 @@ const asideShop = [
     ]
   }
 ]
+const asideGoods = [
+  {
+    title: false,
+    list: [
+      {
+        label: '上架新商品',
+        path: '/goods/select_category'
+      }
+    ]
+  },
+  {
+    title: true,
+    label: '商品管理',
+    icon: 'icon-shopcart',
+    list: [
+      {
+        label: '出售中的商品',
+        path: '/goods/onsale_goods'
+      },
+      {
+        label: '仓库中的商品',
+        path: '/goods/onstock_goods'
+      },
+      {
+        label: '已售罄的商品',
+        path: '/goods/zero_good'
+      },
+      {
+        label: '商品回收站',
+        path: '/goods/ondeleted_goods'
+      },
+      {
+        label: '数据包导入',
+        path: '/goods/import_data'
+      },
+      {
+        label: '批量导出',
+        path: '/goods/export_data'
+      }
+    ]
+  },
+  {
+    title: true,
+    label: '分组管理',
+    icon: 'icon-guanli',
+    list: [
+      {
+        label: '商品分类',
+        path: '/goods/manage_categories'
+      },
+      {
+        label: '类型管理',
+        path: '/goods/good_types'
+      },
+      {
+        label: '标签管理',
+        path: '/goods/good_tags'
+      },
+      {
+        label: '品牌管理',
+        path: '/goods/good_brands'
+      }
+    ]
+  },
+  {
+    title: true,
+    label: '客户咨询',
+    icon: 'icon-zixun',
+    list: [
+      {
+        label: '客户咨询'
+      },
+      {
+        label: '客户评论'
+      }
+    ]
+  }
+]
 module.exports = {
-  aside_shop: asideShop
+  aside_shop: asideShop,
+  aside_goods: asideGoods
 }

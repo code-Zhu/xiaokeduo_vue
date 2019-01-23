@@ -4,8 +4,8 @@
       <div class="log">log</div>
       <ul class="bar-list">
         <li v-for="items in menuList" :key="items.id">
-          <a href="#" v-for="v in items" :key="v.id"
-            :class="{active: v.name=='shop'}">{{v.label}}</a>
+          <router-link href="#" v-for="v in items" :key="v.id"
+            :class="{active: $route.path.includes(v.name)}" :to="v.path">{{v.label}}</router-link>
         </li>
       </ul>
       <div class="login-box" @click="handleShow">
