@@ -92,7 +92,7 @@ const asideGoods = [
       },
       {
         label: '已售罄的商品',
-        path: '/goods/zero_good'
+        path: '/goods/zero_goods'
       },
       {
         label: '商品回收站',
@@ -137,10 +137,12 @@ const asideGoods = [
     icon: 'icon-zixun',
     list: [
       {
-        label: '客户咨询'
+        label: '客户咨询',
+        path: '/goods/good_questions'
       },
       {
-        label: '客户评论'
+        label: '客户评论',
+        path: '/goods/good_reviews'
       }
     ]
   }

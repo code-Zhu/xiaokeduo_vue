@@ -20,7 +20,16 @@ const goods = () => import('@/pages/goods/index')
 const selectCategory = () => import('@/pages/goods/selectCategory')
 const onSaleGoods = () => import('@/pages/goods/goodsManage/onSaleGoods')
 const onStockGoods = () => import('@/pages/goods/goodsManage/onStockGoods')
-
+const zeroGoods = () => import('@/pages/goods/goodsManage/zeroGoods')
+const ondeletedGoods = () => import('@/pages/goods/goodsManage/ondeletedGoods')
+const importData = () => import('@/pages/goods/goodsManage/importData')
+const exportData = () => import('@/pages/goods/goodsManage/exportData') //
+const manageCategories = () => import('@/pages/goods/groupManage/manageCategories')
+const goodTypes = () => import('@/pages/goods/groupManage/goodTypes')
+const goodTags = () => import('@/pages/goods/groupManage/goodTags')
+const goodBrands = () => import('@/pages/goods/groupManage/goodBrands') //
+const goodQuestions = () => import('@/pages/goods/customAsk/goodQuestions')
+const goodReviews = () => import('@/pages/goods/customAsk/goodReviews')
 Vue.use(Router)
 
 export default new Router({
@@ -106,6 +115,46 @@ export default new Router({
         {
           path: '/goods/onstock_goods',
           component: onStockGoods
+        },
+        {
+          path: '/goods/zero_goods',
+          component: zeroGoods
+        },
+        {
+          path: '/goods/ondeleted_goods',
+          component: ondeletedGoods
+        },
+        {
+          path: '/goods/import_data',
+          component: importData
+        },
+        {
+          path: '/goods/export_data',
+          component: exportData
+        },
+        {
+          path: '/goods/manage_categories',
+          component: manageCategories
+        },
+        {
+          path: '/goods/good_types',
+          component: goodTypes
+        },
+        {
+          path: '/goods/good_tags',
+          component: goodTags
+        },
+        {
+          path: '/goods/good_brands',
+          component: goodBrands
+        },
+        {
+          path: '/goods/good_questions',
+          component: goodQuestions
+        },
+        {
+          path: '/goods/good_reviews',
+          component: goodReviews
         }
       ]
     }
