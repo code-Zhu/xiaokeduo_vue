@@ -57,7 +57,7 @@
         <el-select size="mini" v-model="query">
           <el-option label="更多操作_ _" value=""></el-option>
         </el-select>
-      </div>      
+      </div>
       <div class="table-body">
         <el-table :data="data" size="small">
           <el-table-column type="selection" align="center" width="35"></el-table-column>
