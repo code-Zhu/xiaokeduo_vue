@@ -3,6 +3,6 @@
   color: #333;
   font-weight: 600;
 }
-.el-checkbox{
+.el-checkbox:not(.el-table .el-checkbox){
   margin-left: 30px;
 }

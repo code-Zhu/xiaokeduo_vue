@@ -44,7 +44,7 @@
             </div>
             <div class="table-body">
               <el-table :data="list1" border>
-                <el-table-column type="selection" width="60"></el-table-column>
+                <el-table-column type="selection" width="35"></el-table-column>
                 <el-table-column prop="title" label="标题"></el-table-column>
                 <el-table-column prop="c_user" label="创建用户" width="80"></el-table-column>
                 <el-table-column prop="c_time" label="创建时间" width="160"></el-table-column>

@@ -71,6 +71,7 @@ export default {
   }
   .table-ctr{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-around
   }
   .table-footer{
