@@ -64,11 +64,11 @@
                 </div>
                 <div class="menu-body-item">
                   <span data-label="label">背景颜色：</span>
-                  <el-input v-model="v.bg_color" type="color" size="mini" style="width: 70px"></el-input>
+                  <el-color-picker v-model="v.bg_color" size="small"></el-color-picker>
                 </div>
                 <div class="menu-body-item">
                   <span data-label="label">文字颜色：</span>
-                  <el-input v-model="v.color" type="color" size="mini" style="width: 70px"></el-input>
+                  <el-color-picker v-model="v.color" size="small"></el-color-picker>
                 </div>
               </div>
             </li>

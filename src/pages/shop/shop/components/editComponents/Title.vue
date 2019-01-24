@@ -26,11 +26,11 @@
         </div>
         <div class="ctr-form-item">
           <span class="label">背景颜色：</span>
-          <el-input v-model="style.bg_color" type="color" size="mini" style="width: 70px"></el-input>
+          <el-color-picker v-model="style.bg_color" size="small"></el-color-picker>
         </div>
         <div class="ctr-form-item">
           <span class="label">文字颜色：</span>
-          <el-input v-model="style.color" type="color" size="mini" style="width: 70px"></el-input>
+          <el-color-picker v-model="style.color" size="small"></el-color-picker>
         </div>
         <div class="ctr-form-item">
           <span class="label">前导图片：</span>

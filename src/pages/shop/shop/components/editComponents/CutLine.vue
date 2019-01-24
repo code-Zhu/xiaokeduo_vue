@@ -5,7 +5,8 @@
       <div class="shop-ctr-form">
         <div class="ctr-form-item">
           <span class="label choose-good">颜色：</span>
-          <input type="color" v-model="borderStyle.borderTopColor">
+          <!-- <input type="color" v-model="borderStyle.borderTopColor"> -->
+          <el-color-picker v-model="borderStyle.borderTopColor" size="small"></el-color-picker>
         </div>
         <div class="ctr-form-item">
           <span class="label">样式：</span>
