@@ -127,4 +127,10 @@ export default {
     }
   }
 }
+.form-box{
+  .tip{
+    font-size: 12px;
+    color: #737373;
+  }
+}
 </style>
