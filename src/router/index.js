@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+const _404 = () => import('@/components/404')
+
 const shop = () => import('@/pages/shop/index')
 const shopDefault = () => import('@/pages/shop/default')
 const shopSetting = () => import('@/pages/shop/setting')
@@ -157,6 +159,10 @@ export default new Router({
           component: goodReviews
         }
       ]
+    },
+    {
+      path: '*',
+      component: _404
     }
   ]
 })

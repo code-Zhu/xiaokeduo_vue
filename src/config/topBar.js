@@ -3,12 +3,12 @@ module.exports = [
     {
       label: '店铺',
       name: 'shop',
-      path: '/shop'
+      path: '/shop/default'
     },
     {
       label: '商品',
       name: 'goods',
-      path: '/goods'
+      path: '/goods/onsale_goods'
     },
     {
       label: '订单',
