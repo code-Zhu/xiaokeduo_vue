@@ -39,7 +39,14 @@
       </div>
     </div>
     <div class="pannel" style="margin-top: 25px">
-      <div class="table-header">
+      <div class="table-header" v-if="isDel">
+        <el-button size="mini" type="danger">彻底删除</el-button>
+        <span>|</span>
+        <el-button size="mini" type="primary">还原到出售中</el-button>
+        <span>|</span>
+        <el-button size="mini" type="primary">还原到仓库里</el-button>
+      </div>
+      <div class="table-header" v-else>
         <el-button size="mini" type="primary" v-if="type=='onsale'">下架</el-button>
         <el-button size="mini" type="primary" v-if="type=='onstock'">上架</el-button>
         <el-button size="mini" type="danger">删除</el-button>
@@ -50,7 +57,7 @@
         <el-select size="mini" v-model="query">
           <el-option label="更多操作_ _" value=""></el-option>
         </el-select>
-      </div>
+      </div>      
       <div class="table-body">
         <el-table :data="data" size="small">
           <el-table-column type="selection" align="center" width="35"></el-table-column>
@@ -81,12 +88,18 @@
           <el-table-column prop="created_time" label="创建时间" width="150" align="center"></el-table-column>
           <el-table-column label="操作">
             <template slot-scope="scope">
-              <div class="table-ctr" :data="scope.row.id">
+              <div class="table-ctr" :data="scope.row.id" v-if="isDel">
+                <a href="javascript:;">彻底删除</a>
+                <a href="javascript:;">还原到出售中</a>
+                <a href="javascript:;">还原到仓库里</a>
+              </div>
+              <div class="table-ctr" :data="scope.row.id" v-else>
                 <a href="javascript:;">编辑</a>
                 <span>|</span>
                 <a href="javascript:;">详情</a>
-                <a href="javascript:;">下架</a>
-                <span>|</span>
+                <a href="javascript:;" v-if="type=='onsale'">下架</a>
+                <a href="javascript:;" v-if="type=='onstock'">上架</a>
+                <span v-if="type">|</span>
                 <a href="javascript:;">删除</a>
               </div>
             </template>
@@ -105,7 +118,7 @@
 </template>
 <script>
 export default {
-  props: ['data', 'type'],
+  props: ['data', 'type', 'isDel'],
   data () {
     return {
       query: '',
