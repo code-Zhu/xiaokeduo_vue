@@ -1,6 +1,5 @@
 <template>
-  <div class="selectcategory">
-    <p class="page-title">客户评论</p>
+  <div class="list-table">
     <div class="pannel pannel-content">
       <el-row style="line-height: 30px">
         <el-col :span="6">
@@ -39,7 +38,7 @@
             </div>
           </template>
         </el-table-column>
-        <el-table-column label="客户评论">
+        <el-table-column label="客户评论" v-if="type=='question'">
           <template slot-scope="scope">
             <div class="review">
               <p>{{scope.row.review}}</p>
@@ -48,9 +47,23 @@
             </div>
           </template>
         </el-table-column>
+        <el-table-column label="客户/问题" v-if="type=='reply'">
+          <template slot-scope="scope">
+            <div class="review">
+              <p>{{scope.row.review}}</p>
+              <span>{{scope.row.time}}</span>
+              <span>{{scope.row.review_name}}</span>
+              <div class="reply">
+                <p>[回复]{{scope.row.reply}}</p>
+                <p>[{{scope.row.reply_time}}]</p>
+              </div>
+            </div>
+          </template>
+        </el-table-column>
         <el-table-column label="操作" width="90">
           <template slot-scope="scope">
-            <el-button size="mini" type="danger">删除</el-button>
+            <el-button size="mini" type="success" v-if="type=='question'">回复</el-button>
+            <el-button size="mini" type="danger" style="margin-top:10px;margin-left: 0px">删除</el-button>
           </template>
         </el-table-column>
       </el-table>
@@ -66,39 +79,10 @@
 </template>
 <script>
 export default {
+  props: ['list', 'type'],
   data () {
     return {
-      query: '',
-      list: [
-        {
-          name: '苹果',
-          img: './static/img/apple.jpg',
-          review: '测试评论',
-          time: '2019-01-20 10:46:34',
-          review_name: 'admin'
-        },
-        {
-          name: '苹果',
-          img: './static/img/apple.jpg',
-          review: '测试评论',
-          time: '2019-01-20 10:46:34',
-          review_name: 'admin'
-        },
-        {
-          name: '苹果',
-          img: './static/img/apple.jpg',
-          review: '测试评论',
-          time: '2019-01-20 10:46:34',
-          review_name: 'admin'
-        },
-        {
-          name: '苹果',
-          img: './static/img/apple.jpg',
-          review: '测试评论',
-          time: '2019-01-20 10:46:34',
-          review_name: '测试用户'
-        }
-      ]
+      query: ''
     }
   }
 }
@@ -112,12 +96,17 @@ export default {
     }
   }
   .review{
-    p{
+    >p{
       color: #000;
       &~span{
         color: #999;
         margin-right: 10px;
       }
+    }
+    .reply{
+      color: #ff0000;
+      font-size: 12px;
+      background-color: #F2F2F2;
     }
   }
 }
