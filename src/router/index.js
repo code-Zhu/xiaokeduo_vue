@@ -32,6 +32,19 @@ const goodTags = () => import('@/pages/goods/groupManage/goodTags')
 const goodBrands = () => import('@/pages/goods/groupManage/goodBrands') //
 const goodQuestions = () => import('@/pages/goods/customAsk/goodQuestions')
 const goodReviews = () => import('@/pages/goods/customAsk/goodReviews')
+
+const order = () => import('@/pages/trade/index')
+const setOrder = () => import('@/pages/trade/setOrder')
+const allOrder = () => import('@/pages/trade/manageorder/allOrder')
+const waitPay = () => import('@/pages/trade/manageorder/waitPay')
+const waitSend = () => import('@/pages/trade/manageorder/waitSend')
+const sended = () => import('@/pages/trade/manageorder/sended')
+const finished = () => import('@/pages/trade/manageorder/finished')
+const closed = () => import('@/pages/trade/manageorder/closed')
+const recycleStation = () => import('@/pages/trade/manageorder/recycleStation')
+const expressTemplates = () => import('@/pages/trade/manageorder/expressTemplates')
+const returnsApply = () => import('@/pages/trade/afterSale/returnsApply')
+
 Vue.use(Router)
 
 export default new Router({
@@ -157,6 +170,52 @@ export default new Router({
         {
           path: '/goods/good_reviews',
           component: goodReviews
+        }
+      ]
+    },
+    {
+      path: '/trade',
+      component: order,
+      children: [
+        {
+          path: '/trade/set_order',
+          component: setOrder
+        },
+        {
+          path: '/trade/all_order',
+          component: allOrder
+        },
+        {
+          path: '/trade/wait_pay',
+          component: waitPay
+        },
+        {
+          path: '/trade/wait_send',
+          component: waitSend
+        },
+        {
+          path: '/trade/sended',
+          component: sended
+        },
+        {
+          path: '/trade/finished',
+          component: finished
+        },
+        {
+          path: '/trade/closed',
+          component: closed
+        },
+        {
+          path: '/trade/recycle_station',
+          component: recycleStation
+        },
+        {
+          path: '/trade/express_templates',
+          component: expressTemplates
+        },
+        {
+          path: '/trade/returns_apply',
+          component: returnsApply
         }
       ]
     },

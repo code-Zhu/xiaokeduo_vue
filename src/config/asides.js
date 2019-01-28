@@ -147,7 +147,69 @@ const asideGoods = [
     ]
   }
 ]
+const asideTrade = [
+  {
+    title: false,
+    list: [
+      {
+        label: '订单设置',
+        path: '/trade/set_order'
+      }
+    ]
+  },
+  {
+    title: true,
+    label: '所有订单',
+    icon: 'iconfont icon-order',
+    list: [
+      {
+        label: '所有订单',
+        path: '/trade/all_order'
+      },
+      {
+        label: '等待付款',
+        path: '/trade/wait_pay'
+      },
+      {
+        label: '等待发货',
+        path: '/trade/wait_send'
+      },
+      {
+        label: '已发货',
+        path: '/trade/sended'
+      },
+      {
+        label: '交易成功',
+        path: '/trade/finished'
+      },
+      {
+        label: '交易关闭',
+        path: '/trade/closed'
+      },
+      {
+        label: '订单回收站',
+        path: '/trade/recycle_station'
+      },
+      {
+        label: '快递单模板',
+        path: '/trade/express_templates'
+      }
+    ]
+  },
+  {
+    title: true,
+    label: '售后服务',
+    icon: 'iconfont icon-shouhou',
+    list: [
+      {
+        label: '售后订单',
+        path: '/trade/returns_apply'
+      }
+    ]
+  }
+]
 module.exports = {
   aside_shop: asideShop,
-  aside_goods: asideGoods
+  aside_goods: asideGoods,
+  aside_trade: asideTrade
 }
