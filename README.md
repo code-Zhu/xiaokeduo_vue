@@ -1,6 +1,8 @@
 # xiaokeduo_vue
 
 > A Vue.js project
+###预览地址
+>https://code-zhu.github.io/xiaokeduo_vue/
 
 ## Build Setup
 
