@@ -2,7 +2,9 @@
 
 > A Vue.js project
 ### 预览地址
->https://code-zhu.github.io/xiaokeduo_vue/
+> https://code-zhu.github.io/xiaokeduo_vue/shop/default
+### 完成进度
+> 完成 店铺、商品, 订单正在开发中
 
 ## Build Setup
 
