@@ -71,18 +71,18 @@ export default {
   },
   methods: {
     handleList (val, level) {
+      this.current_name = val.name
       if (level === 0) {
         this.hasChildren = val.hasChildren
-      }
-      if (val.children) {
         this.child_list = val.children
-        this.step1Data.continue = level === 1
-      } else {
-        // this.child_list = []
-        this.step1Data.continue = true
+        this.step1Data.str[0] = val.name
+        // this.step1Data.str[1] = ''
+        this.step1Data.str.length = 1
+        this.step1Data.continue = !val.hasChildren
+      } else if (level === 1) {
+        this.step1Data.str[1] = val.name
+        this.step1Data.continue = !val.hasChildren
       }
-      this.current_name = val.name
-      this.step1Data.str[level] = val.name
       this.$emit('EventGetData', this.step1Data)
     }
   }

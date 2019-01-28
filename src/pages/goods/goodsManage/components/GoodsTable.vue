@@ -1,6 +1,6 @@
 <template>
   <div class="goods-table">
-    <el-tabs v-model="tabs_name" type="border-card">
+    <el-tabs v-model="tabs_name" type="border-card" @tab-click="handleTabsClick">
       <el-tab-pane label="出售中" name="onsale">
         <data-table :data="list" :type="'onsale'"/>
       </el-tab-pane>
@@ -23,6 +23,11 @@ export default {
   data () {
     return {
       tabs_name: '',
+      tabsRouter: {
+        onsale: '/goods/onsale_goods',
+        onstock: '/goods/onstock_goods',
+        zero: '/goods/zero_goods'
+      },
       list: [
         {
           name: '测试1',
@@ -55,6 +60,12 @@ export default {
           created_time: '2019/1/15 15:13:04'
         }
       ]
+    }
+  },
+  methods: {
+    handleTabsClick (v) {
+      // console.log(v.name)
+      this.$router.push(this.tabsRouter[v.name])
     }
   },
   mounted () {

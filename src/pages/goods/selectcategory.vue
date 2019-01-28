@@ -2,36 +2,46 @@
   <div class="selectcategory">
     <p class="page-title">上架新商品</p>
     <div class="pannel step-header">
-      <a href="javascript:;" :class="{finished: step>0}">1.选择商品分类</a>
-      <a href="javascript:;" :class="{finished: step>1}">2.编辑商品信息</a>
-      <a href="javascript:;" :class="{finished: step>2}">3.编辑商品详情</a>
+      <a href="javascript:;" :class="{finished: step>0}" @click="step = 1">1.选择商品分类</a>
+      <a href="javascript:;" :class="{finished: step>1}" @click="step = 2">2.编辑商品信息</a>
+      <a href="javascript:;" :class="{finished: step>2}" @click="step = 3">3.编辑商品详情</a>
     </div>
     <div class="pannel step-content">
-      <step1 @EventGetData="getStep1"/>
+      <step1 @EventGetData="getStep1" v-if="step === 1"/>
+      <step2 v-if="step === 2"/>
+      <step3 v-if="step === 3"/>
     </div>
     <div class="pannel step-footer">
-      <p>你当前选择的是：</p>
+      <p v-show="step===1">你当前选择的是：{{selectStr}}</p>
       <p>
-        <el-button type="success" size="mini">已选好分类，进入下一步</el-button>
+        <el-button v-if="step===1" type="success" size="mini" :disabled="!this.continue" @click="nextStep">已选好分类，进入下一步'</el-button>
+        <el-button v-if="step===2" type="success" size="mini" :disabled="!this.continue" @click="nextStep">下一步，编辑商品详情</el-button>
       </p>
     </div>
   </div>
 </template>
 <script>
 const Step1 = () => import('./components/Step1')
+const Step2 = () => import('./components/Step2')
+const Step3 = () => import('./components/Step3')
 export default {
   components: {
-    Step1
+    Step1, Step2, Step3
   },
   data () {
     return {
-      step: 1,
-      step1Date: null
+      step: 3,
+      continue: false,
+      selectStr: ''
     }
   },
   methods: {
     getStep1 ($e) {
-      console.log($e)
+      this.continue = $e.continue
+      this.selectStr = $e.continue ? $e.str.join('>>') : $e.str[0]
+    },
+    nextStep () {
+      this.step++
     }
   }
 }
