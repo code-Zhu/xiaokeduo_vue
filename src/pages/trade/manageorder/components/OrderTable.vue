@@ -17,10 +17,11 @@
           <el-input size="mini" v-model="query.receiver" placeholder="姓名/手机号"></el-input>
         </el-form-item>
         <el-form-item label="收货人地区：" label-width="110px">
-          <area-select :level="2" type="text" v-model="query.receiverArea" :data="pcaa" size="small"></area-select>
+          <area-select :level="2" type="text" v-model="query.receiverArea" :data="pcaa" size="small"
+            :placeholders="['-请选择省-', '-请选择市-', '-请选择区-']"></area-select>
         </el-form-item>
         <el-form-item label="商品名称：" label-width="85px">
-          <el-input size="mini" v-model="query.goodName" placeholder="姓名/手机号"></el-input>
+          <el-input size="mini" v-model="query.goodName"></el-input>
         </el-form-item>
         <el-form-item label="分销店铺名称：">
           <el-input size="mini" v-model="query.shopName"></el-input>
@@ -56,39 +57,46 @@
         <b>操作</b>
       </div>
       <ul class="order-table-body">
-        <li class="order-table-item">
+        <li class="order-table-item" v-for="(v, index) in tableList" :key="index">
           <p class="order-table-item-header">
             <label>
               <input type="checkbox">
-              <span>订单编号：190121163525990</span>
+              <span>订单编号：{{v.orderNumber}}</span>
             </label>
-            <span>2019-01-21 16:35:25</span>
-            <span>买家：aaaaa</span>
+            <span>{{v.time}}</span>
+            <span>买家：{{v.buyer}}</span>
             <i class="iconfont icon-biaoji"></i>
           </p>
           <div class="order-table-item-body">
             <div>
-              <img :src="'./static/img/none.gif'" alt="">
-              <a href="javascript:;">测试苹果</a>
+              <img :src="v.img" alt="">
+              <a href="javascript:;">{{v.name}}</a>
             </div>
-            <span class="order-table-item-column">￥9.50</span>
-            <span class="order-table-item-column">1</span>
-            <span class="order-table-item-column">已关闭</span>
+            <span class="order-table-item-column">￥{{v.price}}</span>
+            <span class="order-table-item-column">{{v.number}}</span>
+            <span class="order-table-item-column" style="color: #FF0000">{{v.afterSale}}</span>
             <div class="order-table-item-column fact-pay">
-              <p>￥9.50</p>
+              <p>{{v.factPay}}</p>
               <p>（含运费￥0.00）</p>
             </div>
             <div class="order-table-item-column reciver">
-              <p>a</p>
-              <p>15000000000</p>
+              <p>{{v.reciver}}</p>
+              <p>{{v.phone}}</p>
             </div>
-            <span class="order-table-item-column">茅岩莓茶_8796</span>
+            <span class="order-table-item-column">{{v.source}}</span>
             <div class="order-table-item-column">
               <el-button type="primary" size="mini">查看详情</el-button>
             </div>
           </div>
         </li>
       </ul>
+    </div>
+    <div class="table-footer">
+      <el-pagination
+        :page-size="10"
+        layout="sizes, total, prev, next, jumper"
+        :total="1000">
+      </el-pagination>
     </div>
   </div>
 </template>
@@ -107,7 +115,149 @@ export default {
         goodName: '',
         shopName: '',
         buyerName: ''
-      }
+      },
+      tableList: [
+        {
+          img: './static/img/none.gif',
+          name: '测试苹果',
+          orderNumber: '190121163525990',
+          time: '2019-01-21 16:35:25',
+          buyer: 'aaaaa',
+          price: '9.50',
+          number: '1',
+          afterSale: '已关闭',
+          factPay: '9.50',
+          reciver: 'aaa',
+          phone: '',
+          source: 'admin'
+        },
+        {
+          img: './static/img/none.gif',
+          name: '测试苹果',
+          orderNumber: '190121163525990',
+          time: '2019-01-21 16:35:25',
+          buyer: 'aaaaa',
+          price: '9.50',
+          number: '1',
+          afterSale: '已关闭',
+          factPay: '9.50',
+          reciver: 'aaa',
+          phone: '',
+          source: 'admin'
+        },
+        {
+          img: './static/img/none.gif',
+          name: '测试苹果',
+          orderNumber: '190121163525990',
+          time: '2019-01-21 16:35:25',
+          buyer: 'aaaaa',
+          price: '9.50',
+          number: '1',
+          afterSale: '已关闭',
+          factPay: '9.50',
+          reciver: 'aaa',
+          phone: '',
+          source: 'admin'
+        },
+        {
+          img: './static/img/apple.jpg',
+          name: '测试苹果',
+          orderNumber: '190121163525990',
+          time: '2019-01-21 16:35:25',
+          buyer: 'aaaaa',
+          price: '9.50',
+          number: '1',
+          afterSale: '已关闭',
+          factPay: '9.50',
+          reciver: 'aaa',
+          phone: '',
+          source: 'admin'
+        },
+        {
+          img: './static/img/none.gif',
+          name: '测试苹果',
+          orderNumber: '190121163525990',
+          time: '2019-01-21 16:35:25',
+          buyer: 'aaaaa',
+          price: '9.50',
+          number: '1',
+          afterSale: '已关闭',
+          factPay: '9.50',
+          reciver: 'aaa',
+          phone: '',
+          source: 'admin'
+        },
+        {
+          img: './static/img/apple.jpg',
+          name: '测试苹果',
+          orderNumber: '190121163525990',
+          time: '2019-01-21 16:35:25',
+          buyer: 'aaaaa',
+          price: '9.50',
+          number: '1',
+          afterSale: '已关闭',
+          factPay: '9.50',
+          reciver: 'aaa',
+          phone: '',
+          source: 'admin'
+        },
+        {
+          img: './static/img/none.gif',
+          name: '测试苹果',
+          orderNumber: '190121163525990',
+          time: '2019-01-21 16:35:25',
+          buyer: 'aaaaa',
+          price: '9.50',
+          number: '1',
+          afterSale: '已关闭',
+          factPay: '9.50',
+          reciver: 'aaa',
+          phone: '',
+          source: 'admin'
+        },
+        {
+          img: './static/img/apple.jpg',
+          name: '测试苹果',
+          orderNumber: '190121163525990',
+          time: '2019-01-21 16:35:25',
+          buyer: 'aaaaa',
+          price: '9.50',
+          number: '1',
+          afterSale: '已关闭',
+          factPay: '9.50',
+          reciver: 'aaa',
+          phone: '',
+          source: 'admin'
+        },
+        {
+          img: './static/img/none.gif',
+          name: '测试苹果',
+          orderNumber: '190121163525990',
+          time: '2019-01-21 16:35:25',
+          buyer: 'aaaaa',
+          price: '9.50',
+          number: '1',
+          afterSale: '已关闭',
+          factPay: '9.50',
+          reciver: 'aaa',
+          phone: '',
+          source: 'admin'
+        },
+        {
+          img: './static/img/apple.jpg',
+          name: '测试苹果',
+          orderNumber: '190121163525990',
+          time: '2019-01-21 16:35:25',
+          buyer: 'aaaaa',
+          price: '9.50',
+          number: '1',
+          afterSale: '已关闭',
+          factPay: '9.50',
+          reciver: 'aaa',
+          phone: '',
+          source: 'admin'
+        }
+      ]
     }
   }
 }
@@ -148,6 +298,7 @@ export default {
   }
   .order-table-item{
     border: 1px solid #D7D7D7;
+    margin-bottom: 20px;
     .order-table-item-header{
       display: flex;
       line-height: 30px;
@@ -168,17 +319,17 @@ export default {
     .order-table-item-body{
       height: 95px;
       display: flex;
-      :first-child{
+      &>:first-child{
         flex: 1;
-        vertical-align: top;
         padding-left: 5px;
-        margin-top: 10px;
+        margin-top: 15px;
         img{
           width: 62px;
           height: 62px;
           border: 1px solid #CDCDCD;
         }
         a{
+          vertical-align: top;
           font-size: 12px;
         }
       }
@@ -201,5 +352,4 @@ export default {
     }
   }
 }
-
 </style>

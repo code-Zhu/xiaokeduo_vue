@@ -35,6 +35,7 @@ export default {
   background-color: #364150;
   padding: 10px;
   border-radius: 5px;
+  min-height: 400px;
   a{
     display: inline-block;
     color: #B4BCC8;
