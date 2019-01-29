@@ -42,8 +42,8 @@ const sended = () => import('@/pages/trade/manageorder/sended')
 const finished = () => import('@/pages/trade/manageorder/finished')
 const closed = () => import('@/pages/trade/manageorder/closed')
 const recycleStation = () => import('@/pages/trade/manageorder/recycleStation')
-const expressTemplates = () => import('@/pages/trade/manageorder/expressTemplates')
-const returnsApply = () => import('@/pages/trade/afterSale/returnsApply')
+// const expressTemplates = () => import('@/pages/trade/manageorder/expressTemplates')
+// const returnsApply = () => import('@/pages/trade/afterSale/returnsApply')
 
 Vue.use(Router)
 
@@ -208,15 +208,15 @@ export default new Router({
         {
           path: '/trade/recycle_station',
           component: recycleStation
-        },
-        {
-          path: '/trade/express_templates',
-          component: expressTemplates
-        },
-        {
-          path: '/trade/returns_apply',
-          component: returnsApply
         }
+        // { //快递单模板
+        //   path: '/trade/express_templates',
+        //   component: expressTemplates
+        // }
+        // { // 售后订单
+        //   path: '/trade/returns_apply',
+        //   component: returnsApply
+        // }
       ]
     },
     {

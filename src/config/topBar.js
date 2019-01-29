@@ -13,7 +13,7 @@ module.exports = [
     {
       label: '订单',
       name: 'trade',
-      path: '/trade'
+      path: '/trade/all_order'
     }
   ],
   [

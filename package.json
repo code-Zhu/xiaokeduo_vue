@@ -15,7 +15,9 @@
     "element-ui": "^2.4.11",
     "node-sass": "^4.11.0",
     "v-charts": "^1.19.0",
+    "v-distpicker": "^1.1.0",
     "vue": "^2.5.2",
+    "vue-area-linkage": "^5.1.0",
     "vue-router": "^3.0.1",
     "vuedraggable": "^2.17.0"
   },

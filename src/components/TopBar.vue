@@ -49,6 +49,7 @@ export default {
 <style lang="scss" scoped>
 .topbar{
   width: 100%;
+  min-width: 1260px;
   background-color: #2B3643;
   margin: 0 auto 20px;
   color: #C6CFDA;

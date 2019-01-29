@@ -156,6 +156,18 @@ export default {
       background-color: #449D44
     }
   }
+  &[type=light]{
+    background-color: #5BC0DE;
+    &:hover{
+      background-color: #31B0D5;
+    }
+  }
+  &[type=danger]{
+    background-color: #D9534F;
+    &:hover{
+      background-color: #C9302C;
+    }
+  }
 }
 .mobile-model{
   width: 346px;

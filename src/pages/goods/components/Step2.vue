@@ -23,7 +23,7 @@
             <el-option label="法国梧桐" value="1"></el-option>
           </el-select>
         </el-form-item>
-        <el-form-item label="商品名称：">
+        <el-form-item label="商品名称：" required>
           <el-input size="small" v-model="baseInfo.good_name"></el-input>
         </el-form-item>
         <el-form-item label="排序：">
@@ -98,16 +98,16 @@
         </div>
       </div>
       <el-form label-width="140px">
-        <el-form-item label="原价：">
+        <el-form-item label="原价：" required>
           <el-input class="_110px" size="small" v-model="stock.old_price"></el-input>
           <span>元</span>
         </el-form-item>
-        <el-form-item label="现价：">
+        <el-form-item label="现价：" required>
           <el-input class="_110px" size="small" v-model="stock.new_price"></el-input>
           <span>元</span>
           <el-button type="info" size="small" style="margin-left:20px">设置会员价格</el-button>
         </el-form-item>
-        <el-form-item label="总库存：">
+        <el-form-item label="总库存：" required>
           <el-input class="_110px" size="small" v-model="stock.total"></el-input>
         </el-form-item>
         <el-form-item label="商品编码：">
@@ -164,7 +164,7 @@
           <el-input size="small" class="_110px" v-model="logistics.weight"></el-input>
           <span>千克</span>
         </el-form-item>
-        <el-form-item label="运费设置：">
+        <el-form-item label="运费设置：" required>
           <p>
             <label>
               <input type="radio" name="freight" v-model="logistics.freight">
@@ -178,7 +178,7 @@
             </label>
           </p>
         </el-form-item>
-        <el-form-item label="是否上架：">
+        <el-form-item label="是否上架：" required>
           <p>
             <label>
               <input type="radio" v-model="logistics.upper" name="upper" value="upper">

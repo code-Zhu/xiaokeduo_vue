@@ -30,7 +30,7 @@ export default {
   },
   data () {
     return {
-      step: 3,
+      step: 1,
       continue: false,
       selectStr: ''
     }

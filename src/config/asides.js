@@ -159,7 +159,7 @@ const asideTrade = [
   },
   {
     title: true,
-    label: '所有订单',
+    label: '订单管理',
     icon: 'iconfont icon-order',
     list: [
       {
@@ -189,24 +189,24 @@ const asideTrade = [
       {
         label: '订单回收站',
         path: '/trade/recycle_station'
-      },
-      {
-        label: '快递单模板',
-        path: '/trade/express_templates'
       }
-    ]
-  },
-  {
-    title: true,
-    label: '售后服务',
-    icon: 'iconfont icon-shouhou',
-    list: [
-      {
-        label: '售后订单',
-        path: '/trade/returns_apply'
-      }
+      // {
+      //   label: '快递单模板',
+      //   path: '/trade/express_templates'
+      // }
     ]
   }
+  // {
+  //   title: true,
+  //   label: '售后服务',
+  //   icon: 'iconfont icon-shouhou',
+  //   list: [
+  //     {
+  //       label: '售后订单',
+  //       path: '/trade/returns_apply'
+  //     }
+  //   ]
+  // }
 ]
 module.exports = {
   aside_shop: asideShop,
