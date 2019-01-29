@@ -273,7 +273,7 @@ export default {
   margin-top: 5px;
 }
 .area-select .area-selected-trigger{
-  padding-top: 0;
+  padding: 0 20px 7px 12px;
   line-height: 30px;
 }
 .el-form--inline .el-form-item{

@@ -33,17 +33,17 @@ module.exports = [
       label: '微信',
       name: 'wechat',
       path: '/wechat'
-    },
-    {
-      label: '微博',
-      name: 'weibo',
-      path: '/weibo'
-    },
-    {
-      label: '服务窗',
-      name: 'alifuwu',
-      path: '/alifuwu'
     }
+    // {
+    //   label: '微博',
+    //   name: 'weibo',
+    //   path: '/weibo'
+    // },
+    // {
+    //   label: '服务窗',
+    //   name: 'alifuwu',
+    //   path: '/alifuwu'
+    // }
   ],
   [
     {
