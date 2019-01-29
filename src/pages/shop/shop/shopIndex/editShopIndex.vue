@@ -2,7 +2,7 @@
   <div class="edit-shop-index">
     <p class="page-title">编辑店铺主页</p>
     <div class="drag-box">
-      <div class="pannel pannel-edit">
+      <div class="pannel pannel-edit" :class="{fixed: fixed}">
         <p class="title">拖动添加模块</p>
         <draggable element="ul" :list="module_list" class="list"
           :options="{group:{name:'people', pull:'clone', put:false }}">
@@ -12,6 +12,7 @@
           </li>
         </draggable>
       </div>
+      <div class="pannel pannel-edit-box" v-if="fixed"></div>
       <div class="pannel mobile-model">
         <div class="mobile-header">
           <i></i>
@@ -141,7 +142,8 @@ export default {
         }
       ],
       list: [],
-      edit_focus_index: 0
+      edit_focus_index: 0,
+      fixed: false
     }
   },
   watch: {
@@ -156,7 +158,22 @@ export default {
     },
     handleEdit (index) {
       this.edit_focus_index = index
+    },
+    handleScroll () {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+      let offsetTop = document.querySelector('.aside-box').offsetTop
+      if (scrollTop > offsetTop) {
+        this.fixed = true
+      } else {
+        this.fixed = false
+      }
     }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.handleScroll)
+  },
+  destroyed () {
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 </script>
@@ -164,11 +181,18 @@ export default {
 .drag-box{
   display: flex;
   align-items: flex-start;
+  .pannel-edit-box{
+    width: 180px
+  }
   .pannel-edit{
     width: 180px;
     border: 1px solid #ccc;
     border-radius: 15px;
     overflow: hidden;
+    &.fixed{
+      position: fixed;
+      top: 20px;
+    }
     .title{
       background: #E8E8E8;
       line-height: 34px;
