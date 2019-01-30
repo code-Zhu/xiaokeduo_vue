@@ -20,7 +20,7 @@ module.exports = [
     {
       label: '会员',
       name: 'member',
-      path: '/member'
+      path: '/member/default'
     },
     {
       label: '分销',

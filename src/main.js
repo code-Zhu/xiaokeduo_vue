@@ -9,11 +9,15 @@ import './assets/css/reset.css'
 import './assets/css/ele.css'
 import 'vue-area-linkage/dist/index.css'
 import AreaSelect from 'vue-area-linkage'
-const VeLine = () => import('v-charts/lib/line.common')
+import VeLine from 'v-charts/lib/line.common'
+import VePie from 'v-charts/lib/pie.common'
+import VeBar from 'v-charts/lib/bar.common'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
 Vue.component(VeLine.name, VeLine)
+Vue.component(VePie.name, VePie)
+Vue.component(VeBar.name, VeBar)
 Vue.use(AreaSelect)
 
 /* eslint-disable no-new */

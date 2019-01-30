@@ -9,7 +9,22 @@
         <el-tab-pane label="未打印快递单" name="3"></el-tab-pane>
         <el-tab-pane label="已打印快递单" name="4"></el-tab-pane>
       </el-tabs>
-      <order-table></order-table>
+      <order-table>
+        <div slot="btn">
+          <label>
+            <input type="checkbox">
+            <span>全选</span>
+          </label>
+          <el-button size="mini" plain type="primary">指定物流</el-button>
+          <el-button size="mini" type="primary">打印快递单</el-button>
+          <el-button size="mini" type="primary">打印发货单</el-button>
+          <el-button size="mini" type="success">批量发货</el-button>
+          <span>|</span>
+          <el-button size="mini" type="primary">批量备注</el-button>
+          <el-button size="mini" type="danger">批量删除</el-button>
+          <el-button size="mini" type="primary">导出Excel</el-button>
+        </div>
+      </order-table>
     </div>
   </div>
 </template>

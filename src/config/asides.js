@@ -160,7 +160,7 @@ const asideTrade = [
   {
     title: true,
     label: '订单管理',
-    icon: 'iconfont icon-order',
+    icon: 'icon-order',
     list: [
       {
         label: '所有订单',
@@ -208,8 +208,84 @@ const asideTrade = [
   //   ]
   // }
 ]
+const asideMeber = [
+  {
+    title: false,
+    list: [
+      {
+        label: '会员概况',
+        path: '/member/default'
+      }
+    ]
+  },
+  {
+    title: true,
+    label: '会员管理',
+    icon: 'icon-huiyuan',
+    list: [
+      {
+        label: '会员列表',
+        path: '/member/list'
+      },
+      {
+        label: '会员等级',
+        path: '/member/mgrade'
+      },
+      {
+        label: '会员积分查询',
+        path: '/member/integral'
+      }
+    ]
+  },
+  {
+    title: true,
+    label: '余额管理',
+    icon: 'icon-yue',
+    list: [
+      {
+        label: '提现管理',
+        path: '/member/withdraw'
+      },
+      {
+        label: '收支明细',
+        path: '/member/budget'
+      }
+    ]
+  },
+  {
+    title: true,
+    label: '会员积分设置',
+    icon: 'icon-integral',
+    list: [
+      {
+        label: '签到送积分',
+        path: '/member/sign_in_integral'
+      },
+      {
+        label: '购物送积分',
+        path: '/member/shop_integral'
+      }
+    ]
+  },
+  {
+    title: true,
+    label: '短信发送设置',
+    icon: 'icon-msg',
+    list: [
+      {
+        label: '短信发送设置',
+        path: '/member/send_msg'
+      },
+      {
+        label: '购买短信套餐',
+        path: '/member/send_server'
+      }
+    ]
+  }
+]
 module.exports = {
   aside_shop: asideShop,
   aside_goods: asideGoods,
-  aside_trade: asideTrade
+  aside_trade: asideTrade,
+  aside_member: asideMeber
 }

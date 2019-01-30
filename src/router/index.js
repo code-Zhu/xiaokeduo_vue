@@ -44,7 +44,8 @@ const closed = () => import('@/pages/trade/manageorder/closed')
 const recycleStation = () => import('@/pages/trade/manageorder/recycleStation')
 // const expressTemplates = () => import('@/pages/trade/manageorder/expressTemplates')
 // const returnsApply = () => import('@/pages/trade/afterSale/returnsApply')
-
+const member = () => import('@/pages/vipMember/index')
+const memberDefault = () => import('@/pages/vipMember/default')
 Vue.use(Router)
 
 export default new Router({
@@ -217,6 +218,16 @@ export default new Router({
         //   path: '/trade/returns_apply',
         //   component: returnsApply
         // }
+      ]
+    },
+    {
+      path: '/member',
+      component: member,
+      children: [
+        {
+          path: '/member/default',
+          component: memberDefault
+        }
       ]
     },
     {

@@ -1,7 +1,7 @@
 <template>
   <div class="order-table-box">
     <div class="pannel-content">
-      <el-form :inline="true">
+      <el-form v-if="formStyle===undefined" :inline="true">
         <el-form-item label="订单号：" label-width="85px">
           <el-input size="mini" v-model="query.orderNumber"></el-input>
         </el-form-item>
@@ -34,17 +34,45 @@
           <a href="javascript:;">清除条件</a>
         </el-form-item>
       </el-form>
+      <el-form v-if="formStyle==='recycle'" :inline="true">
+        <el-form-item label="订单号：" label-width="85px">
+          <el-input size="mini" v-model="query.orderNumber"></el-input>
+        </el-form-item>
+        <el-form-item label="成交时间：">
+          <el-date-picker v-model="query.dealTime" type="daterange" size="mini" style="width:400px"
+            range-separator="至" start-placeholder="开始日期" end-placeholder="结束日期">
+          </el-date-picker>
+        </el-form-item>
+        <el-form-item label="收货人：" label-width="85px">
+          <el-input size="mini" v-model="query.receiver" placeholder="姓名/手机号"></el-input>
+        </el-form-item>
+        <el-form-item label="店铺名称：">
+          <el-input size="mini" v-model="query.shopName"></el-input>
+        </el-form-item>
+        <el-form-item label="订单状态：">
+          <el-select v-model="query.shopName" size="mini">
+            <el-option label="所有订单" value="all"></el-option>
+            <el-option label="等待付款" value="w"></el-option>
+            <el-option label="已付款" value="d"></el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item>
+          <span class="mini-btn" type="primary">查询</span>
+          <a href="javascript:;">清除条件</a>
+        </el-form-item>
+      </el-form>
     </div>
     <div class="pannel order-table">
       <div class="pannel order-table-btn">
-        <label>
+        <slot name="btn"></slot>
+        <!-- <label>
           <input type="checkbox">
           <span>全选</span>
         </label>
         <el-button size="mini" type="primary">批量备注</el-button>
         <el-button size="mini" type="danger">批量删除</el-button>
         <span>|</span>
-        <el-button size="mini" type="primary">导出Excel</el-button>
+        <el-button size="mini" type="primary">导出Excel</el-button> -->
       </div>
       <div class="order-table-header">
         <b>商品信息</b>
@@ -68,9 +96,11 @@
             <i class="iconfont icon-biaoji"></i>
           </p>
           <div class="order-table-item-body">
-            <div>
-              <img :src="v.img" alt="">
-              <a href="javascript:;">{{v.name}}</a>
+            <div class="order-table-item-column">
+              <div>
+                <img :src="v.img" alt="">
+                <a href="javascript:;">{{v.name}}</a>
+              </div>
             </div>
             <span class="order-table-item-column">￥{{v.price}}</span>
             <span class="order-table-item-column">{{v.number}}</span>
@@ -84,8 +114,16 @@
               <p>{{v.phone}}</p>
             </div>
             <span class="order-table-item-column">{{v.source}}</span>
-            <div class="order-table-item-column">
-              <el-button type="primary" size="mini">查看详情</el-button>
+            <div class="order-table-item-column item-ctr">
+              <el-button type="primary" size="mini" plain>查看详情</el-button>
+              <!-- <el-button type="primary" size="mini">查看物流</el-button> -->
+              <!-- <el-button type="primary" size="mini">一键改价</el-button> -->
+              <!-- <el-button type="warning" size="mini">确认付款</el-button> -->
+              <!-- <el-button type="warning" size="mini">确认收货</el-button> -->
+              <!-- <el-button type="danger" size="mini">关闭订单</el-button> -->
+              <!-- <el-button type="primary" size="mini" plain>修改物流</el-button> -->
+              <!-- <el-button type="primary" size="mini" plain style="width: 80px">还原</el-button> -->
+              <!-- <el-button type="danger" size="mini">彻底删除</el-button> -->
             </div>
           </div>
         </li>
@@ -103,6 +141,7 @@
 <script>
 import pcaa from 'area-data/pcaa'
 export default {
+  props: ['formStyle'],
   data () {
     return {
       pcaa,
@@ -259,6 +298,9 @@ export default {
         }
       ]
     }
+  },
+  mounted () {
+    console.log(this.formStyle)
   }
 }
 </script>
@@ -266,7 +308,9 @@ export default {
 .area-select{
   height: 28px;
   padding-top: 0;
-  margin-left: 0;
+}
+.area-select-wrap .area-select{
+  margin-left: 0!important;
   margin-right: 10px;
 }
 .area-select-wrap{
@@ -317,12 +361,11 @@ export default {
       }
     }
     .order-table-item-body{
-      height: 95px;
+      min-height: 95px;
       display: flex;
       &>:first-child{
         flex: 1;
         padding-left: 5px;
-        margin-top: 15px;
         img{
           width: 62px;
           height: 62px;
@@ -335,10 +378,14 @@ export default {
       }
       .order-table-item-column{
         width: 110px;
-        text-align: center;
-        line-height: 95px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        // align-items: center;
+        &:not(:first-child){
+          align-items: center;
+        }
         &.reciver,&.fact-pay{
-          padding-top: 24px;
           line-height: 20px;
         }
         &.fact-pay{
@@ -346,6 +393,11 @@ export default {
           p:last-child{
             font-size: 12px;
             color: #999
+          }
+        }
+        &.item-ctr{
+          .el-button{
+            margin: 2px 0;
           }
         }
       }
