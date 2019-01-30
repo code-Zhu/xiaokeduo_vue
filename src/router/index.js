@@ -46,6 +46,11 @@ const recycleStation = () => import('@/pages/trade/manageorder/recycleStation')
 // const returnsApply = () => import('@/pages/trade/afterSale/returnsApply')
 const member = () => import('@/pages/vipMember/index')
 const memberDefault = () => import('@/pages/vipMember/default')
+const memberList = () => import('@/pages/vipMember/memberManager/list')
+const memberGrade = () => import('@/pages/vipMember/memberManager/grade')
+const memberIntegral = () => import('@/pages/vipMember/memberManager/integral')
+const memberWithdraw = () => import('@/pages/vipMember/balanceManager/withdraw')
+const memberBudget = () => import('@/pages/vipMember/balanceManager/budget')
 Vue.use(Router)
 
 export default new Router({
@@ -227,6 +232,26 @@ export default new Router({
         {
           path: '/member/default',
           component: memberDefault
+        },
+        {
+          path: '/member/list',
+          component: memberList
+        },
+        {
+          path: '/member/grade',
+          component: memberGrade
+        },
+        {
+          path: '/member/integral',
+          component: memberIntegral
+        },
+        {
+          path: '/member/withdraw',
+          component: memberWithdraw
+        },
+        {
+          path: '/member/budget',
+          component: memberBudget
         }
       ]
     },

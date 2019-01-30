@@ -144,6 +144,14 @@ export default {
   border-radius: 3px;
   font-size: 12px;
   cursor: pointer;
+  &[plain]{
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #ADADAD;
+    &:hover{
+      background-color: #E6E6E6;
+    }
+  }
   &[type=primary]{
     background-color: #337AB7;
     &:hover{

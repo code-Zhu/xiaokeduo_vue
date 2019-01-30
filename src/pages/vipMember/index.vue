@@ -23,3 +23,8 @@ export default {
   }
 }
 </script>
+<style>
+.el-form--inline .el-form-item{
+  margin-bottom: 0;
+}
+</style>

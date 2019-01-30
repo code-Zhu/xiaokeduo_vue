@@ -229,7 +229,7 @@ const asideMeber = [
       },
       {
         label: '会员等级',
-        path: '/member/mgrade'
+        path: '/member/grade'
       },
       {
         label: '会员积分查询',
