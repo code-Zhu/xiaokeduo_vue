@@ -12,6 +12,7 @@ import AreaSelect from 'vue-area-linkage'
 import VeLine from 'v-charts/lib/line.common'
 import VePie from 'v-charts/lib/pie.common'
 import VeBar from 'v-charts/lib/bar.common'
+import 'animate.css'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)

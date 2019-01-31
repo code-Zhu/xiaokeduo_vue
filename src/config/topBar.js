@@ -25,7 +25,7 @@ module.exports = [
     {
       label: '分销',
       name: 'fenxiao',
-      path: '/fenxiao'
+      path: '/fenxiao/default'
     }
   ],
   [

@@ -59,9 +59,6 @@ export default {
     flex-wrap: wrap;
     align-content: space-between;
     height: 50px;
-    p:first-child{
-      font-weight: 600;
-    }
     p{
       margin-bottom: 10px;
     }

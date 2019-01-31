@@ -53,6 +53,14 @@ const memberWithdraw = () => import('@/pages/vipMember/balanceManager/withdraw')
 const memberBudget = () => import('@/pages/vipMember/balanceManager/budget')
 const memberIntegralGet = () => import('@/pages/vipMember/integral/getIntegral')
 const memberMsgSendSet = () => import('@/pages/vipMember/msgSendSet/index')
+
+const fenXiao = () => import('@/pages/distribution/index')
+const fenXiaoDefault = () => import('@/pages/distribution/default')
+const fenXiaoSetting = () => import('@/pages/distribution/setting')
+const fenXiaoSaleRank = () => import('@/pages/distribution/manage/saleRank')
+const fenXiaoCommissionList = () => import('@/pages/distribution/commission/list')
+const fenXiaoCommissionDrawList = () => import('@/pages/distribution/commission/withdrawList')
+const fenXiaoCommissionRecord = () => import('@/pages/distribution/commission/withdrawRecord')
 Vue.use(Router)
 
 export default new Router({
@@ -268,6 +276,36 @@ export default new Router({
         {
           path: '/member/send_msg',
           component: memberMsgSendSet
+        }
+      ]
+    },
+    {
+      path: '/fenxiao',
+      component: fenXiao,
+      children: [
+        {
+          path: '/fenxiao/default',
+          component: fenXiaoDefault
+        },
+        {
+          path: '/fenxiao/setting',
+          component: fenXiaoSetting
+        },
+        {
+          path: '/fenxiao/rank',
+          component: fenXiaoSaleRank
+        },
+        {
+          path: '/fenxiao/commission',
+          component: fenXiaoCommissionList
+        },
+        {
+          path: '/fenxiao/withdraw',
+          component: fenXiaoCommissionDrawList
+        },
+        {
+          path: '/fenxiao/record',
+          component: fenXiaoCommissionRecord
         }
       ]
     },

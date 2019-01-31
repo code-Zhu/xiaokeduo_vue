@@ -283,9 +283,76 @@ const asideMeber = [
     ]
   }
 ]
+const asideFenxiao = [
+  {
+    title: false,
+    list: [
+      {
+        label: '分销概况',
+        path: '/fenxiao/default'
+      },
+      {
+        label: '分销设置',
+        path: '/fenxiao/setting'
+      },
+      {
+        label: '分销中心',
+        path: '/fenxiao/center'
+      },
+      {
+        label: '掌柜名片设置',
+        path: '/fenxiao/cardset'
+      }
+    ]
+  },
+  {
+    title: true,
+    icon: 'icon-daili',
+    label: '分销商管理',
+    list: [
+      {
+        label: '分销商列表',
+        path: '/fenxiao/list'
+      },
+      {
+        label: '分销商等级',
+        path: '/fenxiao/grade'
+      },
+      {
+        label: '分销商升级奖励',
+        path: '/fenxiao/update'
+      },
+      {
+        label: '销售排行榜',
+        path: '/fenxiao/rank'
+      }
+    ]
+  },
+  {
+    title: true,
+    icon: 'icon-yue',
+    label: '佣金管理',
+    list: [
+      {
+        label: '佣金明细',
+        path: '/fenxiao/commission'
+      },
+      {
+        label: '提现申请',
+        path: '/fenxiao/withdraw'
+      },
+      {
+        label: '提现记录',
+        path: '/fenxiao/record'
+      }
+    ]
+  }
+]
+
 module.exports = {
   aside_shop: asideShop,
   aside_goods: asideGoods,
   aside_trade: asideTrade,
-  aside_member: asideMeber
+  aside_member: asideMeber,
+  aside_fenxiao: asideFenxiao
 }

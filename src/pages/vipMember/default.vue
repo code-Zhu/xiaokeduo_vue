@@ -12,18 +12,17 @@
     </div>
     <div class="pannel charts-box">
       <div class="charts-item">
-        <b class="charts-title animated bounceInDown">分组数据</b>
+        <b class="charts-title animated fadeInDown">分组数据</b>
         <ve-pie :data="chartData1"></ve-pie>
       </div>
       <div class="charts-item">
-        <b class="charts-title animated bounceInDown">会员分布地区(前9名)</b>
+        <b class="charts-title animated fadeInDown">会员分布地区(前9名)</b>
         <ve-bar :data="chartData2"></ve-bar>
       </div>
     </div>
   </div>
 </template>
 <script>
-import 'animate.css'
 import baseInfo from './components/BaseInfo'
 export default {
   components: {baseInfo},
