@@ -51,6 +51,8 @@ const memberGrade = () => import('@/pages/vipMember/memberManager/grade')
 const memberIntegral = () => import('@/pages/vipMember/memberManager/integral')
 const memberWithdraw = () => import('@/pages/vipMember/balanceManager/withdraw')
 const memberBudget = () => import('@/pages/vipMember/balanceManager/budget')
+const memberIntegralGet = () => import('@/pages/vipMember/integral/getIntegral')
+const memberMsgSendSet = () => import('@/pages/vipMember/msgSendSet/index')
 Vue.use(Router)
 
 export default new Router({
@@ -252,6 +254,20 @@ export default new Router({
         {
           path: '/member/budget',
           component: memberBudget
+        },
+        {
+          name: 'sign_integral',
+          path: '/member/sign_integral',
+          component: memberIntegralGet
+        },
+        {
+          name: 'purchase_integral',
+          path: '/member/purchase_integral',
+          component: memberIntegralGet
+        },
+        {
+          path: '/member/send_msg',
+          component: memberMsgSendSet
         }
       ]
     },

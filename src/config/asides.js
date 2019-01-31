@@ -259,11 +259,11 @@ const asideMeber = [
     list: [
       {
         label: '签到送积分',
-        path: '/member/sign_in_integral'
+        path: '/member/sign_integral'
       },
       {
         label: '购物送积分',
-        path: '/member/shop_integral'
+        path: '/member/purchase_integral'
       }
     ]
   },

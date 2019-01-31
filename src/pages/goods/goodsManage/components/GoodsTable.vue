@@ -64,7 +64,6 @@ export default {
   },
   methods: {
     handleTabsClick (v) {
-      // console.log(v.name)
       this.$router.push(this.tabsRouter[v.name])
     }
   },
