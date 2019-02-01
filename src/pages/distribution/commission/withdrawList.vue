@@ -20,7 +20,7 @@
       </el-form>
     </div>
     <div class="pannel">
-      <el-tabs v-model="tabName" type="card" @tab-click="handleClick">
+      <el-tabs v-model="tabName" type="card">
         <el-tab-pane label="待发放" name="first">
           <el-table border>
             <el-table-column label="店铺名称/手机"></el-table-column>

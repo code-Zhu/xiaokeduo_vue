@@ -19,6 +19,8 @@
     "v-distpicker": "^1.1.0",
     "vue": "^2.5.2",
     "vue-area-linkage": "^5.1.0",
+    "vue-draggable-resizable": "^2.0.0-rc1",
+    "vue-draggable-resizable-gorkys": "^1.1.2",
     "vue-router": "^3.0.1",
     "vuedraggable": "^2.17.0"
   },

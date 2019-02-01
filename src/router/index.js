@@ -57,6 +57,11 @@ const memberMsgSendSet = () => import('@/pages/vipMember/msgSendSet/index')
 const fenXiao = () => import('@/pages/distribution/index')
 const fenXiaoDefault = () => import('@/pages/distribution/default')
 const fenXiaoSetting = () => import('@/pages/distribution/setting')
+const fenXiaoCenter = () => import('@/pages/distribution/center')
+const fenXiaoCard = () => import('@/pages/distribution/card')
+const fenXiaoList = () => import('@/pages/distribution/manage/list')
+const fenXiaoGrade = () => import('@/pages/distribution/manage/grade')
+const fenXiaoLevel = () => import('@/pages/distribution/manage/levelReward')
 const fenXiaoSaleRank = () => import('@/pages/distribution/manage/saleRank')
 const fenXiaoCommissionList = () => import('@/pages/distribution/commission/list')
 const fenXiaoCommissionDrawList = () => import('@/pages/distribution/commission/withdrawList')
@@ -290,6 +295,26 @@ export default new Router({
         {
           path: '/fenxiao/setting',
           component: fenXiaoSetting
+        },
+        {
+          path: '/fenxiao/center',
+          component: fenXiaoCenter
+        },
+        {
+          path: '/fenxiao/cardset',
+          component: fenXiaoCard
+        },
+        {
+          path: '/fenxiao/list',
+          component: fenXiaoList
+        },
+        {
+          path: '/fenxiao/grade',
+          component: fenXiaoGrade
+        },
+        {
+          path: '/fenxiao/level',
+          component: fenXiaoLevel
         },
         {
           path: '/fenxiao/rank',

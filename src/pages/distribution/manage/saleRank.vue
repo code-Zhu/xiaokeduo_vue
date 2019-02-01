@@ -17,12 +17,13 @@
       </el-form>
     </div>
     <div class="pannel">
-      <el-table border :data="list">
-        <el-table-column label="微信头像">
+      <el-table border :data="list" size="small">
+        <el-table-column label="微信头像" width="110">
           <template slot-scope="scope">
-            <div>
-              <span>{{scope.$index}}</span>
-              <img :src="scope.row.avator" style="width:60px;height:60px">
+            <div class="img-box">
+              <img :src="`./static/img/000${scope.$index+1}_.gif`" v-if="scope.$index<3">
+              <span v-else>{{scope.$index}}</span>
+              <img :src="scope.row.avator" style="width:60px;height:60px;">
             </div>
           </template>
         </el-table-column>
@@ -198,3 +199,13 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+.img-box{
+  img {
+    vertical-align: middle;
+  }
+  span{
+    padding: 0 8px;
+  }
+}
+</style>

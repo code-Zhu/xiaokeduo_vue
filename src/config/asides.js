@@ -320,7 +320,7 @@ const asideFenxiao = [
       },
       {
         label: '分销商升级奖励',
-        path: '/fenxiao/update'
+        path: '/fenxiao/level'
       },
       {
         label: '销售排行榜',
