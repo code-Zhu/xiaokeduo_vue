@@ -4,7 +4,8 @@
 ### 预览地址
 > https://code-zhu.github.io/xiaokeduo_vue/#/shop/default
 ### 完成进度
-> 完成 店铺、商品, 订单正在开发中
+> 完成 店铺、商品, 订单, 会员, 分销正在开发中
+> 分销剩余分销中心的小交互，名片设置剩余样式自定义
 
 ## Build Setup
 
