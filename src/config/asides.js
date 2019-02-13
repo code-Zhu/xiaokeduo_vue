@@ -348,11 +348,49 @@ const asideFenxiao = [
     ]
   }
 ]
-
+const asideWechat = [
+  {
+    title: false,
+    list: [
+      {
+        label: '绑定微信公众号',
+        path: '/wechat/default'
+      }
+    ]
+  },
+  {
+    title: true,
+    icon: 'icon-wechat',
+    label: '微信设置',
+    list: [
+      {
+        label: '引导关注',
+        path: '/wechat/guide_concern'
+      },
+      {
+        label: '一键登录',
+        path: '/wechat/validation_service'
+      },
+      {
+        label: '消息模板',
+        path: '/wechat/message_templets'
+      },
+      {
+        label: '微信支付',
+        path: '/wechat/weixin_pay'
+      },
+      {
+        label: '微信证书设置',
+        path: '/wechat/redpack_setting'
+      }
+    ]
+  }
+]
 module.exports = {
   aside_shop: asideShop,
   aside_goods: asideGoods,
   aside_trade: asideTrade,
   aside_member: asideMeber,
-  aside_fenxiao: asideFenxiao
+  aside_fenxiao: asideFenxiao,
+  aside_wechat: asideWechat
 }

@@ -128,6 +128,7 @@ export default {
   .tip{
     font-size: 12px;
     color: #737373;
+    line-height: 20px;
   }
 }
 .mini-btn{
@@ -219,5 +220,16 @@ export default {
       background: url('./assets/img/modules.png') no-repeat -253px -70px;
     }
   }
+}
+.submit-box-fixed{
+  width: 100%;
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  bottom: 0;
+  height: 55px;
+  line-height: 55px;
+  background-color: rgba(43,54,67,0.8);
+  text-align: center;
 }
 </style>

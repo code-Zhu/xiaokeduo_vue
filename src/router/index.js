@@ -66,6 +66,15 @@ const fenXiaoSaleRank = () => import('@/pages/distribution/manage/saleRank')
 const fenXiaoCommissionList = () => import('@/pages/distribution/commission/list')
 const fenXiaoCommissionDrawList = () => import('@/pages/distribution/commission/withdrawList')
 const fenXiaoCommissionRecord = () => import('@/pages/distribution/commission/withdrawRecord')
+
+const weChat = () => import('@/pages/wechat/index')
+const wechatDefault = () => import('@/pages/wechat/default')
+const wechatGuideConcern = () => import('@/pages/wechat/wechatSetting/guideConcern')
+const wechatValidationService = () => import('@/pages/wechat/wechatSetting/validationService')
+const wechatMessageTemplets = () => import('@/pages/wechat/wechatSetting/messageTemplets')
+const wechatWpay = () => import('@/pages/wechat/wechatSetting/weixinPay')
+const wechatRedpackSetting = () => import('@/pages/wechat/wechatSetting/redpackSetting')
+
 Vue.use(Router)
 
 export default new Router({
@@ -331,6 +340,36 @@ export default new Router({
         {
           path: '/fenxiao/record',
           component: fenXiaoCommissionRecord
+        }
+      ]
+    },
+    {
+      path: '/wechat',
+      component: weChat,
+      children: [
+        {
+          path: '/wechat/default',
+          component: wechatDefault
+        },
+        {
+          path: '/wechat/guide_concern',
+          component: wechatGuideConcern
+        },
+        {
+          path: '/wechat/validation_service',
+          component: wechatValidationService
+        },
+        {
+          path: '/wechat/message_templets',
+          component: wechatMessageTemplets
+        },
+        {
+          path: '/wechat/weixin_pay',
+          component: wechatWpay
+        },
+        {
+          path: '/wechat/redpack_setting',
+          component: wechatRedpackSetting
         }
       ]
     },

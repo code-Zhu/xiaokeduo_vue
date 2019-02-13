@@ -28,7 +28,7 @@
         </label>
       </div>
     </div>
-    <div class="submit-box">
+    <div class="submit-box-fixed">
       <el-button type="primary" size="small">上一步</el-button>
       <el-button type="success" size="small">保存</el-button>
       <el-button type="success" size="small">保存并预览</el-button>
@@ -92,17 +92,6 @@ export default {
     position: relative;
     left: 0;
     width: 540px;
-  }
-  .submit-box{
-    width: 100%;
-    position: fixed;
-    z-index: 3;
-    left: 0;
-    bottom: 0;
-    height: 55px;
-    line-height: 55px;
-    background-color: rgba(43,54,67,0.8);
-    text-align: center;
   }
 }
 </style>

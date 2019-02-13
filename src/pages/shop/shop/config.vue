@@ -2,26 +2,26 @@
   <div class="shop-config">
     <p class="page-title">店铺信息</p>
     <div class="pannel form-box">
-      <el-form label-width="170px">
+      <el-form label-width="170px" class="form-box">
         <el-form-item label="店铺LOGO：">
           <input type="file" style="display:none" id="shop_logo">
           <label for="shop_logo" class="shop_logo">
             <span>logo</span>
             <span>修改</span>
           </label>
-          <p>建议尺寸：200 x 200 像素</p>
-          <p>小于120KB，支持.jpg、.gif、.png格式</p>
+          <p class="tip">建议尺寸：200 x 200 像素</p>
+          <p class="tip">小于120KB，支持.jpg、.gif、.png格式</p>
         </el-form-item>
         <el-form-item label="店铺名称：">
           <el-input></el-input>
         </el-form-item>
         <el-form-item label="联系电话：">
           <el-input></el-input>
-          <p>支持输入手机号码或座机号码</p>
+          <p class="tip">支持输入手机号码或座机号码</p>
         </el-form-item>
         <el-form-item label="店铺介绍：">
           <el-input type="textarea" :autosize="{ minRows: 4}"></el-input>
-          <p>微信分享店铺给好友时会显示这里的文案</p>
+          <p class="tip">微信分享店铺给好友时会显示这里的文案</p>
         </el-form-item>
         <el-form-item>
           <el-button type="success" size="mini">保存</el-button>
@@ -44,11 +44,6 @@
       border: 1px solid #A19C9C;
       margin-right: 10px;
     }
-  }
-  p{
-    font-size: 12px;
-    line-height: 20px;
-    color: #737373;
   }
 }
 </style>

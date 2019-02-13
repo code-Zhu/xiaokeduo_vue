@@ -32,7 +32,7 @@ module.exports = [
     {
       label: '微信',
       name: 'wechat',
-      path: '/wechat'
+      path: '/wechat/default'
     }
     // {
     //   label: '微博',
