@@ -5,18 +5,24 @@
         <i></i>
         <div class="mobile-title">店铺主页</div>
       </div>
-      <div class="mobile-content">
+      <div class="mobile-content" :style="{backgroundImage: `url(${data.bg})`}">
         <vue-draggable-resizable-gorkys :parent="true" :w="avatar.w" :h="avatar.h" :x="avatar.x" :y="avatar.y">
           <div class="avatar">
             <img :src="avatar.url" alt="">
           </div>
         </vue-draggable-resizable-gorkys>
         <vue-draggable-resizable-gorkys :parent="true" :w="150" :h="28" :x="intr.x" :y="intr.y" :resizable="false">
-          <p class="intr">{{intr.content}}</p>
+          <div class="intr" :style="{fontSize: data.intr.style.fontSize+'px', color: data.intr.style.color}">
+            <span>{{data.intr.content.substring(0, data.intr.content.indexOf('{'))}}</span>
+            <span :style="{color: data.intr.style.title_color}">{{data.intr.content.substring(data.intr.content.lastIndexOf('{')+1, data.intr.content.indexOf('}'))}}</span>
+            <span>{{data.intr.content.substring(data.intr.content.lastIndexOf('}')+1)}}</span>
+          </div>
         </vue-draggable-resizable-gorkys>
-        <vue-draggable-resizable-gorkys :parent="true" :minw="220" :h="1" :x="spread.x" :y="spread.y" :resizable="false">
-          <div class="spread">
-            <span>{{spread.content}}</span>
+        <vue-draggable-resizable-gorkys :parent="true" :minw="230" :h="1" :x="spread.x" :y="spread.y" :resizable="false">
+          <div class="spread" :style="{fontSize: data.spread.style.fontSize+'px', color: data.spread.style.color}">
+            <span>{{data.spread.content.substring(0, data.spread.content.indexOf('{'))}}</span>
+            <span :style="{color: data.spread.style.title_color}">{{data.spread.content.substring(data.spread.content.lastIndexOf('{')+1, data.spread.content.indexOf('}'))}}</span>
+            <span>{{data.spread.content.substring(data.spread.content.lastIndexOf('}')+1)}}</span>
           </div>
         </vue-draggable-resizable-gorkys>
         <vue-draggable-resizable-gorkys :parent="true" :w="qrcode.w" :h="qrcode.h" :x="qrcode.x" :y="qrcode.y">
@@ -29,44 +35,45 @@
           <el-form :inline="true" label-width="85px">
             <el-form-item label="默认头像：">
               <label>
-                <input type="radio" name="default-avatar">
+                <input v-model="data.avatar.default" type="radio" value="1">
                 <span>使用会员头像</span>
               </label>
               <label>
-                <input type="radio" name="default-avatar">
+                <input v-model="data.avatar.default" type="radio" value="2">
                 <span>使用分销商店铺Logo</span>
               </label>
               <label>
-                <input type="radio" name="default-avatar">
+                <input v-model="data.avatar.default" type="radio" value="3">
                 <span>不使用头像</span>
               </label>
             </el-form-item>
             <el-form-item label="个人介绍：">
-              <el-input size="mini" style="width:188px"></el-input>
+              <el-input v-model="data.intr.content" size="mini" style="width:188px"></el-input>
             </el-form-item>
             <el-form-item label="文字样式：">
-              <el-color-picker v-model="color1" size="mini" class="_color-picker"></el-color-picker>
-              <el-color-picker v-model="color2" size="mini" class="_color-picker"></el-color-picker>
-              <el-input-number size="mini" style="width:80px" controls-position="right"></el-input-number>
+              <el-color-picker v-model="data.intr.style.color" size="mini" class="_color-picker"></el-color-picker>
+              <el-color-picker v-model="data.intr.style.title_color" size="mini" class="_color-picker"></el-color-picker>
+              <el-input-number v-model="data.intr.style.fontSize" size="mini" style="width:80px" controls-position="right"></el-input-number>
               <span>像素</span>
             </el-form-item>
             <el-form-item label=" ">
-              <p class="tip">“{{'昵称'}}”为系统参数，实际显示以分销商的昵称替代</p>
+              <p class="tip">“{&nbsp;{昵称}&nbsp;}”为系统参数，实际显示以分销商的昵称替代</p>
             </el-form-item>
             <el-form-item label="推广口号：">
-              <el-input type="textarea" :rows="2"></el-input>
+              <el-input v-model="data.spread.content" type="textarea" :rows="2"></el-input>
             </el-form-item>
             <el-form-item label="文字样式：">
-              <el-color-picker v-model="color1" size="mini" class="_color-picker"></el-color-picker>
-              <el-color-picker v-model="color2" size="mini" class="_color-picker"></el-color-picker>
-              <el-input-number size="mini" style="width:80px" controls-position="right"></el-input-number>
+              <el-color-picker v-model="data.spread.style.color" size="mini" class="_color-picker"></el-color-picker>
+              <el-color-picker v-model="data.spread.style.title_color" size="mini" class="_color-picker"></el-color-picker>
+              <el-input-number v-model="data.spread.style.fontSize" size="mini" style="width:80px" controls-position="right"></el-input-number>
               <span>像素</span>
             </el-form-item>
             <el-form-item label=" ">
-              <p class="tip">“{{'店铺名称'}}”为系统参数，实际显示以分销商的店铺名称替代</p>
+              <p class="tip">“{&nbsp;{店铺名称}&nbsp;}”为系统参数，实际显示以分销商的店铺名称替代</p>
             </el-form-item>
             <el-form-item label="背景图片：">
               <label class="bg">
+                <img :src="data.bg">
                 <input type="file" class="hide" accept="image/jpeg, image/png">
               </label>
               <p class="tip">点击图片上传，建议上传480*735px，小于1M，png、jpg格式图片</p>
@@ -116,6 +123,28 @@ export default {
         h: 168,
         x: 76,
         y: 220
+      },
+      data: {
+        avatar: {
+          default: '1'
+        },
+        intr: {
+          content: '我是{{天使}}',
+          style: {
+            color: '#ff0000',
+            title_color: '#fff000',
+            fontSize: 26
+          }
+        },
+        spread: {
+          content: '邀请您加入{{店铺名称}}分销团队',
+          style: {
+            color: '#04FF00',
+            title_color: '#fff000',
+            fontSize: 16
+          }
+        },
+        bg: '../static/img/storecardbg.png'
       }
     }
   },
@@ -137,7 +166,6 @@ export default {
     position: relative;
     background-color: #fff;
     margin: -1px 15px 0;
-    background-image: url('../../../static/img/storecardbg.png');
     background-repeat: no-repeat;
     background-size: 100%;
     .avatar, .qrcode{
@@ -153,12 +181,8 @@ export default {
         border-radius: 50%;
       }
     }
-    .intr{
-      font-size: 28px;
-    }
     .spread{
       display: inline-block;
-      font-size: 16px;
     }
   }
   .edit-right-ctr{
