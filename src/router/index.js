@@ -75,6 +75,12 @@ const wechatMessageTemplets = () => import('@/pages/wechat/wechatSetting/message
 const wechatWpay = () => import('@/pages/wechat/wechatSetting/weixinPay')
 const wechatRedpackSetting = () => import('@/pages/wechat/wechatSetting/redpackSetting')
 
+const settings = () => import('@/pages/settings/index')
+const settingsDefault = () => import('@/pages/settings/default')
+const settingsDepartment = () => import('@/pages/settings/security/department')
+const settingsMember = () => import('@/pages/settings/security/member')
+const settingsLogs = () => import('@/pages/settings/security/logs')
+
 const statistics = () => import('@/pages/statistics/index')
 const statisticsDefault = () => import('@/pages/statistics/default')
 const statisticsOrder = () => import('@/pages/statistics/sale/order')
@@ -383,6 +389,28 @@ export default new Router({
       ]
     },
     {
+      path: '/settings',
+      component: settings,
+      children: [
+        {
+          path: '/settings/default',
+          component: settingsDefault
+        },
+        {
+          path: '/settings/department',
+          component: settingsDepartment
+        },
+        {
+          path: '/settings/staff',
+          component: settingsMember
+        },
+        {
+          path: '/settings/logs',
+          component: settingsLogs
+        }
+      ]
+    },
+    {
       path: '/statistics',
       component: statistics,
       children: [
@@ -403,15 +431,15 @@ export default new Router({
           component: statisticsRank
         },
         {
-          path: '/statistics/member_rank',
+          path: '/statistics/vip_rank',
           component: statisticsMemberRank
         },
         {
-          path: '/statistics/member_area',
+          path: '/statistics/vip_area',
           component: statisticsMemberArea
         },
         {
-          path: '/statistics/member_increase',
+          path: '/statistics/vip_increase',
           component: statisticsMemberIncrease
         }
       ]

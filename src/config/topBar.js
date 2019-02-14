@@ -56,7 +56,7 @@ module.exports = [
     {
       label: '设置',
       name: 'settings',
-      path: '/settings'
+      path: '/settings/default'
     },
     {
       label: '分析统计',

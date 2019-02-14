@@ -386,6 +386,73 @@ const asideWechat = [
     ]
   }
 ]
+const asideSettings = [
+  {
+    title: true,
+    label: '设置收款账号',
+    icon: 'icon-alipay',
+    list: [
+      {
+        label: '账户余额',
+        path: '/settings/balance'
+      },
+      {
+        label: '线下支付',
+        path: '/settings/offline_pay'
+      },
+      {
+        label: '货到付款',
+        path: '/settings/cod'
+      },
+      {
+        label: '提现设置',
+        path: '/settings/draw_setting'
+      }
+    ]
+  },
+  {
+    title: true,
+    label: '物流配送',
+    icon: 'icon-wuliu',
+    list: [
+      {
+        label: '运费模板',
+        path: '/settings/shipping_templates'
+      },
+      {
+        label: '物流公司',
+        path: '/settings/logistics'
+      },
+      {
+        label: '物流地址管理',
+        path: '/settings/logistics_addr'
+      },
+      {
+        label: '物流跟踪配置',
+        path: '/settings/logistics_track'
+      }
+    ]
+  },
+  {
+    title: true,
+    label: '安全中心',
+    icon: 'icon-security',
+    list: [
+      {
+        label: '部门管理',
+        path: '/settings/department'
+      },
+      {
+        label: '人员管理',
+        path: '/settings/staff'
+      },
+      {
+        label: '操作日志',
+        path: '/settings/logs'
+      }
+    ]
+  }
+]
 const asideStatistics = [
   {
     title: false,
@@ -422,15 +489,15 @@ const asideStatistics = [
     list: [
       {
         label: '会员排行榜',
-        path: '/statistics/member_rank'
+        path: '/statistics/vip_rank'
       },
       {
         label: '会员地区分布',
-        path: '/statistics/member_area'
+        path: '/statistics/vip_area'
       },
       {
         label: '会员增长统计',
-        path: '/statistics/member_increase'
+        path: '/statistics/vip_increase'
       }
     ]
   }
@@ -442,5 +509,6 @@ module.exports = {
   aside_member: asideMeber,
   aside_fenxiao: asideFenxiao,
   aside_wechat: asideWechat,
+  aside_settings: asideSettings,
   aside_statistics: asideStatistics
 }
