@@ -12,6 +12,10 @@ import AreaSelect from 'vue-area-linkage'
 import VeLine from 'v-charts/lib/line.common'
 import VePie from 'v-charts/lib/pie.common'
 import VeBar from 'v-charts/lib/bar.common'
+import VeHistogram from 'v-charts/lib/histogram.common'
+import VeHeatmap from 'v-charts/lib/heatmap.common'
+import VeMap from 'v-charts/lib/map.common'
+
 import 'animate.css'
 
 Vue.config.productionTip = false
@@ -19,6 +23,9 @@ Vue.use(ElementUI)
 Vue.component(VeLine.name, VeLine)
 Vue.component(VePie.name, VePie)
 Vue.component(VeBar.name, VeBar)
+Vue.component(VeHistogram.name, VeHistogram)
+Vue.component(VeMap.name, VeMap)
+Vue.component(VeHeatmap.name, VeHeatmap)
 Vue.use(AreaSelect)
 
 /* eslint-disable no-new */

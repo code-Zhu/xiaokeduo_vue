@@ -386,11 +386,61 @@ const asideWechat = [
     ]
   }
 ]
+const asideStatistics = [
+  {
+    title: false,
+    list: [
+      {
+        label: '经营简报',
+        path: '/statistics/default'
+      }
+    ]
+  },
+  {
+    title: true,
+    label: '销售分析',
+    icon: 'icon-fenxi',
+    list: [
+      {
+        label: '订单统计',
+        path: '/statistics/order'
+      },
+      {
+        label: '老顾客回头率',
+        path: '/statistics/return'
+      },
+      {
+        label: '商品销售排行榜',
+        path: '/statistics/sale_rank'
+      }
+    ]
+  },
+  {
+    title: true,
+    label: '会员分析',
+    icon: 'icon-qushi',
+    list: [
+      {
+        label: '会员排行榜',
+        path: '/statistics/member_rank'
+      },
+      {
+        label: '会员地区分布',
+        path: '/statistics/member_area'
+      },
+      {
+        label: '会员增长统计',
+        path: '/statistics/member_increase'
+      }
+    ]
+  }
+]
 module.exports = {
   aside_shop: asideShop,
   aside_goods: asideGoods,
   aside_trade: asideTrade,
   aside_member: asideMeber,
   aside_fenxiao: asideFenxiao,
-  aside_wechat: asideWechat
+  aside_wechat: asideWechat,
+  aside_statistics: asideStatistics
 }

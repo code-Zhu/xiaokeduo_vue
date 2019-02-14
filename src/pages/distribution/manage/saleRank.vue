@@ -22,7 +22,7 @@
           <template slot-scope="scope">
             <div class="img-box">
               <img :src="`./static/img/000${scope.$index+1}_.gif`" v-if="scope.$index<3">
-              <span v-else>{{scope.$index}}</span>
+              <span v-else>{{scope.$index+1}}</span>
               <img :src="scope.row.avator" style="width:60px;height:60px;">
             </div>
           </template>

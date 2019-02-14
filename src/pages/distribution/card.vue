@@ -144,7 +144,7 @@ export default {
             fontSize: 16
           }
         },
-        bg: '../static/img/storecardbg.png'
+        bg: './static/img/storecardbg.png'
       }
     }
   },

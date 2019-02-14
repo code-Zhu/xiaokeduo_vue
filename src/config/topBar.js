@@ -61,7 +61,7 @@ module.exports = [
     {
       label: '分析统计',
       name: 'statistics',
-      path: '/statistics'
+      path: '/statistics/default'
     }
   ]
 ]

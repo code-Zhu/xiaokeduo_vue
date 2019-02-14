@@ -75,6 +75,15 @@ const wechatMessageTemplets = () => import('@/pages/wechat/wechatSetting/message
 const wechatWpay = () => import('@/pages/wechat/wechatSetting/weixinPay')
 const wechatRedpackSetting = () => import('@/pages/wechat/wechatSetting/redpackSetting')
 
+const statistics = () => import('@/pages/statistics/index')
+const statisticsDefault = () => import('@/pages/statistics/default')
+const statisticsOrder = () => import('@/pages/statistics/sale/order')
+const statisticsReturn = () => import('@/pages/statistics/sale/return')
+const statisticsRank = () => import('@/pages/statistics/sale/rank')
+const statisticsMemberRank = () => import('@/pages/statistics/member/memberRank')
+const statisticsMemberArea = () => import('@/pages/statistics/member/memberArea')
+const statisticsMemberIncrease = () => import('@/pages/statistics/member/memberIncrease')
+
 Vue.use(Router)
 
 export default new Router({
@@ -370,6 +379,40 @@ export default new Router({
         {
           path: '/wechat/redpack_setting',
           component: wechatRedpackSetting
+        }
+      ]
+    },
+    {
+      path: '/statistics',
+      component: statistics,
+      children: [
+        {
+          path: '/statistics/default',
+          component: statisticsDefault
+        },
+        {
+          path: '/statistics/order',
+          component: statisticsOrder
+        },
+        {
+          path: '/statistics/return',
+          component: statisticsReturn
+        },
+        {
+          path: '/statistics/sale_rank',
+          component: statisticsRank
+        },
+        {
+          path: '/statistics/member_rank',
+          component: statisticsMemberRank
+        },
+        {
+          path: '/statistics/member_area',
+          component: statisticsMemberArea
+        },
+        {
+          path: '/statistics/member_increase',
+          component: statisticsMemberIncrease
         }
       ]
     },
