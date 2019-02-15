@@ -75,8 +75,19 @@ const wechatMessageTemplets = () => import('@/pages/wechat/wechatSetting/message
 const wechatWpay = () => import('@/pages/wechat/wechatSetting/weixinPay')
 const wechatRedpackSetting = () => import('@/pages/wechat/wechatSetting/redpackSetting')
 
+const promotion = () => import('@/pages/promotion/index')
+const promotionCouponList = () => import('@/pages/promotion/coupon/couponList')
+const promotionSetRegisterSendCoupon = () => import('@/pages/promotion/coupon/setRegisterSendCoupon')
+const promotionSendCouponByManager = () => import('@/pages/promotion/coupon/sendCouponByManager')
+
 const settings = () => import('@/pages/settings/index')
-const settingsDefault = () => import('@/pages/settings/default')
+const settingsDrawSetting = () => import('@/pages/settings/account/drawSetting')
+const settingsAccountBalance = () => import('@/pages/settings/account/account')
+const settingsOfflinePay = () => import('@/pages/settings/account/offlinePay')
+const settingsCod = () => import('@/pages/settings/account/cod')
+const settingsLogisticsCompany = () => import('@/pages/settings/logistics/logisticsCompany')
+const settingsLogisticsAddr = () => import('@/pages/settings/logistics/logisticsAddr')
+const settingsLogisticsTrack = () => import('@/pages/settings/logistics/logisticsTrack')
 const settingsDepartment = () => import('@/pages/settings/security/department')
 const settingsMember = () => import('@/pages/settings/security/member')
 const settingsLogs = () => import('@/pages/settings/security/logs')
@@ -389,12 +400,54 @@ export default new Router({
       ]
     },
     {
+      path: '/promotion',
+      component: promotion,
+      children: [
+        {
+          path: '/promotion/coupons_list',
+          component: promotionCouponList
+        },
+        {
+          path: '/promotion/set_register_send_coupon',
+          component: promotionSetRegisterSendCoupon
+        },
+        {
+          path: '/promotion/send_coupon_by_manager',
+          component: promotionSendCouponByManager
+        }
+      ]
+    },
+    {
       path: '/settings',
       component: settings,
       children: [
         {
-          path: '/settings/default',
-          component: settingsDefault
+          path: '/settings/account_balance',
+          component: settingsAccountBalance
+        },
+        {
+          path: '/settings/offline_pay',
+          component: settingsOfflinePay
+        },
+        {
+          path: '/settings/cod',
+          component: settingsCod
+        },
+        {
+          path: '/settings/draw_setting',
+          component: settingsDrawSetting
+        },
+        {
+          path: '/settings/logistics_company',
+          component: settingsLogisticsCompany
+        },
+        {
+          path: '/settings/logistics_addr',
+          component: settingsLogisticsAddr
+        },
+        {
+          path: '/settings/logistics_track',
+          component: settingsLogisticsTrack
         },
         {
           path: '/settings/department',

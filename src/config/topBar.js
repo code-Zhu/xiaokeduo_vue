@@ -49,14 +49,14 @@ module.exports = [
     {
       label: '营销',
       name: 'promotion',
-      path: '/promotion'
+      path: '/promotion/coupons_list'
     }
   ],
   [
     {
       label: '设置',
       name: 'settings',
-      path: '/settings/default'
+      path: '/settings/account_balance'
     },
     {
       label: '分析统计',

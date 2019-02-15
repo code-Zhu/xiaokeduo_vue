@@ -386,6 +386,39 @@ const asideWechat = [
     ]
   }
 ]
+const asidePromotion = [
+  {
+    title: true,
+    icon: 'icon-juan',
+    label: '优惠卷',
+    list: [
+      {
+        label: '优惠卷列表',
+        path: '/promotion/coupons_list'
+      },
+      {
+        label: '会员注册送优惠卷',
+        path: '/promotion/set_register_send_coupon'
+      },
+      {
+        label: '优惠卷手动发放',
+        path: '/promotion/send_coupon_by_manager'
+      }
+    ]
+  },
+  {
+    title: true,
+    icon: 'icon-cuxiao',
+    label: '促销活动',
+    list: []
+  },
+  {
+    title: true,
+    icon: 'icon-choujiang',
+    label: '抽奖游戏',
+    list: []
+  }
+]
 const asideSettings = [
   {
     title: true,
@@ -394,7 +427,7 @@ const asideSettings = [
     list: [
       {
         label: '账户余额',
-        path: '/settings/balance'
+        path: '/settings/account_balance'
       },
       {
         label: '线下支付',
@@ -421,7 +454,7 @@ const asideSettings = [
       },
       {
         label: '物流公司',
-        path: '/settings/logistics'
+        path: '/settings/logistics_company'
       },
       {
         label: '物流地址管理',
@@ -509,6 +542,7 @@ module.exports = {
   aside_member: asideMeber,
   aside_fenxiao: asideFenxiao,
   aside_wechat: asideWechat,
+  aside_promotion: asidePromotion,
   aside_settings: asideSettings,
   aside_statistics: asideStatistics
 }
