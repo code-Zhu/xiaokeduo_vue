@@ -79,6 +79,16 @@ const promotion = () => import('@/pages/promotion/index')
 const promotionCouponList = () => import('@/pages/promotion/coupon/couponList')
 const promotionSetRegisterSendCoupon = () => import('@/pages/promotion/coupon/setRegisterSendCoupon')
 const promotionSendCouponByManager = () => import('@/pages/promotion/coupon/sendCouponByManager')
+const promotionIntegralList = () => import('@/pages/promotion/activity/integral/integralList')
+const promotionPointToCash = () => import('@/pages/promotion/activity/pointToCash')
+const promotionShareActList = () => import('@/pages/promotion/activity/share/index')
+const promotionActivityList = () => import('@/pages/promotion/activity/activity/index')
+const promotionTimeDiscount = () => import('@/pages/promotion/activity/timeDiscount/index')
+const promotionOneRmbList = () => import('@/pages/promotion/activity/oneRMB/index')
+const promotionRefound = () => import('@/pages/promotion/activity/refound/index')
+const promotionBargain = () => import('@/pages/promotion/activity/bargain/index')
+const promotionVote = () => import('@/pages/promotion/activity/vote/index')
+const promotionGameList = () => import('@/pages/promotion/game/lucky')
 
 const settings = () => import('@/pages/settings/index')
 const settingsDrawSetting = () => import('@/pages/settings/account/drawSetting')
@@ -414,6 +424,46 @@ export default new Router({
         {
           path: '/promotion/send_coupon_by_manager',
           component: promotionSendCouponByManager
+        },
+        {
+          path: '/promotion/integral_list',
+          component: promotionIntegralList
+        },
+        {
+          path: '/promotion/point_to_cash',
+          component: promotionPointToCash
+        },
+        {
+          path: '/promotion/share_act_list',
+          component: promotionShareActList
+        },
+        {
+          path: '/promotion/activity_list',
+          component: promotionActivityList
+        },
+        {
+          path: '/promotion/time_discount',
+          component: promotionTimeDiscount
+        },
+        {
+          path: '/promotion/one_rmb_list',
+          component: promotionOneRmbList
+        },
+        {
+          path: '/promotion/refound_list',
+          component: promotionRefound
+        },
+        {
+          path: '/promotion/bargain',
+          component: promotionBargain
+        },
+        {
+          path: '/promotion/vote_list',
+          component: promotionVote
+        },
+        {
+          path: '/promotion/game_list',
+          component: promotionGameList
         }
       ]
     },

@@ -4,7 +4,7 @@
 ### 预览地址
 > https://code-zhu.github.io/xiaokeduo_vue/#/shop/default
 ### 完成进度
-> 剩余营销两个部分，
+> 剩余营销部分的抽奖游戏部分，
 > 统计部分会员分布地图存在问题未解决
 > 设置部分 运费模板待解决
 

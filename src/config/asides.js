@@ -410,13 +410,75 @@ const asidePromotion = [
     title: true,
     icon: 'icon-cuxiao',
     label: '促销活动',
-    list: []
+    list: [
+      {
+        label: '积分兑换',
+        path: '/promotion/integral_list'
+      },
+      {
+        label: '积分抵现',
+        path: '/promotion/point_to_cash'
+      },
+      {
+        label: '分享助力',
+        path: '/promotion/share_act_list'
+      },
+      {
+        label: '满减活动',
+        path: '/promotion/activity_list'
+      },
+      {
+        label: '限时折扣',
+        path: '/promotion/time_discount'
+      },
+      {
+        label: '一元夺宝',
+        path: '/promotion/one_rmb_list'
+      },
+      {
+        label: '活动退款',
+        path: '/promotion/refound_list'
+      },
+      {
+        label: '好友砍价',
+        path: '/promotion/bargain'
+      },
+      {
+        label: '投票调查',
+        path: '/promotion/vote_list'
+      }
+    ]
   },
   {
     title: true,
     icon: 'icon-choujiang',
     label: '抽奖游戏',
-    list: []
+    list: [
+      {
+        label: '幸运大转盘',
+        path: '/promotion/game_list'
+      },
+      {
+        label: '疯狂砸金蛋',
+        path: '/promotion/game_egg_list'
+      },
+      {
+        label: '好运翻翻看',
+        path: '/promotion/game_lucky_list'
+      },
+      {
+        label: '大富翁',
+        path: '/promotion/game_dfw_list'
+      },
+      {
+        label: '刮刮乐',
+        path: '/promotion/game_ggl_list'
+      },
+      {
+        label: '奖品发货管理',
+        path: '/promotion/game_prize_list'
+      }
+    ]
   }
 ]
 const asideSettings = [

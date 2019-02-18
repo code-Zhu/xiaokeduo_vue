@@ -174,6 +174,12 @@ export default {
       background-color: #C9302C;
     }
   }
+  &[type=warning]{
+    background-color: #F0AD4E;
+    &:hover{
+      background-color: #EC971F;
+    }
+  }
 }
 .mobile-model{
   width: 346px;
