@@ -5,10 +5,10 @@
       <el-row>
         <el-col :span="6">
           <el-col :span="10">
-            <el-button size="mini" type="success">新建单条图文</el-button>
+            <el-button size="mini" type="success" @click="$router.push('/shop/articlesAddSingle')">新建单条图文</el-button>
           </el-col>
           <el-col :span="14">
-            <el-button size="mini" type="success">新建多余图文</el-button>
+            <el-button size="mini" type="success" @click="$router.push('/shop/articlesMultiple')">新建多条图文</el-button>
           </el-col>
         </el-col>
         <el-col :span="6">

@@ -40,7 +40,7 @@
           <div class="pannel">
             <div class="table-header">
               <el-button type="danger" size="mini">批量删除</el-button>
-              <el-button type="success" size="mini">创建新的公告</el-button>
+              <el-button type="success" size="mini" @click="$router.push('/shop/notice_list/add')">创建新的公告</el-button>
             </div>
             <div class="table-body">
               <el-table :data="list1" border>

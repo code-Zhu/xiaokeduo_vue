@@ -7,7 +7,7 @@
     <div class="pannel">
       <el-row>
         <el-col :span="4">
-          <el-button size="mini" type="success">新建九图一文素材</el-button>
+          <el-button size="mini" type="success" @click="$router.push('/shop/manage_images_add')">新建九图一文素材</el-button>
         </el-col>
         <el-col :span="6">
           <el-input size="mini" placeholder="请输入内容"  prefix-icon="el-icon-search"></el-input>
@@ -71,7 +71,7 @@
           width: 54px;
           height: 54px;
           border: 1px solid #ddd;
-          background: url('../../../assets/img/none.gif') no-repeat;
+          background: url('../../../../assets/img/none.gif') no-repeat;
           background-size: 100%;
           padding: 1px;
           margin-bottom: 2px;

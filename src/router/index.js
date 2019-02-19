@@ -12,9 +12,13 @@ const shopEdit = () => import('@/pages/shop/shop/shopIndex/editShopIndex')
 const pageManage = () => import('@/pages/shop/shop/pageManage')
 const shopMenu = () => import('@/pages/shop/shop/shopMenu')
 const meiQia = () => import('@/pages/shop/shop/meiQia')
-const noticeList = () => import('@/pages/shop/shop/noticeList')
-const articles = () => import('@/pages/shop/shop/articles')
-const manageImages = () => import('@/pages/shop/shop/manageImages')
+const noticeList = () => import('@/pages/shop/shop/noticeList/index')
+const noticeListAdd = () => import('@/pages/shop/shop/noticeList/add')
+const articles = () => import('@/pages/shop/shop/articles/index')
+const articlesAddSingle = () => import('@/pages/shop/shop/articles/addSingle')
+const articlesAddMultiple = () => import('@/pages/shop/shop/articles/addMultiple')
+const manageImages = () => import('@/pages/shop/shop/manageImages/index')
+const manageImagesAdd = () => import('@/pages/shop/shop/manageImages/add')
 const imageLib = () => import('@/pages/shop/imgLib/imageLib')
 const imageType = () => import('@/pages/shop/imgLib/imageType')
 
@@ -170,12 +174,28 @@ export default new Router({
           component: noticeList
         },
         {
+          path: '/shop/notice_list/add',
+          component: noticeListAdd
+        },
+        {
           path: '/shop/articles',
           component: articles
         },
         {
+          path: '/shop/articlesAddSingle',
+          component: articlesAddSingle
+        },
+        {
+          path: '/shop/articlesMultiple',
+          component: articlesAddMultiple
+        },
+        {
           path: '/shop/manage_images',
           component: manageImages
+        },
+        {
+          path: '/shop/manage_images_add',
+          component: manageImagesAdd
         },
         {
           path: '/shop/image_lib',
