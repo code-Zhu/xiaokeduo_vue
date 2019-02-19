@@ -2,7 +2,7 @@
   <div>
     <p class="page-title">分销中心</p>
     <div class="pannel center-box">
-      <div class="mobile-box">
+      <div class="mobile-box" style="background-image: url('./static/img/phonebg.jpg');">
         <p class="title text-white">{{formData.center_name || '分销中心'}}</p>
         <div class="info text-white">
           <p>天天的小店【初级】</p>
@@ -141,7 +141,7 @@ export default {
     width: 345px;
     height: 770px;
     box-sizing: border-box;
-    background: url('../../assets/img/phonebg.jpg') no-repeat;
+    background-repeat: no-repeat;
     padding: 98px 17px 148px;
     .text-white{
       color: #fff;

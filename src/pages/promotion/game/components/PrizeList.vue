@@ -124,6 +124,7 @@ export default {
   padding: 0 20px 7px 12px;
   line-height: 30px;
 }
+// 自定义表格
 .diy-table{
   box-sizing: border-box;
   .table-header{
