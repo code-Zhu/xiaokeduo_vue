@@ -1,11 +1,11 @@
 <template>
   <div>
-    <p class="page-title">幸运大转盘</p>
+    <p class="page-title">大富翁</p>
     <div class="pannel">
-      <el-button type="primary" size="small">新建幸运大转盘</el-button>
+      <el-button type="primary" size="small">新建大富翁</el-button>
     </div>
     <div class="pannel">
-      <tab asideName="lucky"/>
+      <tab asideName="dfw"/>
     </div>
   </div>
 </template>

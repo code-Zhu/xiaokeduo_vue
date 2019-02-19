@@ -89,6 +89,11 @@ const promotionRefound = () => import('@/pages/promotion/activity/refound/index'
 const promotionBargain = () => import('@/pages/promotion/activity/bargain/index')
 const promotionVote = () => import('@/pages/promotion/activity/vote/index')
 const promotionGameList = () => import('@/pages/promotion/game/lucky')
+const promotionGameDFW = () => import('@/pages/promotion/game/dfw')
+const promotionGameEGG = () => import('@/pages/promotion/game/egg')
+const promotionGameFLIP = () => import('@/pages/promotion/game/flip')
+const promotionGameGGL = () => import('@/pages/promotion/game/ggl')
+const promotionGamePrizeList = () => import('@/pages/promotion/game/gamePrizeList')
 
 const settings = () => import('@/pages/settings/index')
 const settingsDrawSetting = () => import('@/pages/settings/account/drawSetting')
@@ -117,6 +122,7 @@ export default new Router({
   routes: [
     {
       path: '/',
+      redirect: '/shop/default',
       component: shop
     },
     {
@@ -464,6 +470,26 @@ export default new Router({
         {
           path: '/promotion/game_list',
           component: promotionGameList
+        },
+        {
+          path: '/promotion/game_egg_list',
+          component: promotionGameEGG
+        },
+        {
+          path: '/promotion/game_lucky_list',
+          component: promotionGameFLIP
+        },
+        {
+          path: '/promotion/game_dfw_list',
+          component: promotionGameDFW
+        },
+        {
+          path: '/promotion/game_ggl_list',
+          component: promotionGameGGL
+        },
+        {
+          path: '/promotion/game_prize_list',
+          component: promotionGamePrizeList
         }
       ]
     },
