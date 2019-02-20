@@ -39,7 +39,7 @@ export default {
       margin-bottom: 20px;
       span{
         color: #999;
-        font-size: 14px;
+        font-size: 12px;
         line-height: 26px;
       }
     }

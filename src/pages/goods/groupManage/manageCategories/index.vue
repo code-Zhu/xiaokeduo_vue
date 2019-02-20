@@ -2,7 +2,7 @@
   <div class="selectcategory">
     <p class="page-title">商品分类管理</p>
     <div class="pannel">
-      <el-button type="primary" size="small">添加商品分类<i class="el-icon-plus el-icon--right"></i></el-button>
+      <el-button type="primary" size="small" @click="$router.push('/goods/manage_categories/add')">添加商品分类<i class="el-icon-plus el-icon--right"></i></el-button>
       <el-button @click="all_show = !all_show" type="primary" size="small" plain>
         {{all_show?'全部收缩':'全部展开'}}
         <i v-if="all_show" class="el-icon-circle-plus el-icon--right"></i>

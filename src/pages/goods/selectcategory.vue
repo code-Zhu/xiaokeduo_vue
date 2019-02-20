@@ -1,6 +1,8 @@
 <template>
   <div class="selectcategory">
-    <p class="page-title">上架新商品</p>
+    <p class="page-title" v-if="step===1">上架新商品</p>
+    <p class="page-title" v-if="step===2">编辑商品信息</p>
+    <p class="page-title" v-if="step===3">编辑商品详情</p>
     <div class="pannel step-header">
       <a href="javascript:;" :class="{finished: step>0}" @click="step = 1">1.选择商品分类</a>
       <a href="javascript:;" :class="{finished: step>1}" @click="step = 2">2.编辑商品信息</a>
@@ -43,6 +45,9 @@ export default {
     nextStep () {
       this.step++
     }
+  },
+  created () {
+    this.step = Number(this.$route.params.step || 1)
   }
 }
 </script>

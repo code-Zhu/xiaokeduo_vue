@@ -94,9 +94,9 @@
                 <a href="javascript:;">还原到仓库里</a>
               </div>
               <div class="table-ctr" :data="scope.row.id" v-else>
-                <a href="javascript:;">编辑</a>
+                <router-link to="/goods/select_category/2">编辑</router-link>
                 <span>|</span>
-                <a href="javascript:;">详情</a>
+                <router-link to="/goods/select_category/3">详情</router-link>
                 <a href="javascript:;" v-if="type=='onsale'">下架</a>
                 <a href="javascript:;" v-if="type=='onstock'">上架</a>
                 <span v-if="type">|</span>

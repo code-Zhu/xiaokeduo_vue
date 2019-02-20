@@ -35,10 +35,15 @@
 
         //工具栏上的所有的功能按钮和下拉框，可以在new编辑器的实例时选择自己需要的从新定义
         ,
+        // toolbars: [
+        //   ['source','bold','italic','underline','strikethrough','forecolor','backcolor','justifyleft','justifyright', 'justifycenter', 'justifyjustify','insertunorderedlist','insertorderedlist','blockquote'],
+        //   ['inserttable','deletetable','insertparagraphbeforetable','mergeright','mergedown','splittorows','splittocols','splittocells','mergecells','insertrow','insertcol','deleterow', 'deletecol'],
+        //   ['paragraph','fontsize','simpleupload','emotion','link','removeformat','rowspacingbottom','rowspacingtop','lineheight']
+        // ]
         toolbars: [
-          ['source','bold','italic','underline','strikethrough','forecolor','backcolor','justifyleft','justifyright', 'justifycenter', 'justifyjustify','insertunorderedlist','insertorderedlist','blockquote'],
-          ['inserttable','deletetable','insertparagraphbeforetable','mergeright','mergedown','splittorows','splittocols','splittocells','mergecells','insertrow','insertcol','deleterow', 'deletecol'],
-          ['paragraph','fontsize','simpleupload','emotion','link','removeformat','rowspacingbottom','rowspacingtop','lineheight']
+            ['source','bold','italic','underline','strikethrough','forecolor','backcolor','justifyleft','justifyright', 'justifycenter', 'justifyjustify','insertunorderedlist','insertorderedlist','blockquote',
+            'inserttable','deletetable','insertparagraphbeforetable','mergeright','mergedown','splittorows','splittocols','splittocells','mergecells','insertrow','insertcol','deleterow', 'deletecol',
+            'paragraph','fontsize','simpleupload','emotion','link','removeformat','rowspacingbottom','rowspacingtop','lineheight']
         ]
         //当鼠标放在工具栏上时显示的tooltip提示,留空支持自动多语言配置，否则以配置值为准
         //,labelMap:{

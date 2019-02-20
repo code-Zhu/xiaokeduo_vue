@@ -30,15 +30,19 @@ const zeroGoods = () => import('@/pages/goods/goodsManage/zeroGoods')
 const ondeletedGoods = () => import('@/pages/goods/goodsManage/ondeletedGoods')
 const importData = () => import('@/pages/goods/goodsManage/importData')
 const exportData = () => import('@/pages/goods/goodsManage/exportData') //
-const manageCategories = () => import('@/pages/goods/groupManage/manageCategories')
-const goodTypes = () => import('@/pages/goods/groupManage/goodTypes')
+const manageCategories = () => import('@/pages/goods/groupManage/manageCategories/index')
+const manageCategoriesAdd = () => import('@/pages/goods/groupManage/manageCategories/add')
+const goodTypes = () => import('@/pages/goods/groupManage/goodTypes/index')
+const goodTypesAdd = () => import('@/pages/goods/groupManage/goodTypes/add')
 const goodTags = () => import('@/pages/goods/groupManage/goodTags')
-const goodBrands = () => import('@/pages/goods/groupManage/goodBrands') //
+const goodBrands = () => import('@/pages/goods/groupManage/goodBrands/index') //
+const goodBrandsAdd = () => import('@/pages/goods/groupManage/goodBrands/add')
 const goodQuestions = () => import('@/pages/goods/customAsk/goodQuestions')
 const goodReviews = () => import('@/pages/goods/customAsk/goodReviews')
 
 const order = () => import('@/pages/trade/index')
 const setOrder = () => import('@/pages/trade/setOrder')
+const orderDetail = () => import('@/pages/trade/detail')
 const allOrder = () => import('@/pages/trade/manageorder/allOrder')
 const waitPay = () => import('@/pages/trade/manageorder/waitPay')
 const waitSend = () => import('@/pages/trade/manageorder/waitSend')
@@ -52,7 +56,8 @@ const member = () => import('@/pages/vipMember/index')
 const memberDefault = () => import('@/pages/vipMember/default')
 const memberList = () => import('@/pages/vipMember/memberManager/list')
 const memberGrade = () => import('@/pages/vipMember/memberManager/grade')
-const memberIntegral = () => import('@/pages/vipMember/memberManager/integral')
+const memberIntegral = () => import('@/pages/vipMember/memberManager/integral/index')
+const memberIntegralDetail = () => import('@/pages/vipMember/memberManager/integral/detail')
 const memberWithdraw = () => import('@/pages/vipMember/balanceManager/withdraw')
 const memberBudget = () => import('@/pages/vipMember/balanceManager/budget')
 const memberIntegralGet = () => import('@/pages/vipMember/integral/getIntegral')
@@ -216,6 +221,10 @@ export default new Router({
           component: selectCategory
         },
         {
+          path: '/goods/select_category/:step',
+          component: selectCategory
+        },
+        {
           path: '/goods/onsale_goods',
           component: onSaleGoods
         },
@@ -244,8 +253,16 @@ export default new Router({
           component: manageCategories
         },
         {
+          path: '/goods/manage_categories/add',
+          component: manageCategoriesAdd
+        },
+        {
           path: '/goods/good_types',
           component: goodTypes
+        },
+        {
+          path: '/goods/good_types/add',
+          component: goodTypesAdd
         },
         {
           path: '/goods/good_tags',
@@ -254,6 +271,14 @@ export default new Router({
         {
           path: '/goods/good_brands',
           component: goodBrands
+        },
+        {
+          path: '/goods/good_brands/add',
+          component: goodBrandsAdd
+        },
+        {
+          path: '/goods/good_brands/add/:id',
+          component: goodBrandsAdd
         },
         {
           path: '/goods/good_questions',
@@ -276,6 +301,10 @@ export default new Router({
         {
           path: '/trade/all_order',
           component: allOrder
+        },
+        {
+          path: '/trade/order_detail',
+          component: orderDetail
         },
         {
           path: '/trade/wait_pay',
@@ -330,6 +359,10 @@ export default new Router({
         {
           path: '/member/integral',
           component: memberIntegral
+        },
+        {
+          path: '/member/integral/:id',
+          component: memberIntegralDetail
         },
         {
           path: '/member/withdraw',

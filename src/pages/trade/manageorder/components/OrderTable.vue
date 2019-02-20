@@ -93,7 +93,7 @@
             </label>
             <span>{{v.time}}</span>
             <span>买家：{{v.buyer}}</span>
-            <i class="iconfont icon-biaoji"></i>
+            <i class="iconfont icon-biaoji" @click="dialogVisible=true"></i>
           </p>
           <div class="order-table-item-body">
             <div class="order-table-item-column">
@@ -115,7 +115,7 @@
             </div>
             <span class="order-table-item-column">{{v.source}}</span>
             <div class="order-table-item-column item-ctr">
-              <el-button type="primary" size="mini" plain>查看详情</el-button>
+              <el-button type="primary" size="mini" plain @click="$router.push('/trade/order_detail')">查看详情</el-button>
               <!-- <el-button type="primary" size="mini">查看物流</el-button> -->
               <!-- <el-button type="primary" size="mini">一键改价</el-button> -->
               <!-- <el-button type="warning" size="mini">确认付款</el-button> -->
@@ -136,6 +136,45 @@
         :total="1000">
       </el-pagination>
     </div>
+    <el-dialog title="修改备注" :visible.sync="dialogVisible"
+      width="520px">
+      <el-form class="form-box" label-width="85px" size="small" style="margin:0 40px">
+        <el-form-item label="标志：" required>
+          <label>
+            <input type="radio">
+            <i style="color: #309930" class="iconfont icon-true"></i>
+          </label>
+          <label>
+            <input type="radio">
+            <i style="color: #CB1E02" class="iconfont icon-gantanhao"></i>
+          </label>
+          <label>
+            <input type="radio">
+            <i style="color: #CB1E02" class="iconfont icon-biaoji"></i>
+          </label>
+          <label>
+            <input type="radio">
+            <i style="color: #309930" class="iconfont icon-biaoji"></i>
+          </label>
+          <label>
+            <input type="radio">
+            <i style="color: #FFC500" class="iconfont icon-biaoji"></i>
+          </label>
+          <label>
+            <input type="radio">
+            <i style="color: #ABABAB" class="iconfont icon-biaoji"></i>
+          </label>
+        </el-form-item>
+        <el-form-item label="备注：" required>
+          <el-input type="textarea" :rows="2"></el-input>
+          <p class="tip">(备注信息仅后台可见)</p>
+        </el-form-item>
+      </el-form>
+      <span slot="footer" class="dialog-footer">
+        <el-button type="success" @click="dialogVisible = false" size="small">保&nbsp;存</el-button>
+        <el-button @click="dialogVisible = false" size="small">关&nbsp;闭</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 <script>
@@ -144,6 +183,7 @@ export default {
   props: ['formStyle'],
   data () {
     return {
+      dialogVisible: false,
       pcaa,
       query: {
         orderNumber: '',

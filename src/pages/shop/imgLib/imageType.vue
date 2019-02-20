@@ -27,14 +27,28 @@
     </div>
     <div>
       <el-button size="small" type="primary">批量保存</el-button>
-      <el-button size="small" type="success">添加分组</el-button>
+      <el-button size="small" type="success" @click="dialogVisible=true">添加分组</el-button>
     </div>
+    <el-dialog title="添加图片分组" :visible.sync="dialogVisible"
+      width="520px">
+      <el-form class="form-box" label-width="85px" size="small">
+        <el-form-item label="分组名称：">
+          <el-input></el-input>
+          <p class="tip">长度限制在10个字符以内</p>
+        </el-form-item>
+      </el-form>
+      <span slot="footer" class="dialog-footer">
+        <el-button type="success" @click="dialogVisible = false" size="small">保&nbsp;存</el-button>
+        <el-button @click="dialogVisible = false" size="small">关&nbsp;闭</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 <script>
 export default {
   data () {
     return {
+      dialogVisible: false,
       list: [
         {
           name: '食品'

@@ -6,3 +6,18 @@
 .el-checkbox:not(.el-table .el-checkbox){
   margin-left: 30px;
 }
+.el-dialog__footer,.el-dialog__body,.el-dialog__header{
+  padding: 15px;
+}
+.el-dialog__footer{
+  border-top: 1px solid #e5e5e5;
+}
+.el-dialog__header{
+  border-bottom: 1px solid #e5e5e5;
+}
+.el-dialog__title{
+  font-size: 16px;
+}
+.el-dialog{
+  border-radius: 5px;
+}

@@ -16,7 +16,7 @@
       </el-row>
     </div>
     <div class="pannel">
-      <el-button size="small" type="success">添加新商品类型</el-button>
+      <el-button size="small" type="success" @click="$router.push('/goods/good_types/add')">添加新商品类型</el-button>
     </div>
     <div class="pannel table-header">
       <el-table :data="list" size="small" border>

@@ -50,7 +50,7 @@
         <el-table-column label="会员可用积分" prop="integral" align="center"></el-table-column>
         <el-table-column align="center">
           <template slot-scope="scope">
-            <a href="javascript:;">积分明细</a>
+            <router-link to="/member/integral/1">积分明细</router-link>
           </template>
         </el-table-column>
       </el-table>
