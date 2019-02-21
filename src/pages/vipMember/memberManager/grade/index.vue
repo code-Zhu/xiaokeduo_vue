@@ -2,7 +2,7 @@
   <div class="member-grade">
     <p class="page-title">会员等级管理</p>
     <div class="pannel">
-      <el-button size="mini" type="primary">添加会员等级</el-button>
+      <el-button size="mini" type="primary" @click="$router.push('/member/grade/add')">添加会员等级</el-button>
     </div>
     <div class="table-body">
       <el-table :data="list" border>
@@ -18,7 +18,7 @@
         <el-table-column label="操作" align="center" width="100">
           <template slot-scope="scope">
             <div class="table-ctr">
-              <a href="javscript:;">编辑</a>
+              <router-link to="/member/grade/edit/1">编辑</router-link>
               <span>|</span>
               <a href="javscript:;">删除</a>
             </div>

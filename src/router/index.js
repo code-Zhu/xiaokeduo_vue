@@ -55,7 +55,10 @@ const recycleStation = () => import('@/pages/trade/manageorder/recycleStation')
 const member = () => import('@/pages/vipMember/index')
 const memberDefault = () => import('@/pages/vipMember/default')
 const memberList = () => import('@/pages/vipMember/memberManager/list')
-const memberGrade = () => import('@/pages/vipMember/memberManager/grade')
+const memberDetail = () => import('@/pages/vipMember/memberManager/detail')
+const memberDetailEdit = () => import('@/pages/vipMember/memberManager/edit')
+const memberGrade = () => import('@/pages/vipMember/memberManager/grade/index')
+const memberGradeAdd = () => import('@/pages/vipMember/memberManager/grade/add')
 const memberIntegral = () => import('@/pages/vipMember/memberManager/integral/index')
 const memberIntegralDetail = () => import('@/pages/vipMember/memberManager/integral/detail')
 const memberWithdraw = () => import('@/pages/vipMember/balanceManager/withdraw')
@@ -353,8 +356,24 @@ export default new Router({
           component: memberList
         },
         {
+          path: '/member/list/:id',
+          component: memberDetail
+        },
+        {
+          path: '/member/detail/edit/:id',
+          component: memberDetailEdit
+        },
+        {
           path: '/member/grade',
           component: memberGrade
+        },
+        {
+          path: '/member/grade/add',
+          component: memberGradeAdd
+        },
+        {
+          path: '/member/grade/edit/:id',
+          component: memberGradeAdd
         },
         {
           path: '/member/integral',
