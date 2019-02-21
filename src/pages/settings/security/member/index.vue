@@ -14,7 +14,7 @@
       <span class="mini-btn" type="primary">查询</span>
     </div>
     <div class="pannel">
-      <el-button size="small" type="success">添加管理员</el-button>
+      <el-button size="small" type="success" @click="$router.push('/settings/staff/add')">添加管理员</el-button>
     </div>
     <div class="pannel">
       <el-table :data="list" border>
@@ -24,7 +24,7 @@
         <el-table-column label="操作" align="center" width="100">
           <template slot-scope="scope">
             <div class="table-ctr">
-              <a href="javascript:;">编辑</a>
+              <router-link to="/settings/staff/1">编辑</router-link>
               <a href="javascript:;">删除</a>
             </div>
           </template>

@@ -119,8 +119,11 @@ const settingsCod = () => import('@/pages/settings/account/cod')
 const settingsLogisticsCompany = () => import('@/pages/settings/logistics/logisticsCompany')
 const settingsLogisticsAddr = () => import('@/pages/settings/logistics/logisticsAddr')
 const settingsLogisticsTrack = () => import('@/pages/settings/logistics/logisticsTrack')
-const settingsDepartment = () => import('@/pages/settings/security/department')
-const settingsMember = () => import('@/pages/settings/security/member')
+const settingsDepartment = () => import('@/pages/settings/security/department/index')
+const settingsDepartmentPower = () => import('@/pages/settings/security/department/power')
+const settingsMember = () => import('@/pages/settings/security/member/index')
+const settingsMemberAdd = () => import('@/pages/settings/security/member/add')
+const settingsMemberEdit = () => import('@/pages/settings/security/member/edit')
 const settingsLogs = () => import('@/pages/settings/security/logs')
 
 const statistics = () => import('@/pages/statistics/index')
@@ -626,8 +629,20 @@ export default new Router({
           component: settingsDepartment
         },
         {
+          path: '/settings/department/power/:id',
+          component: settingsDepartmentPower
+        },
+        {
           path: '/settings/staff',
           component: settingsMember
+        },
+        {
+          path: '/settings/staff/add',
+          component: settingsMemberAdd
+        },
+        {
+          path: '/settings/staff/:id',
+          component: settingsMemberEdit
         },
         {
           path: '/settings/logs',

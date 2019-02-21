@@ -16,6 +16,8 @@
             <input v-model="form.account_list" type="checkbox" value="wxhb">
             <span>微信红包</span>
           </label>
+          <p class="tip">如需使用支付宝或微信支付自动转账，请先设置好支付宝和微信支付的账号信息；线下转账方式是分销商提现</p>
+          <p class="tip">时，填写自己的收款帐户信息，管理员再根据信息手工转账</p>
         </el-form-item>
         <el-form-item label="微信支付批量转账：">
           <el-switch v-model="form.wxpays"
