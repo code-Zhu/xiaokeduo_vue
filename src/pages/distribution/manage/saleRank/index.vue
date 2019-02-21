@@ -63,7 +63,7 @@
         </el-table-column>
         <el-table-column label="操作">
           <template slot-scope="scope">
-            <a href="javascript:;" @click="test(scope)">查看详情</a>
+            <router-link to="/fenxiao/rank/1">查看详情</router-link>
           </template>
         </el-table-column>
       </el-table>
@@ -190,11 +190,6 @@ export default {
           commIn: 6898.00
         }
       ]
-    }
-  },
-  methods: {
-    test (val) {
-      console.log(val)
     }
   }
 }

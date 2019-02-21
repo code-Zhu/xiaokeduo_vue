@@ -72,9 +72,13 @@ const fenXiaoSetting = () => import('@/pages/distribution/setting')
 const fenXiaoCenter = () => import('@/pages/distribution/center')
 const fenXiaoCard = () => import('@/pages/distribution/card')
 const fenXiaoList = () => import('@/pages/distribution/manage/list')
-const fenXiaoGrade = () => import('@/pages/distribution/manage/grade')
+const fenXiaoListDetail = () => import('@/pages/distribution/manage/detail')
+const fenXiaoListCommissionDetail = () => import('@/pages/distribution/manage/commissionDetail')
+const fenXiaoGrade = () => import('@/pages/distribution/manage/grade/index')
+const fenXiaoGradeEdit = () => import('@/pages/distribution/manage/grade/edit')
 const fenXiaoLevel = () => import('@/pages/distribution/manage/levelReward')
-const fenXiaoSaleRank = () => import('@/pages/distribution/manage/saleRank')
+const fenXiaoSaleRank = () => import('@/pages/distribution/manage/saleRank/index')
+const fenXiaoSaleRankDetail = () => import('@/pages/distribution/manage/saleRank/detail')
 const fenXiaoCommissionList = () => import('@/pages/distribution/commission/list')
 const fenXiaoCommissionDrawList = () => import('@/pages/distribution/commission/withdrawList')
 const fenXiaoCommissionRecord = () => import('@/pages/distribution/commission/withdrawRecord')
@@ -432,8 +436,24 @@ export default new Router({
           component: fenXiaoList
         },
         {
+          path: '/fenxiao/list/commission/:id',
+          component: fenXiaoListCommissionDetail
+        },
+        {
+          path: '/fenxiao/list/:id',
+          component: fenXiaoListDetail
+        },
+        {
           path: '/fenxiao/grade',
           component: fenXiaoGrade
+        },
+        {
+          path: '/fenxiao/grade/add',
+          component: fenXiaoGradeEdit
+        },
+        {
+          path: '/fenxiao/grade/:id',
+          component: fenXiaoGradeEdit
         },
         {
           path: '/fenxiao/level',
@@ -442,6 +462,10 @@ export default new Router({
         {
           path: '/fenxiao/rank',
           component: fenXiaoSaleRank
+        },
+        {
+          path: '/fenxiao/rank/:id',
+          component: fenXiaoSaleRankDetail
         },
         {
           path: '/fenxiao/commission',

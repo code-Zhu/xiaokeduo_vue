@@ -2,7 +2,7 @@
   <div>
     <p class="page-title">分销商等级管理</p>
     <div class="pannel">
-      <el-button size="small" type="primary">添加分销商分等级</el-button>
+      <el-button size="small" type="primary" @click="$router.push('/fenxiao/grade/add')">添加分销商分等级</el-button>
     </div>
     <div class="pannel">
       <el-table :data="list" border>
@@ -27,14 +27,15 @@
         </el-table-column>
         <el-table-column label="操作" width="110">
           <template slot-scope="scope">
-            <div class="table-ctr">
-              <a href="javascript:;">编辑</a>
-              <a href="javascript:;">删除</a>
+            <div>
+              <router-link to="/fenxiao/grade/1">编辑</router-link>
+              <a href="javascript:;" v-if="!scope.row.default">删除</a>
             </div>
           </template>
         </el-table-column>
       </el-table>
     </div>
+    <p style="color: #ff0000">说明：分销商佣金奖励，指的是分销商在享受商品佣金的基础上，额外增加的佣金比例，最终分销商享受的佣金百分比=商品佣金百分比+佣金奖励百分比。</p>
   </div>
 </template>
 <script>

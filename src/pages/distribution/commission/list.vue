@@ -26,7 +26,8 @@
       <el-table :data="list" border>
         <el-table-column label="流水号">
           <template slot-scope="scope">
-            <a href="javascript:;">{{scope.row.num}}</a>
+            <a href="javascript:;"></a>
+            <router-link to="/trade/order_detail">{{scope.row.num}}</router-link>
           </template>
         </el-table-column>
         <el-table-column label="买家昵称" prop="buyerName"></el-table-column>

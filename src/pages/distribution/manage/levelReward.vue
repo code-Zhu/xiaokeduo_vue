@@ -39,6 +39,9 @@
                 </template>
               </el-table-column>
             </el-table>
+            <div class="pannel">
+              <el-button type="success" size="small">保存</el-button>
+            </div>
           </el-form-item>
         </el-form>
       </el-tab-pane>
