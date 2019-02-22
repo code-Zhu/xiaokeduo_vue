@@ -92,18 +92,31 @@ const wechatWpay = () => import('@/pages/wechat/wechatSetting/weixinPay')
 const wechatRedpackSetting = () => import('@/pages/wechat/wechatSetting/redpackSetting')
 
 const promotion = () => import('@/pages/promotion/index')
-const promotionCouponList = () => import('@/pages/promotion/coupon/couponList')
+const promotionCouponList = () => import('@/pages/promotion/coupon/couponList/index')
+const promotionCouponListAdd = () => import('@/pages/promotion/coupon/couponList/add')
+const promotionCouponListAddGood = () => import('@/pages/promotion/coupon/couponList/couponGood')
 const promotionSetRegisterSendCoupon = () => import('@/pages/promotion/coupon/setRegisterSendCoupon')
 const promotionSendCouponByManager = () => import('@/pages/promotion/coupon/sendCouponByManager')
 const promotionIntegralList = () => import('@/pages/promotion/activity/integral/integralList')
+const promotionIntegralListAdd = () => import('@/pages/promotion/activity/integral/add')
+const promotionIntegralListAddGoods = () => import('@/pages/promotion/activity/integral/integralGood')
 const promotionPointToCash = () => import('@/pages/promotion/activity/pointToCash')
 const promotionShareActList = () => import('@/pages/promotion/activity/share/index')
+const promotionShareActListAdd = () => import('@/pages/promotion/activity/share/add')
 const promotionActivityList = () => import('@/pages/promotion/activity/activity/index')
+const promotionActivityListAdd = () => import('@/pages/promotion/activity/activity/add')
+const promotionActivityListAddGood = () => import('@/pages/promotion/activity/activity/good')
 const promotionTimeDiscount = () => import('@/pages/promotion/activity/timeDiscount/index')
+const promotionTimeDiscountAdd = () => import('@/pages/promotion/activity/timeDiscount/add')
+const promotionTimeDiscountAddGood = () => import('@/pages/promotion/activity/timeDiscount/good')
 const promotionOneRmbList = () => import('@/pages/promotion/activity/oneRMB/index')
+const promotionOneRmbListAdd = () => import('@/pages/promotion/activity/oneRMB/add')
 const promotionRefound = () => import('@/pages/promotion/activity/refound/index')
 const promotionBargain = () => import('@/pages/promotion/activity/bargain/index')
+const promotionBargainAdd = () => import('@/pages/promotion/activity/bargain/add')
 const promotionVote = () => import('@/pages/promotion/activity/vote/index')
+const promotionVoteAdd = () => import('@/pages/promotion/activity/vote/add')
+const promotionGameAdd = () => import('@/pages/promotion/game/components/add')
 const promotionGameList = () => import('@/pages/promotion/game/lucky')
 const promotionGameDFW = () => import('@/pages/promotion/game/dfw')
 const promotionGameEGG = () => import('@/pages/promotion/game/egg')
@@ -116,6 +129,8 @@ const settingsDrawSetting = () => import('@/pages/settings/account/drawSetting')
 const settingsAccountBalance = () => import('@/pages/settings/account/account')
 const settingsOfflinePay = () => import('@/pages/settings/account/offlinePay')
 const settingsCod = () => import('@/pages/settings/account/cod')
+const settingsLogisticsTemplates = () => import('@/pages/settings/logistics/shippingTemplates')
+const settingsLogisticsTemplatesAdd = () => import('@/pages/settings/logistics/addTemplates')
 const settingsLogisticsCompany = () => import('@/pages/settings/logistics/logisticsCompany')
 const settingsLogisticsAddr = () => import('@/pages/settings/logistics/logisticsAddr')
 const settingsLogisticsTrack = () => import('@/pages/settings/logistics/logisticsTrack')
@@ -523,6 +538,14 @@ export default new Router({
           component: promotionCouponList
         },
         {
+          path: '/promotion/coupons_list/add',
+          component: promotionCouponListAdd
+        },
+        {
+          path: '/promotion/coupons_list/add/good',
+          component: promotionCouponListAddGood
+        },
+        {
           path: '/promotion/set_register_send_coupon',
           component: promotionSetRegisterSendCoupon
         },
@@ -535,6 +558,14 @@ export default new Router({
           component: promotionIntegralList
         },
         {
+          path: '/promotion/integral_list/add',
+          component: promotionIntegralListAdd
+        },
+        {
+          path: '/promotion/integral_list/add/goods',
+          component: promotionIntegralListAddGoods
+        },
+        {
           path: '/promotion/point_to_cash',
           component: promotionPointToCash
         },
@@ -543,16 +574,40 @@ export default new Router({
           component: promotionShareActList
         },
         {
+          path: '/promotion/share_act_list/add',
+          component: promotionShareActListAdd
+        },
+        {
           path: '/promotion/activity_list',
           component: promotionActivityList
+        },
+        {
+          path: '/promotion/activity_list/add',
+          component: promotionActivityListAdd
+        },
+        {
+          path: '/promotion/activity_list/add/good',
+          component: promotionActivityListAddGood
         },
         {
           path: '/promotion/time_discount',
           component: promotionTimeDiscount
         },
         {
+          path: '/promotion/time_discount/add',
+          component: promotionTimeDiscountAdd
+        },
+        {
+          path: '/promotion/time_discount/add/good',
+          component: promotionTimeDiscountAddGood
+        },
+        {
           path: '/promotion/one_rmb_list',
           component: promotionOneRmbList
+        },
+        {
+          path: '/promotion/one_rmb_list/add',
+          component: promotionOneRmbListAdd
         },
         {
           path: '/promotion/refound_list',
@@ -563,8 +618,20 @@ export default new Router({
           component: promotionBargain
         },
         {
+          path: '/promotion/bargain/add',
+          component: promotionBargainAdd
+        },
+        {
           path: '/promotion/vote_list',
           component: promotionVote
+        },
+        {
+          path: '/promotion/vote_list/add',
+          component: promotionVoteAdd
+        },
+        {
+          path: '/promotion/game/add',
+          component: promotionGameAdd
         },
         {
           path: '/promotion/game_list',
@@ -611,6 +678,14 @@ export default new Router({
         {
           path: '/settings/draw_setting',
           component: settingsDrawSetting
+        },
+        {
+          path: '/settings/shipping_templates',
+          component: settingsLogisticsTemplates
+        },
+        {
+          path: '/settings/shipping_templates/add',
+          component: settingsLogisticsTemplatesAdd
         },
         {
           path: '/settings/logistics_company',

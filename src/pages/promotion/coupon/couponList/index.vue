@@ -2,10 +2,10 @@
   <div>
     <p class="page-title">优惠卷</p>
     <div class="pannel">
-      <el-button size="small" type="primary">新增优惠卷</el-button>
+      <el-button size="small" type="primary" @click="$router.push('/promotion/coupons_list/add')">新增优惠卷</el-button>
     </div>
     <div class="pannel">
-      <el-tabs type="border-card">
+      <el-tabs type="card">
         <el-tab-pane label="优惠卷">
           <list/>
         </el-tab-pane>
@@ -33,7 +33,7 @@
   </div>
 </template>
 <script>
-import List from './components/List'
+import List from '../components/List'
 export default {
   components: {
     List

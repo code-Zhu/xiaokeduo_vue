@@ -6,7 +6,7 @@
       <span style="color: #ff0000">系统每半小时会自动检查一次需要开奖的活动，如果满足条件自动开奖！</span>
     </div>
     <div class="pannel">
-      <el-button type="success" size="small">新建一元夺宝活动</el-button>
+      <el-button type="success" size="small" @click="$router.push('/promotion/one_rmb_list/add')">新建一元夺宝活动</el-button>
     </div>
     <div class="pannel">
       <el-tabs v-model="tabName" type="card">

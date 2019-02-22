@@ -10,7 +10,11 @@
       <el-form-item label="送优惠卷：" v-if="form.switch">
         <el-select v-model="form.name">
           <el-option value="" label="请选择优惠卷"></el-option>
+          <el-option value="1" label="满100减50"></el-option>
         </el-select>
+        <router-link to="/promotion/coupons_list/add">新建</router-link>
+        <p class="tip" v-if="form.name">还剩 10 张</p>
+        <p class="tip" v-if="form.name">有效期：2019-02-22 11:16:00 到 2019-02-28 18:50:59</p>
       </el-form-item>
       <el-form-item label="活动期限：" v-if="form.switch">
         <el-date-picker v-model="form.time"

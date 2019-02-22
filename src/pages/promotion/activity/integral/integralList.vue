@@ -2,7 +2,7 @@
   <div>
     <p class="page-title">积分兑换</p>
     <div class="pannel">
-      <el-button type="primary" size="small">添加积分兑换活动</el-button>
+      <el-button type="primary" size="small" @click="$router.push('/promotion/integral_list/add')">添加积分兑换活动</el-button>
       <el-button type="primary" size="small">会员积分设置</el-button>
     </div>
     <div class="pannel pannel-content">

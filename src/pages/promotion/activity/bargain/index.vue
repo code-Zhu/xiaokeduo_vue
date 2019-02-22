@@ -2,11 +2,11 @@
 <template>
   <div>
     <div class="page-title">
-      <p>满减活动</p>
+      <p>好友砍价管理</p>
       <span style="color: #ff0000">好友砍价商品不同时享受满减活动,不能使用优惠劵,不能使用积分抵扣订单金额</span>
     </div>
     <div class="pannel">
-      <el-button type="primary" size="small">新建砍价</el-button>
+      <el-button type="primary" size="small" @click="$router.push('/promotion/bargain/add')">新建砍价</el-button>
     </div>
     <div class="pannel">
       <el-tabs v-model="tabName" type="card">

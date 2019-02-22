@@ -5,7 +5,7 @@
       <p>投票调查</p>
     </div>
     <div class="pannel">
-      <el-button type="primary" size="small">新建投票调查</el-button>
+      <el-button type="primary" size="small" @click="$router.push('/promotion/vote_list/add')">新建投票调查</el-button>
     </div>
     <div class="pannel">
       <el-tabs v-model="tabName" type="card">

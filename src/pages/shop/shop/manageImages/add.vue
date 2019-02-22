@@ -8,7 +8,9 @@
           <div class="mobile-title">店铺主页</div>
         </div>
         <div class="mobile-content">
-          <img :src="'./static/img/headLogo.jpg'" style="width:35px;height:35px">
+          <div>
+            <img :src="'./static/img/headLogo.jpg'" style="width:35px;height:35px">
+          </div>
           <div class="list-box">
             <a href="javascript:;">您的昵称</a>
             <p>{{data.title || '分享标题内容'}}</p>
@@ -77,9 +79,6 @@ export default {
           },
           {
             url: './static/img/nvr.jpg'
-          },
-          {
-            url: './static/img/user.png'
           }
         ]
       }

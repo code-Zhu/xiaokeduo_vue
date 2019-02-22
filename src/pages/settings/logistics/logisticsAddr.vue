@@ -64,7 +64,7 @@ export default {
     return {
       pcaa,
       area: [],
-      dialogVisible: true,
+      dialogVisible: false,
       addr_list: [
         {
           name: 'testUser',

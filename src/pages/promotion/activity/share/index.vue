@@ -3,7 +3,7 @@
   <div>
     <p class="page-title">分享助力</p>
     <div class="pannel">
-      <el-button type="primary" size="small">添加分享助力活动</el-button>
+      <el-button type="primary" size="small" @click="$router.push('/promotion/share_act_list/add')">添加分享助力活动</el-button>
     </div>
     <div class="pannel pannel-content">
       <b>优惠卷名称：</b>

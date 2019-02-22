@@ -9,7 +9,7 @@
         active-color="#13ce66" inactive-color="#ccc">
       </el-switch>
     </div>
-    <div class="pannel"><el-button size="mini" type="success">微信支付收款设置</el-button></div>
+    <div class="pannel"><el-button size="mini" type="success" @click="$router.push('/wechat/weixin_pay')">微信支付收款设置</el-button></div>
     <div class="pannel">
       <p>如已成功设置微信支付收款，请忽略以上提示，直接设置微信证书。</p>
       <el-form label-width="160px" class="form-box">

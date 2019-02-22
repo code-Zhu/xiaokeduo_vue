@@ -3,7 +3,7 @@
   <div>
     <p class="page-title">满减活动</p>
     <div class="pannel">
-      <el-button type="primary" size="small">添加满减活动</el-button>
+      <el-button type="primary" size="small" @click="$router.push('/promotion/activity_list/add')">添加满减活动</el-button>
     </div>
     <div class="pannel pannel-content">
       <el-input size="mini" v-model="query.key" style="width: 110px" placeholder="活动名称"></el-input>

@@ -5,9 +5,10 @@
       <el-form-item label="选择优惠卷：">
         <el-select v-model="form.couponName">
           <el-option value="" label="请选择优惠卷"></el-option>
+          <el-option value="1" label="满50减5"></el-option>
         </el-select>
-        <p class="tip">还剩10张</p>
-        <p class="tip">有效期：2019-02-15 14:40:00 到 2019-02-16 14:40:59</p>
+        <p class="tip" v-if="form.couponName">还剩10张</p>
+        <p class="tip" v-if="form.couponName">有效期：2019-02-15 14:40:00 到 2019-02-16 14:40:59</p>
       </el-form-item>
       <el-form-item label="发放范围：">
         <div>
