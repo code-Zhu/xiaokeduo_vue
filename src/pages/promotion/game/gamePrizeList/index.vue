@@ -9,7 +9,7 @@
         <el-tab-pane label="所有奖品" name="first">
           <list :tabName="tabName"/>
         </el-tab-pane>
-        <el-tab-pane label="带填写收货地址" name="second" lazy>
+        <el-tab-pane label="待填写收货地址" name="second" lazy>
           <list :tabName="tabName"/>
         </el-tab-pane>
         <el-tab-pane label="待发货" name="third" lazy>
@@ -26,7 +26,7 @@
   </div>
 </template>
 <script>
-import list from './components/PrizeList'
+import list from '../components/PrizeList'
 export default {
   components: {
     list

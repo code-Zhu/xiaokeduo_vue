@@ -122,7 +122,8 @@ const promotionGameDFW = () => import('@/pages/promotion/game/dfw')
 const promotionGameEGG = () => import('@/pages/promotion/game/egg')
 const promotionGameFLIP = () => import('@/pages/promotion/game/flip')
 const promotionGameGGL = () => import('@/pages/promotion/game/ggl')
-const promotionGamePrizeList = () => import('@/pages/promotion/game/gamePrizeList')
+const promotionGamePrizeList = () => import('@/pages/promotion/game/gamePrizeList/index')
+const promotionGamePrizeListDetail = () => import('@/pages/promotion/game/gamePrizeList/detail')
 
 const settings = () => import('@/pages/settings/index')
 const settingsDrawSetting = () => import('@/pages/settings/account/drawSetting')
@@ -630,7 +631,7 @@ export default new Router({
           component: promotionVoteAdd
         },
         {
-          path: '/promotion/game/add',
+          path: '/promotion/game/add/:type',
           component: promotionGameAdd
         },
         {
@@ -656,6 +657,10 @@ export default new Router({
         {
           path: '/promotion/game_prize_list',
           component: promotionGamePrizeList
+        },
+        {
+          path: '/promotion/game_prize_list/:id',
+          component: promotionGamePrizeListDetail
         }
       ]
     },

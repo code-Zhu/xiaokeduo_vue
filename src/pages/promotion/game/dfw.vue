@@ -2,7 +2,7 @@
   <div>
     <p class="page-title">大富翁</p>
     <div class="pannel">
-      <el-button type="primary" size="small">新建大富翁</el-button>
+      <el-button type="primary" size="small" @click="$router.push('/promotion/game/add/dfw')">新建大富翁</el-button>
     </div>
     <div class="pannel">
       <tab asideName="dfw"/>

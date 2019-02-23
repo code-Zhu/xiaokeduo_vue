@@ -11,13 +11,13 @@
         </div>
         <div class="mobile-content">
           <div class="game-top">
-            <img :src="'./static/img/imgtop.png'" alt="">
+            <img :src="gameTypeImg[gameType].topImg" alt="">
           </div>
           <div class="game-num">
             <p>您还有{{form.eachDayTime || 1}}次机会</p>
           </div>
           <div class="game-middle">
-            <img :src="'./static/img/imgbottom.png'" alt="">
+            <img :src="gameTypeImg[gameType].middleImg" alt="">
           </div>
           <div class="game-footer">
             <p>活动奖品：</p>
@@ -203,6 +203,28 @@ export default {
   data () {
     return {
       step: 1,
+      gameTypeImg: {
+        lucky: {
+          topImg: './static/img/imgtop.png',
+          middleImg: './static/img/imgbottom.png'
+        },
+        egg: {
+          topImg: './static/img/eggpic1.png',
+          middleImg: './static/img/eggpic.png'
+        },
+        flip: {
+          topImg: './static/img/fanpai-toubupic1.png',
+          middleImg: './static/img/fanpaipic.png'
+        },
+        dfw: {
+          topImg: './static/img/dafuwenpic1.png',
+          middleImg: './static/img/dafuwenpic.png'
+        },
+        ggl: {
+          topImg: './static/img/guaguakapic.png',
+          middleImg: './static/img/guajiangpic1.png'
+        }
+      },
       form: {
         title: '',
         time: [],
@@ -216,6 +238,11 @@ export default {
       priceName: '一等奖',
       prizeList: [],
       NUM: ['', '一', '二', '三', '四', '五', '六', '七', '八', '九']
+    }
+  },
+  computed: {
+    gameType () {
+      return this.$route.params.type
     }
   },
   methods: {

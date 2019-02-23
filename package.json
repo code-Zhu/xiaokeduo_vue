@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "animate.css": "^3.7.0",
+    "area-data": "^5.0.6",
     "echarts": "^4.2.0-rc.2",
     "element-ui": "^2.4.11",
     "node-sass": "^4.11.0",
@@ -22,6 +23,7 @@
     "vue-draggable-resizable": "^2.0.0-rc1",
     "vue-draggable-resizable-gorkys": "^1.1.2",
     "vue-router": "^3.0.1",
+    "vue-ueditor-wrap": "^2.4.0",
     "vuedraggable": "^2.17.0"
   },
   "devDependencies": {

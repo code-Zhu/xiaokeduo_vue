@@ -70,7 +70,7 @@
               <span class="grade">四等奖</span>
               <div class="ctr">
                 <p>
-                  <span class="mini-btn" type="light">查看详情</span>
+                  <span class="mini-btn" type="light" @click="$router.push('/promotion/game_prize_list/1')">查看详情</span>
                 </p>
                 <p v-if="tabName!=='five'">
                   <span class="mini-btn" type="light" style="margin-top:5px">修改地址</span>

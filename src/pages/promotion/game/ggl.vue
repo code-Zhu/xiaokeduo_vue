@@ -2,7 +2,7 @@
   <div>
     <p class="page-title">刮刮乐</p>
     <div class="pannel">
-      <el-button type="primary" size="small">新建刮刮乐</el-button>
+      <el-button type="primary" size="small" @click="$router.push('/promotion/game/add/ggl')">新建刮刮乐</el-button>
     </div>
     <div class="pannel">
       <tab asideName="ggl"/>
