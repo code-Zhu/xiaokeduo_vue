@@ -32,7 +32,7 @@
         <li v-for="v in 17" :key="v">
           <div class="img-box">
             <div class="btn">
-              <el-button type="primary" size="mini">编辑</el-button>
+              <el-button type="primary" size="mini" @click="$router.push('/shop/shop_index/shop_edit')">编辑</el-button>
               <el-button type="success" size="mini">使用模板</el-button>
             </div>
           </div>

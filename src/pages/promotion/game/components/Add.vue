@@ -152,7 +152,7 @@
             @tab-remove="prizeRemove" @tab-add="prizeAdd">
             <el-tab-pane :key="index" v-for="(item, index) in prizeList"
               :label="item.name" :name="item.name">
-              <el-form size="mini" label-width="150px" class="form-box">
+              <el-form size="small" label-width="150px" class="form-box">
                 <el-form-item label="奖品类别：" required>
                   <label>
                     <input v-model="item.type" type="radio" value="1">
@@ -174,9 +174,35 @@
                 <el-form-item label="奖品名称：" required>
                   <el-input style="width: 200px" v-model="item.prizeName"></el-input>
                 </el-form-item>
+                <el-form-item label="赠送积分：" required v-if="item.type==1">
+                  <el-input style="width: 200px"></el-input>
+                </el-form-item>
+                <el-form-item label="赠送优惠券：" required v-if="item.type==2">
+                  <el-select value="1" style="width: 200px">
+                    <el-option label="满50减5" value="1"></el-option>
+                  </el-select>
+                </el-form-item>
+                <el-form-item label="赠送商品：" required v-if="item.type==3">
+                  <span class="prize-img" @click="dialogVisible=true">
+                    <i class="el-icon-plus"></i>
+                  </span>
+                </el-form-item>
+                <el-form-item label="是否配送：" required v-if="item.type==4">
+                  <label>
+                    <input type="checkbox">
+                    <span>是，需要配送</span>
+                  </label>
+                </el-form-item>
                 <el-form-item label="奖品数量：" required>
                   <el-input style="width: 200px" v-model="item.prizeName"></el-input>
                   <p class="tip">奖品数量为0时不设此奖项</p>
+                </el-form-item>
+                <el-form-item label="奖品图片：" v-if="item.type==4">
+                  <label class="prize-img">
+                    <input type="file" class="hide">
+                    <i class="el-icon-plus"></i>
+                  </label>
+                  <p class="tip">仅支持jpg、 png、gif，尺寸60*60px,不超过1M</p>
                 </el-form-item>
               </el-form>
             </el-tab-pane>
@@ -196,12 +222,38 @@
       <el-button type="success" size="small" v-if="step == 1" @click="step=2">下一步</el-button>
       <el-button type="success" size="small" v-if="step == 2">提交</el-button>
     </div>
+    <el-dialog :visible.sync="dialogVisible"
+      width="30%">
+      <div slot="title">
+        <span>选择商品</span>
+        <el-input size="mini" placeholder="请输入商品名称" style="width:350px"></el-input>
+        <span class="mini-btn" type="success">查询</span>
+      </div>
+      <ul class="dialog-good-list">
+        <li v-for="v in 4" :key="v">
+          <img :src="'./static/img/apple.jpg'" style="width:60px;height:60px">
+          <div>
+            <a href="javascript:;">苹果手机</a>
+            <span>￥98.00</span>
+          </div>
+          <span class="mini-btn" plain>选取</span>
+        </li>
+      </ul>
+      <div class="pannel table-footer">
+        <el-pagination
+          :page-size="10"
+          layout="total, prev, next, jumper"
+          :total="1000">
+        </el-pagination>
+      </div>
+    </el-dialog>
   </div>
 </template>
 <script>
 export default {
   data () {
     return {
+      dialogVisible: false,
       step: 1,
       gameTypeImg: {
         lucky: {
@@ -236,7 +288,14 @@ export default {
         textarea: '谢谢参与'
       },
       priceName: '一等奖',
-      prizeList: [],
+      prizeList: [
+        {
+          name: '一等奖',
+          type: '1',
+          prizeName: '',
+          prizeNum: 1
+        }
+      ],
       NUM: ['', '一', '二', '三', '四', '五', '六', '七', '八', '九']
     }
   },
@@ -267,6 +326,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.dialog-good-list{
+  li{
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+    div{
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .mini-btn{
+      height: 28px;
+      line-height: 24px;
+    }
+  }
+}
 .add-box{
   display: flex;
   align-items: flex-start;
@@ -317,6 +393,14 @@ export default {
       left: 50%;
       transform: translate(-50%, -50%);
     }
+  }
+  .prize-img{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    border: 1px dashed #8D8A89;
+    line-height: 35px;
+    text-align: center;
   }
 }
 
