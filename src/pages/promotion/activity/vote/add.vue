@@ -110,10 +110,10 @@ export default {
 <style lang="scss" scoped>
 .img-box{
   display: inline-block;
-  width: 70px;
-  height: 70px;
+  width: 74px;
+  height: 74px;
   border: 1px solid #A19C9C;
-  line-height: 70px;
+  line-height: 74px;
   text-align: center;
 }
 </style>
