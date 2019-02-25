@@ -64,7 +64,7 @@
         <el-table-column label="交易类型" prop="type"></el-table-column>
         <el-table-column label="用户名">
           <template slot-scope="scope">
-            <a href="javascript:;">{{scope.row.username}}</a>
+            <router-link to="/member/list/1">{{scope.row.username}}</router-link>
           </template>
         </el-table-column>
         <el-table-column label="交易方式" prop="method"></el-table-column>
