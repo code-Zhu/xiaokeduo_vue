@@ -151,6 +151,7 @@ const statisticsMemberIncrease = () => import('@/pages/statistics/member/memberI
 Vue.use(Router)
 
 export default new Router({
+  mode: 'hash',
   routes: [
     {
       path: '/',
