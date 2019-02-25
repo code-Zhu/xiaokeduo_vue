@@ -30,9 +30,9 @@
                 <p>0</p>
               </li>
               <li>
-                <p>商品数：<a href="#">5</a></p>
-                <p>会员总数：<a href="#">747</a></p>
-                <p>分销商数：<a href="#">725</a></p>
+                <p>商品数：<router-link to="/goods/onsale_goods">5</router-link></p>
+                <p>会员总数：<router-link to="/member/list">747</router-link></p>
+                <p>分销商数：<router-link to="/fenxiao/list">725</router-link></p>
               </li>
             </ul>
           </div>
