@@ -13,10 +13,10 @@
         <i class="el-icon-caret-bottom"></i>
         <ul class="function" v-show="login_show">
           <li>
-            <a href="#"><i class="iconfont icon-user"></i>个人信息</a>
+            <router-link to="/settings/staff/1/info"><i class="iconfont icon-user"></i>个人信息</router-link>
           </li>
           <li>
-            <a href="#"><i class="iconfont icon-liebiao"></i>修改密码</a>
+            <router-link to="/settings/staff/1/password"><i class="iconfont icon-liebiao"></i>修改密码</router-link>
           </li>
           <li>
             <a href="#"><i class="iconfont icon-tuichu"></i>退出</a>
