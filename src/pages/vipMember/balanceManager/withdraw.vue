@@ -22,8 +22,8 @@
       </el-form>
     </div>
     <div class="pannel table-btn">
-      <el-button type="primary" size="mini">批量审核</el-button>
-      <el-button type="primary" size="mini">批量驳回</el-button>
+      <el-button type="primary" size="mini" @click="dialogVisible3 = true">批量审核</el-button>
+      <el-button type="primary" size="mini" @click="dialogVisible4 = true">批量驳回</el-button>
       <span>|</span>
       <el-button type="primary" size="mini">支付宝批量发放</el-button>
       <el-button type="primary" size="mini">微信支付批量发放</el-button>
@@ -97,6 +97,33 @@
         <el-button @click="dialogVisible2= false" size="small">关&nbsp;闭</el-button>
       </span>
     </el-dialog>
+    <el-dialog title="批量审核" :visible.sync="dialogVisible3"
+      width="500px">
+        <span class="verify">
+          <span>￥1600.00</span>
+          <span>1212123</span>
+        </span>
+      <span slot="footer" class="dialog-footer">
+        <el-button type="primary" @click="dialogVisible3 = false" size="small">确定审核</el-button>
+        <el-button @click="dialogVisible3= false" size="small">关&nbsp;闭</el-button>
+      </span>
+    </el-dialog>
+    <el-dialog title="批量驳回" :visible.sync="dialogVisible4"
+      width="500px">
+      <el-form size="small" label-width="90px">
+        <el-form-item label="驳回理由" required>
+          <el-input type="textarea" :rows="3"></el-input>
+        </el-form-item>
+      </el-form>
+        <span class="verify">
+          <span>￥1600.00</span>
+          <span>1212123</span>
+        </span>
+      <span slot="footer" class="dialog-footer">
+        <el-button type="primary" @click="dialogVisible4 = false" size="small">确定驳回</el-button>
+        <el-button @click="dialogVisible4 = false" size="small">关&nbsp;闭</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 <script>
@@ -105,6 +132,8 @@ export default {
     return {
       dialogVisible1: false,
       dialogVisible2: false,
+      dialogVisible3: false,
+      dialogVisible4: false,
       query: {
         username: '',
         time: []
@@ -133,3 +162,13 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+.verify{
+  border: 1px solid #E5E5E5;
+  padding: 3px 10px;
+  :first-child{
+    color: #D95E0B;
+    margin-right: 20px;
+  }
+}
+</style>
