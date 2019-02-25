@@ -47,12 +47,12 @@
         <el-button size="mini" type="primary">还原到仓库里</el-button>
       </div>
       <div class="table-header" v-else>
-        <el-button size="mini" type="primary" v-if="type=='onsale'">下架</el-button>
+        <el-button size="mini" type="primary" v-if="type=='onsale'" @click="currentDialog='offset';dialogVisible1=true">下架</el-button>
         <el-button size="mini" type="primary" v-if="type=='onstock'">上架</el-button>
         <el-button size="mini" type="danger">删除</el-button>
         <span>|</span>
-        <el-button size="mini" type="primary">设置包邮</el-button>
-        <el-button size="mini" type="primary">设置运费模板</el-button>
+        <el-button size="mini" type="primary" @click="currentDialog='free';dialogVisible1=true">设置包邮</el-button>
+        <el-button size="mini" type="primary" @click="dialogVisible2 = true">设置运费模板</el-button>
         <span>|</span>
         <el-select size="mini" v-model="query">
           <el-option label="更多操作_ _" value=""></el-option>
@@ -86,7 +86,7 @@
           <el-table-column prop="id" label="商品编码" align="center"></el-table-column>
           <el-table-column prop="id" label="排序" align="center"></el-table-column>
           <el-table-column prop="created_time" label="创建时间" width="150" align="center"></el-table-column>
-          <el-table-column label="操作">
+          <el-table-column label="操作" width="95">
             <template slot-scope="scope">
               <div class="table-ctr" :data="scope.row.id" v-if="isDel">
                 <a href="javascript:;">彻底删除</a>
@@ -114,6 +114,23 @@
         </el-pagination>
       </div>
     </div>
+    <el-dialog :title="dialog[currentDialog].title" :visible.sync="dialogVisible1" width="500px">
+      <span>{{dialog[currentDialog].msg}}</span>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible1 = false" size="small">关&nbsp;闭</el-button>
+        <el-button type="primary" @click="dialogVisible1 = false" size="small">{{dialog[currentDialog].title}}</el-button>
+      </span>
+    </el-dialog>
+    <el-dialog title="设置运费模板" :visible.sync="dialogVisible2" width="500px">
+      <span>选择运费模板：</span>
+      <el-select size="small" value="">
+        <el-option value="" label="--请选择运费模板--"></el-option>
+      </el-select>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible2 = false" size="small">关&nbsp;闭</el-button>
+        <el-button type="primary" @click="dialogVisible2 = false" size="small">确定</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 <script>
@@ -121,6 +138,21 @@ export default {
   props: ['data', 'type', 'isDel'],
   data () {
     return {
+      currentDialog: 'offset',
+      dialogVisible1: false,
+      dialogVisible2: false,
+      dialog: {
+        offset: {
+          title: '下架商品',
+          url: '',
+          msg: '确定要下架所选商品吗？下架后商品将不在前台显示！'
+        },
+        free: {
+          title: '设置包邮',
+          url: '',
+          msg: '确定要设置这些商品包邮？'
+        }
+      },
       query: '',
       time: [],
       categories: [

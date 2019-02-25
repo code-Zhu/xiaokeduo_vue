@@ -2,13 +2,13 @@
   <div class="goods-table">
     <el-tabs v-model="tabs_name" type="card" @tab-click="handleTabsClick">
       <el-tab-pane label="出售中" name="onsale">
-        <data-table :data="list" :type="'onsale'"/>
+        <data-table :data="list" :type="'onsale'" v-if="tabs_name=='onsale'"/>
       </el-tab-pane>
       <el-tab-pane label="仓库中" name="onstock">
-        <data-table :data="list" :type="'onstock'"/>
+        <data-table :data="list" :type="'onstock'" v-if="tabs_name=='onstock'"/>
       </el-tab-pane>
       <el-tab-pane label="已售罄" name="zero">
-        <data-table :data="list"/>
+        <data-table :data="list" v-if="tabs_name=='zero'"/>
       </el-tab-pane>
     </el-tabs>
   </div>
