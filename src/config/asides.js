@@ -275,11 +275,11 @@ const asideMeber = [
       {
         label: '短信发送设置',
         path: '/member/send_msg'
-      },
-      {
-        label: '购买短信套餐',
-        path: '/member/send_server'
       }
+      // {
+      //   label: '购买短信套餐',
+      //   path: '/member/send_server'
+      // }
     ]
   }
 ]
@@ -456,23 +456,23 @@ const asidePromotion = [
     list: [
       {
         label: '幸运大转盘',
-        path: '/promotion/game_list'
+        path: '/promotion/game/lucky'
       },
       {
         label: '疯狂砸金蛋',
-        path: '/promotion/game_egg_list'
+        path: '/promotion/game/egg'
       },
       {
         label: '好运翻翻看',
-        path: '/promotion/game_lucky_list'
+        path: '/promotion/game/flip'
       },
       {
         label: '大富翁',
-        path: '/promotion/game_dfw_list'
+        path: '/promotion/game/dfw'
       },
       {
         label: '刮刮乐',
-        path: '/promotion/game_ggl_list'
+        path: '/promotion/game/ggl'
       },
       {
         label: '奖品发货管理',
