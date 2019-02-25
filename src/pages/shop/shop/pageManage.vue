@@ -13,9 +13,9 @@
           <p>http://47.93.12.216:10285/default.aspx</p>
         </div>
         <div class="btn">
-          <el-button size="mini">编辑</el-button>
+          <el-button size="mini" @click="$router.push('/shop/shop_index/shop_edit')">编辑</el-button>
           <el-button size="mini">链接</el-button>
-          <el-button size="mini">二维码</el-button>
+          <el-button size="mini" @click="dialogVisible = true">二维码</el-button>
         </div>
       </div>
     </div>
@@ -30,9 +30,9 @@
               <el-table-column label="操作" width="225" align="center">
                 <template slot-scope="scope">
                   <div class="table-ctr">
-                    <a href="#">二维码</a>
+                    <a href="#" @click="dialogVisible = true">二维码</a>
                     <a href="#">复制</a>
-                    <a href="#">编辑</a>
+                    <a href="#" @click="$router.push('/shop/shop_index/shop_edit')">编辑</a>
                     <a href="#">删除</a>
                   </div>
                 </template>
@@ -53,12 +53,12 @@
               <el-table-column label="页面名称" prop="name"></el-table-column>
               <el-table-column label="页面地址" prop="url"></el-table-column>
               <el-table-column label="浏览量" prop="browse" width="70" align="center"></el-table-column>
-              <el-table-column label="操作" width="225" align="center">
+              <el-table-column label="操作" width="130" align="center">
                 <template slot-scope="scope">
                   <div class="table-ctr">
-                    <a href="#">二维码</a>
-                    <a href="#">复制</a>
-                    <a href="#">编辑</a>
+                    <!-- <a href="#" @click="dialogVisible = true">二维码</a>
+                    <a href="#">复制</a> -->
+                    <a href="#" @click="$router.push('/shop/shop_index/shop_edit')">编辑</a>
                     <a href="#">删除</a>
                   </div>
                 </template>
@@ -75,12 +75,21 @@
         </el-tab-pane>
       </el-tabs>
     </div>
+    <el-dialog title="店铺二维码" :visible.sync="dialogVisible" width="300px">
+      <div>
+        <img :src="'./static.jpg'" alt="" style="width:200px;height:200px">
+      </div>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible = false" size="small">关&nbsp;闭</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 <script>
 export default {
   data () {
     return {
+      dialogVisible: false,
       list_name: 'first',
       list1: [
         {
