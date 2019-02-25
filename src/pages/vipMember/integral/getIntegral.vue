@@ -1,9 +1,9 @@
 <template>
   <div class="integral">
     <p class="page-title">会员积分设置</p>
-    <el-tabs type="border-card" v-model="tabsName" @tab-click="handleTabsClick">
+    <el-tabs type="card" v-model="tabsName" @tab-click="handleTabsClick">
       <el-tab-pane label="签到送积分" name="sign_integral">
-        <el-form label-width="110px">
+        <el-form label-width="180px">
           <el-form-item label="是否开启">
             <el-switch v-model="signData.open"></el-switch>
           </el-form-item>
@@ -26,7 +26,7 @@
         </el-form>
       </el-tab-pane>
       <el-tab-pane label="购物送积分" name="purchase_integral">
-        <el-form label-width="110px">
+        <el-form label-width="180px">
           <el-form-item label="是否开启">
             <el-switch v-model="shopData.open"></el-switch>
           </el-form-item>

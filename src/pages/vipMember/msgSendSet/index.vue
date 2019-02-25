@@ -1,10 +1,10 @@
 <template>
   <div>
     <p class="page-title">短信发送设置</p>
-    <div class="pannel" style="width: 800px;margin:0 auto">
-      <span>第一次使用请先<a href="http://sms.kuaidiantong.cn/Login.aspx">点击这里</a>注册账号获取短信接口的AppKey和AppSecret</span>
-    </div>
-    <el-form label-width="100px" style="width:500px">
+    <el-form label-width="180px" style="width:700px">
+      <el-form-item>
+        <span>第一次使用请先<a href="http://sms.kuaidiantong.cn/Login.aspx">点击这里</a>注册账号获取短信接口的AppKey和AppSecret</span>
+      </el-form-item>
       <el-form-item label="AppKey：">
         <el-input size="small" type="text" v-model="data.appKey"></el-input>
       </el-form-item>
@@ -21,7 +21,7 @@
         <el-input size="small" type="text" v-model="data.content"></el-input>
       </el-form-item>
       <el-form-item>
-        <el-button type="success" size="small" style="width: 110px">测试发生</el-button>
+        <el-button type="success" size="small" style="width: 110px">测试发送</el-button>
       </el-form-item>
     </el-form>
   </div>

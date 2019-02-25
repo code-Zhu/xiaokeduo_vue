@@ -1,8 +1,8 @@
 <template>
   <div>
     <p class="page-title">编辑管理员信息</p>
-    <el-tabs type="card">
-      <el-tab-pane label="基本信息">
+    <el-tabs :value="tabName" type="card">
+      <el-tab-pane name="info" label="基本信息">
         <el-form class="form-box" label-width="160px" style="margin-right:400px">
           <el-form-item label="用户名：">
             <span>admin</span>
@@ -24,7 +24,7 @@
           </el-form-item>
         </el-form>
       </el-tab-pane>
-      <el-tab-pane label="修改密码">
+      <el-tab-pane name="password" label="修改密码">
         <el-form class="form-box" label-width="160px" style="margin-right:400px">
           <el-form-item label="用户名：">
             <span>admin</span>
@@ -48,3 +48,12 @@
     </el-tabs>
   </div>
 </template>
+<script>
+export default {
+  computed: {
+    tabName () {
+      return this.$route.params.tabname || 'info'
+    }
+  }
+}
+</script>

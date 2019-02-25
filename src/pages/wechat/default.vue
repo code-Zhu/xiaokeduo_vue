@@ -5,7 +5,7 @@
       <i class="el-icon-success"></i>
       <b>已成功绑定微信公众号</b>
       <div>
-        店铺正式运营期间请勿随意<a href="javascript:;">更换微信公众号</a>，以免造成不必要的麻烦，如果网站出现绑定公众号错误，您可以手动
+        店铺正式运营期间请勿随意<router-link to="/wechat/default/change">更换微信公众号</router-link>，以免造成不必要的麻烦，如果网站出现绑定公众号错误，您可以手动
         <a href="javascript:;">刷新令牌</a>。
       </div>
     </div>
