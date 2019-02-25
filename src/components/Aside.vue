@@ -48,6 +48,7 @@ export default {
     }
     &.active{
       border-left: 5px solid #1CAF9A;
+      padding-left: 45px;
     }
   }
   .aside-list{
