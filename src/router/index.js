@@ -85,6 +85,7 @@ const fenXiaoCommissionRecord = () => import('@/pages/distribution/commission/wi
 
 const weChat = () => import('@/pages/wechat/index')
 const wechatDefault = () => import('@/pages/wechat/default')
+const wechatDefaultChange = () => import('@/pages/wechat/changeWx')
 const wechatGuideConcern = () => import('@/pages/wechat/wechatSetting/guideConcern')
 const wechatValidationService = () => import('@/pages/wechat/wechatSetting/validationService')
 const wechatMessageTemplets = () => import('@/pages/wechat/wechatSetting/messageTemplets')
@@ -116,12 +117,8 @@ const promotionBargain = () => import('@/pages/promotion/activity/bargain/index'
 const promotionBargainAdd = () => import('@/pages/promotion/activity/bargain/add')
 const promotionVote = () => import('@/pages/promotion/activity/vote/index')
 const promotionVoteAdd = () => import('@/pages/promotion/activity/vote/add')
+const promotionGame = () => import('@/pages/promotion/game/index')
 const promotionGameAdd = () => import('@/pages/promotion/game/components/add')
-const promotionGameList = () => import('@/pages/promotion/game/lucky')
-const promotionGameDFW = () => import('@/pages/promotion/game/dfw')
-const promotionGameEGG = () => import('@/pages/promotion/game/egg')
-const promotionGameFLIP = () => import('@/pages/promotion/game/flip')
-const promotionGameGGL = () => import('@/pages/promotion/game/ggl')
 const promotionGamePrizeList = () => import('@/pages/promotion/game/gamePrizeList/index')
 const promotionGamePrizeListDetail = () => import('@/pages/promotion/game/gamePrizeList/detail')
 
@@ -509,6 +506,10 @@ export default new Router({
           component: wechatDefault
         },
         {
+          path: '/wechat/default/change',
+          component: wechatDefaultChange
+        },
+        {
           path: '/wechat/guide_concern',
           component: wechatGuideConcern
         },
@@ -631,28 +632,12 @@ export default new Router({
           component: promotionVoteAdd
         },
         {
-          path: '/promotion/game/add/:type',
+          path: '/promotion/game/:gameType',
+          component: promotionGame
+        },
+        {
+          path: '/promotion/game/:gameType/add',
           component: promotionGameAdd
-        },
-        {
-          path: '/promotion/game_list',
-          component: promotionGameList
-        },
-        {
-          path: '/promotion/game_egg_list',
-          component: promotionGameEGG
-        },
-        {
-          path: '/promotion/game_lucky_list',
-          component: promotionGameFLIP
-        },
-        {
-          path: '/promotion/game_dfw_list',
-          component: promotionGameDFW
-        },
-        {
-          path: '/promotion/game_ggl_list',
-          component: promotionGameGGL
         },
         {
           path: '/promotion/game_prize_list',
@@ -722,6 +707,10 @@ export default new Router({
         },
         {
           path: '/settings/staff/:id',
+          component: settingsMemberEdit
+        },
+        {
+          path: '/settings/staff/:id/:tabname',
           component: settingsMemberEdit
         },
         {

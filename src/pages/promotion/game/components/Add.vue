@@ -301,7 +301,7 @@ export default {
   },
   computed: {
     gameType () {
-      return this.$route.params.type
+      return this.$route.params.gameType
     }
   },
   methods: {
