@@ -1,7 +1,35 @@
 <template>
   <div>
     <p class="page-title">订单详情</p>
-    <div class="pannel pannel-content">
+    <div>
+      <ul class="list-status">
+        <li>
+          <div>
+            <span>1.买家下单</span>
+          </div>
+          <p>2019-02-10 18:14:22</p>
+        </li>
+        <li>
+          <div>
+            <span>2.买家付款</span>
+          </div>
+          <p>2019-02-10 18:14:22</p>
+        </li>
+        <li>
+          <div>
+            <span>3.发货</span>
+          </div>
+          <p>2019-02-10 18:14:22</p>
+        </li>
+        <li>
+          <div>
+            <span>4.买家确认收货</span>
+          </div>
+          <p>2019-02-10 18:14:22</p>
+        </li>
+      </ul>
+    </div>
+    <div class="pannel pannel-content list-pannel">
       <b>当前订单状态：已关闭</b>
       <span class="tip">关闭原因：到期自动关闭</span>
       <p>订单号：190215015015188(盛付通手机网页支付流水号：190215015015149)</p>
@@ -70,7 +98,7 @@
         </div>
         <div class="pannel table-footer">
           <span>实收款：</span>
-          <span class="_read">￥746.00 含运费 ￥0.00</span>
+          <span class="_red">￥746.00 含运费 ￥0.00</span>
         </div>
         <div class="pannel commision">
           <p class="top">佣金信息</p>
@@ -85,8 +113,8 @@
           <div>
             <span>成交店铺：</span>
             <span>销客多_8053</span>
-            <span class="_read">￥0.00</span>
-            <span style="margin-left:200px">佣金总额：<span class="_read">￥0.00</span></span>
+            <span class="_red">￥0.00</span>
+            <span style="margin-left:200px">佣金总额：<span class="_red">￥0.00</span></span>
           </div>
         </div>
       </el-tab-pane>
@@ -184,10 +212,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-._read{
+._red{
   color: #ff0000;
 }
-.page-title + .pannel-content{
+.list-pannel{
   border: 1px solid #ccc;
   line-height: 30px;
   b{
@@ -195,6 +223,35 @@ export default {
     &+span{
       font-size: 12px;
       color: #666;
+    }
+  }
+}
+.list-status{
+  display: flex;
+  text-align: center;
+  li{
+    flex: 1;
+    >div{
+      font-size: 16px;
+      background-color: #FFE7BB;
+      color: #FE6728;
+      margin-bottom: 10px;
+      height: 25px;
+      line-height: 25px;
+      position: relative;
+      overflow: hidden;
+    }
+    &:not(:last-child){
+      >div{
+        &::after{
+          content: '>';
+          position: absolute;
+          color: #fff;
+          font-size: 64px;
+          top: -5px;
+          right: -10px;
+        }
+      }
     }
   }
 }
