@@ -4,7 +4,7 @@
       <p>分销商升级奖励设置</p>
       <span>分销商获得佣金自动升级，会产生一定的现金奖励，并计入分销商的佣金总额（系统调整佣金影响的等级变化，在下一次消费时生效）。</span>
     </div>
-    <el-tabs type="border-card">
+    <el-tabs type="card">
       <el-tab-pane label="奖励设置">
         <el-form label-width="85px">
           <el-form-item label="开启奖励：">

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-tabs type="border-card" v-model="tab" @tab-click="handleTabClick">
+    <el-tabs type="card" v-model="tab" @tab-click="handleTabClick">
       <el-tab-pane label="账户余额" name="account_balance">
         <div class="pannel-content">
           <b>账户余额支付</b>
@@ -89,7 +89,7 @@ export default {
     return {
       tab: '',
       switch1: true,
-      switch2: false,
+      switch2: true,
       switch3: false,
       switch4: false,
       switch5: true,

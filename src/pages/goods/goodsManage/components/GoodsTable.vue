@@ -1,6 +1,6 @@
 <template>
   <div class="goods-table">
-    <el-tabs v-model="tabs_name" type="border-card" @tab-click="handleTabsClick">
+    <el-tabs v-model="tabs_name" type="card" @tab-click="handleTabsClick">
       <el-tab-pane label="出售中" name="onsale">
         <data-table :data="list" :type="'onsale'"/>
       </el-tab-pane>

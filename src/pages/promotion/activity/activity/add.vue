@@ -121,13 +121,13 @@
                 <span>元</span>
               </label>
             </div>
-            <div>
+            <div style="margin-top:5px">
               <label>
                 <input v-model="scope.row.type" type="checkbox" value="free">
                 <span>包邮</span>
               </label>
             </div>
-            <div>
+            <div style="margin-top:5px">
               <label>
                 <input v-model="scope.row.type" type="checkbox" value="send1">
                 <span>送</span>
@@ -135,7 +135,7 @@
                 <span>积分</span>
               </label>
             </div>
-            <div>
+            <div style="margin-top:5px">
               <label>
                 <input v-model="scope.row.type" type="checkbox" value="send2">
                 <span>送优惠卷</span>
@@ -147,10 +147,16 @@
             </div>
           </template>
         </el-table-column>
-        <el-table-column label="操作">
-          <!-- <template slot-scope="scope"></template> -->
+        <el-table-column label="操作" width="100" align="center">
+          <template slot-scope="scope">
+            <a v-if="scope.$index>0" href="javascript:;" @click="handleDelLevel(scope.$index)">删除</a>
+          </template>
         </el-table-column>
       </el-table>
+      <p style="margin-top:15px" v-if="form.level==2 && list.length<5">
+        <a href="javascript:;" @click="handleAddLevel">+  新增一级优惠</a>
+        <span>最多可设置5个层级</span>
+      </p>
     </div>
     <div style="margin-left: 100px">
       <b>选择活动商品：</b>
@@ -214,6 +220,17 @@ export default {
         condition: 1,
         good: 1
       }
+    }
+  },
+  methods: {
+    handleDelLevel (ind) {
+      this.list.splice(ind, 1)
+    },
+    handleAddLevel () {
+      this.list.push({
+        min: '',
+        type: []
+      })
     }
   }
 }

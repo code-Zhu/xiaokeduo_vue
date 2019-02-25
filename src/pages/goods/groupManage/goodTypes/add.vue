@@ -39,7 +39,7 @@
               </el-table-column>
               <el-table-column label="支持多选" align="center" width="80">
                 <template slot-scope="scope">
-                  <i class="el-icon-check" v-if="scope.row.multiple"></i>
+                  <b class="el-icon-check" v-if="scope.row.multiple"></b>
                   <i class="el-icon-close" v-else style="color: #ff0000"></i>
                 </template>
               </el-table-column>

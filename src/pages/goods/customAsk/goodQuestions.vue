@@ -2,7 +2,7 @@
   <div class="selectcategory">
     <p class="page-title">客户咨询</p>
     <div class="pannel">
-      <el-tabs type="border-card">
+      <el-tabs type="card">
         <el-tab-pane label="未回复咨询">
           <data-table :list="list1" type="question"></data-table>
         </el-tab-pane>
