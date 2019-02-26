@@ -19,7 +19,7 @@
             <router-link to="/settings/staff/1/password"><i class="iconfont icon-liebiao"></i>修改密码</router-link>
           </li>
           <li>
-            <a href="#"><i class="iconfont icon-tuichu"></i>退出</a>
+            <router-link to="/login"><i class="iconfont icon-tuichu"></i>退出</router-link>
           </li>
         </ul>
       </div>
@@ -94,6 +94,7 @@ export default {
         color: #333;
         border: 1px solid #C9C9C9;
         border-radius: 5px;
+        z-index: 10;
         li{
           padding: 3px 0;
         }

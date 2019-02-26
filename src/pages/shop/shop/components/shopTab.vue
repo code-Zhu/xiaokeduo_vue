@@ -6,7 +6,7 @@
         <p>{{tab.title}}</p>
         <p>
           <span class="first-edit">编辑</span>
-          <span v-if="tab.children">设置二级导航以后，主链接已失效。</span>
+          <span v-if="tab.list.length>0">设置二级导航以后，主链接已失效。</span>
         </p>
       </div>
     </div>

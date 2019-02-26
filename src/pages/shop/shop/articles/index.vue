@@ -17,7 +17,7 @@
       </el-row>
     </div>
     <div class="pannel">
-      <el-tabs type="border-card">
+      <el-tabs type="card">
         <el-tab-pane label="所有素材">所有素材</el-tab-pane>
         <el-tab-pane label="分销商分享素材">分销商分享素材</el-tab-pane>
         <el-tab-pane label="单条图文">单条图文</el-tab-pane>

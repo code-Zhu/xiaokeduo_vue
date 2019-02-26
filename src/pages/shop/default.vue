@@ -3,8 +3,8 @@
     <div class="pannel pannel-top">
       <span class="log">log</span>
       <span class="name">茅台莓茶</span>
-      <el-button size="mini" type="primary" @click="$router.push('/goods/select_category')">发布商品</el-button>
-      <el-button size="mini" type="success">访问店铺</el-button>
+      <el-button size="mini" type="success" @click="$router.push('/goods/select_category')">发布商品</el-button>
+      <el-button size="mini" type="primary">访问店铺</el-button>
     </div>
     <div class="pannel pannel-data">
       <el-tabs v-model="tab_name" type="card">

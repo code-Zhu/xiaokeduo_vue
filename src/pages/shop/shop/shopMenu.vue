@@ -1,5 +1,5 @@
 <template>
-  <div class="shop-menu">
+  <div class="shop-menu-box">
     <p class="page-title">店铺导航</p>
     <div class="pannel">
       <div class="pannel-content pannel-content-top">
@@ -21,28 +21,58 @@
       <div class="edit-box">
         <div class="pannel pannel-content">
           <p style="font-weight:600;margin-bottom:10px">在以下页面显示店铺导航:</p>
-          <el-checkbox-group v-model="checkboxVal" style="width:450px">
-            <el-checkbox label="店铺主页"></el-checkbox>
-            <el-checkbox label="店铺活动"></el-checkbox>
-            <el-checkbox label="会员中心"></el-checkbox>
-            <el-checkbox label="分销中心"></el-checkbox>
-            <el-checkbox label="所有商品"></el-checkbox>
-            <el-checkbox label="搜索结果"></el-checkbox>
-            <el-checkbox label="商品分类"></el-checkbox>
-            <el-checkbox label="品牌专题"></el-checkbox>
-          </el-checkbox-group>
+          <div class="checkbox">
+            <label>
+              <input type="checkbox">
+              <span>店铺主页</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span>店铺活动</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span>会员中心</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span>分销中心</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span>所有商品</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span>搜索结果</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span>商品分类</span>
+            </label>
+            <label>
+              <input type="checkbox">
+              <span>品牌专题</span>
+            </label>
+          </div>
         </div>
         <div class="pannel pannel-content">
           <p style="font-weight:600;margin-bottom:10px">店铺导航显示风格:</p>
-          <el-radio v-model="radio" label="1">纯文字</el-radio>
-          <el-radio v-model="radio" label="2">小图标加文字</el-radio>
+          <label>
+            <input type="radio">
+            <span>纯文字</span>
+          </label>
+          <label>
+            <input type="radio">
+            <span>小图标加文字</span>
+          </label>
         </div>
         <div class="pannel pannel-tab">
           <span class="add-tab" @click="addTab">+ 添加一级导航</span>
-          <el-tabs v-model="tab_name" type="border-card" closable @edit="handleTabsEdit">
-            <el-tab-pane :key="item.name" v-for="item in tabLists"
+          <el-tabs v-model="tab_name" type="card" closable @edit="handleTabsEdit">
+            <el-tab-pane :key="index" v-for="(item, index) in tabLists"
               :label="item.title"
-              :name="item.name">
+              :name="item.title">
               <tab-content :tab="item"></tab-content>
             </el-tab-pane>
           </el-tabs>
@@ -64,12 +94,10 @@ export default {
     return {
       radio: '',
       checkboxVal: [],
-      tab_name: 'index',
+      tab_name: '首页',
       tabLists: [
         {
           title: '首页',
-          name: 'index',
-          children: true,
           list: [
             {
               title: '品牌专题'
@@ -87,47 +115,68 @@ export default {
         },
         {
           title: '活动',
-          name: 'actives',
-          children: false
+          list: []
         }
       ]
     }
   },
   methods: {
-    handleTabsEdit () {
-      this.$message('触发tab删除事件')
+    handleTabsEdit (name) {
+      this.tabLists.forEach((item, index) => {
+        if (item.title === name) {
+          this.tabLists.splice(index, 1)
+        }
+      })
+      this.tab_name = this.tabLists[0].title || ''
     },
     addTab () {
       this.tabLists.push({
         title: 'new',
         name: 'new',
-        content: 'new'
+        list: []
       })
     }
   }
 }
 </script>
 
-<style lang="scss" scoped>
-.pannel-shop{
-  display: flex;
-  .mobile-model{
-    width: 350px;
-    height: 510px;
-  }
-  .edit-box{
-    flex: 1;
-    margin-left: 25px;
-  }
-  .pannel-tab{
-    position: relative;
-    .add-tab{
-      position: absolute;
-      z-index: 2;
-      right: 10px;
-      top: 15px;
-      cursor: pointer;
+<style lang="scss">
+.shop-menu-box{
+  .pannel-shop{
+    display: flex;
+    .mobile-model{
+      width: 350px;
+      height: 510px;
+    }
+    .edit-box{
+      flex: 1;
+      margin-left: 25px;
+    }
+    .pannel-tab{
+      position: relative;
+      .add-tab{
+        position: absolute;
+        z-index: 2;
+        right: 10px;
+        top: 15px;
+        cursor: pointer;
+      }
+    }
+    .checkbox{
+      width: 380px;
+      input[type=checkbox]{
+        margin-left: 10px;
+      }
     }
   }
+  .el-tab-pane{
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-top: none;
+  }
+  .el-tabs__header{
+    margin: 0;
+  }
 }
+
 </style>

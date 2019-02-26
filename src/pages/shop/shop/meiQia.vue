@@ -4,7 +4,7 @@
     <div class="pannel form-box">
       <el-form label-width="180px">
         <el-form-item label="开启在线客服：">
-          <el-switch v-model="onLine"></el-switch>
+          <el-switch v-model="onLine" active-color="#0058CC"></el-switch>
         </el-form-item>
         <el-form-item label="企业ID：" v-show="onLine">
           <el-col :span="18">

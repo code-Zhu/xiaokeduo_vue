@@ -33,7 +33,7 @@
           <div class="img-box">
             <div class="btn">
               <el-button type="primary" size="mini" @click="$router.push('/shop/shop_index/shop_edit')">编辑</el-button>
-              <el-button type="success" size="mini">使用模板</el-button>
+              <el-button type="success" size="mini" style="padding:7px 10px;">使用模板</el-button>
             </div>
           </div>
           <p><i class="el-icon-arrow-up"></i></p>
