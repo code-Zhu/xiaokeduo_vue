@@ -148,11 +148,16 @@ const statisticsMemberRank = () => import('@/pages/statistics/member/memberRank'
 const statisticsMemberArea = () => import('@/pages/statistics/member/memberArea')
 const statisticsMemberIncrease = () => import('@/pages/statistics/member/memberIncrease')
 
+const login = () => import('@/pages/login/index')
 Vue.use(Router)
 
 export default new Router({
   mode: 'hash',
   routes: [
+    {
+      path: '/login',
+      component: login
+    },
     {
       path: '/',
       redirect: '/shop/default',

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <top-bar></top-bar>
+    <top-bar v-if="$route.path !== '/login'"></top-bar>
     <router-view/>
   </div>
 </template>
@@ -16,6 +16,7 @@ export default {
 </script>
 
 <style lang='scss'>
+._primary-text{color:#0077DD;}
 #app {
   font-family: 'Microsoft YaHei', Helvetica, Arial, sans-serif;
   color: #333;
@@ -52,6 +53,9 @@ export default {
     border-radius: 10px;
     padding: 15px;
     margin-top: 20px;
+    &[type=border]{
+      border: 1px solid #ccc;
+    }
   }
   .pannel-content-top{
     display: flex;
