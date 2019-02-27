@@ -27,7 +27,7 @@
           <div class="btn">
             <i class="shadow"></i>
             <p>
-              <a href="#">编辑</a>
+              <router-link to="/shop/manage_images_edit/1">编辑</router-link>
               <a href="#">删除</a>
             </p>
           </div>

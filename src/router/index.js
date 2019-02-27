@@ -232,6 +232,10 @@ export default new Router({
           component: manageImagesAdd
         },
         {
+          path: '/shop/manage_images_edit/:id',
+          component: manageImagesAdd
+        },
+        {
           path: '/shop/image_lib',
           component: imageLib
         },

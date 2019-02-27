@@ -1,6 +1,6 @@
 <template>
   <div style="margin-bottom: 500px">
-    <p class="page-title">新增九图一文素材</p>
+    <p class="page-title">{{id?'编辑':'新增'}}九图一文素材</p>
     <div class="pannel" style="display: flex;align-items:flex-start">
       <div class="mobile-model">
         <div class="mobile-header">
@@ -82,6 +82,11 @@ export default {
           }
         ]
       }
+    }
+  },
+  computed: {
+    id () {
+      return this.$route.params.id
     }
   },
   methods: {

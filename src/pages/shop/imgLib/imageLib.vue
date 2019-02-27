@@ -7,9 +7,9 @@
         <label for="img_lib">
           <span class="btn">上传图片</span>
         </label>
-        <el-button size="mini" type="success" icon="el-icon-check">全选</el-button>
-        <el-button size="mini" type="success" icon="el-icon-rank">反选</el-button>
-        <el-button size="mini" type="primary">移动到</el-button>
+        <el-button size="mini" type="success" icon="el-icon-check" @click="choose('all')">全选</el-button>
+        <el-button size="mini" type="success" icon="el-icon-rank" @click="choose('flip')">反选</el-button>
+        <el-button size="mini" type="primary" @click="dialogVisible=true">移动到</el-button>
         <el-button size="mini" type="danger" icon="el-icon-delete">删除</el-button>
       </div>
       <div class="right">
@@ -56,13 +56,21 @@
             <span>共<span>73</span>张图片</span>
           </div>
           <ul class="list-body">
-            <li v-for="v in 18" :key="v">
-              <span class="img-box"> </span>
-              <p class="name">教育.jpg</p>
+            <li v-for="(v, index) in list" :key="index" @mouseleave="currentIndex=-1">
+              <label class="img-box">
+                <input v-model="selection" type="checkbox" :value="v.id" class="hide">
+                <img :src="v.img" alt="">
+              </label>
+              <p class="name">{{v.title}}</p>
               <div class="ctr">
-                <i class="el-icon-picture"></i>
-                <i class="el-icon-edit"></i>
-                <i class="el-icon-delete"></i>
+                <i v-if="currentIndex==-1" class="el-icon-picture"></i>
+                <i v-if="currentIndex==-1" class="el-icon-edit" @click="currentIndex=index"></i>
+                <i v-if="currentIndex==-1" class="el-icon-delete"></i>
+                <el-input v-model="v.title" v-if="currentIndex==index" size="mini" style="width:70px"></el-input>
+                <span class="mini-btn" v-if="currentIndex==index" type="primary" @click="changeTitle(v.id)" style="line-height:28px;">确定</span>
+              </div>
+              <div class="ischecked" v-if="selection.includes(v.id)" @click="selection.splice(selection.indexOf(v.id),1)">
+                <i class="iconfont icon-true"></i>
               </div>
             </li>
           </ul>
@@ -76,13 +84,76 @@
         </div>
       </div>
     </div>
+    <el-dialog title="移动图片管理" :visible.sync="dialogVisible" width="500px">
+      <el-form label-width="150px">
+        <el-form-item label="选择分组：">
+          <el-select value="1">
+            <el-option value="1" label="默认分组"></el-option>
+          </el-select>
+        </el-form-item>
+      </el-form>
+      <span slot="footer" class="dialog-footer">
+        <el-button type="success" @click="dialogVisible = false" size="small">文件移动</el-button>
+        <el-button @click="dialogVisible = false" size="small">关&nbsp;闭</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 <script>
 export default {
   data () {
     return {
-      order: ''
+      dialogVisible: false,
+      order: '',
+      list: [
+        {
+          id: 1,
+          title: '教育',
+          img: './static/img/wfxqrcode.jpg'
+        },
+        {
+          id: 2,
+          title: '测试',
+          img: './static/img/waitupload.png'
+        },
+        {
+          id: 3,
+          title: '教育',
+          img: './static/img/user.png'
+        },
+        {
+          id: 4,
+          title: '测试1',
+          img: './static/img/wfxqrcode.jpg'
+        },
+        {
+          id: 5,
+          title: '教育2',
+          img: './static/img/waitupload.png'
+        },
+        {
+          id: 6,
+          title: '教育',
+          img: './static/img/user.png'
+        }
+      ],
+      selection: [],
+      currentIndex: -1
+    }
+  },
+  methods: {
+    choose (type) {
+      this.selection = this.list.map(v => {
+        if (type === 'all') {
+          return v.id
+        } else if (type === 'flip' && !this.selection.includes(v.id)) {
+          return v.id
+        }
+      })
+    },
+    changeTitle (id) {
+      this.currentIndex = -1
+      this.$message.success('名称修改成功')
     }
   }
 }
@@ -166,6 +237,10 @@ export default {
           text-align: center;
           .img-box{
             flex: 1;
+            img{
+              width: 100%;
+              height: 108px;
+            }
           }
           .name{
             height: 30px;
@@ -189,6 +264,25 @@ export default {
                 background: #5CB85C;
                 cursor: pointer;
               }
+            }
+          }
+          .ischecked{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            line-height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            i{
+              width: 30px;
+              height: 30px;
+              line-height: 30px;
+              border-radius: 50%;
+              font-size: 18px;
+              color: #fff;
+              background-color: #1C89D5;
             }
           }
           &:hover{
