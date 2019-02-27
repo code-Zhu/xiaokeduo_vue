@@ -22,6 +22,7 @@
     "vue-area-linkage": "^5.1.0",
     "vue-draggable-resizable": "^2.0.0-rc1",
     "vue-draggable-resizable-gorkys": "^1.1.2",
+    "vue-js-toggle-button": "^1.3.2",
     "vue-router": "^3.0.1",
     "vue-ueditor-wrap": "^2.4.0",
     "vuedraggable": "^2.17.0"

@@ -8,52 +8,59 @@
       <b>开启三级分佣</b>
       <p>开启后，成交店铺和其上两级分销商都能获得相应的佣金</p>
       <p>关闭后，则只有成交店铺可获得相应的佣金</p>
-      <el-switch v-model="switchValue1"
-        active-color="#13ce66" inactive-color="#ccc">
-      </el-switch>
+      <toggle-button v-model="switchValue1" :labels="{checked: '已开启', unchecked: '已关闭'}"
+        :color="{checked: '#3AB400', unchecked: '#ccc'}"
+        width="100" height="40" font-size="14">
+      </toggle-button>
     </div>
     <div class="pannel pannel-content">
       <b>分销商消费是否参与分佣</b>
       <p>关闭后，分销商自己购买不参与销售分佣，分销商的上三级获得销售佣金</p>
-      <el-switch v-model="switchValue2"
-        active-color="#13ce66" inactive-color="#ccc">
-      </el-switch>
+      <toggle-button v-model="switchValue2" :labels="{checked: '已开启', unchecked: '已关闭'}"
+        :color="{checked: '#3AB400', unchecked: '#ccc'}"
+        width="100" height="40" font-size="14">
+      </toggle-button>
     </div>
     <div class="pannel pannel-content">
       <b>启用分销商店中店</b>
       <p>关闭后，分销商店铺不能编辑及使用店铺LOGO、店铺名称、店铺相关信息，统一使用主站店铺信息</p>
-      <el-switch v-model="switchValue4"
-        active-color="#13ce66" inactive-color="#ccc">
-      </el-switch>
+      <toggle-button v-model="switchValue3" :labels="{checked: '已开启', unchecked: '已关闭'}"
+        :color="{checked: '#3AB400', unchecked: '#ccc'}"
+        width="100" height="40" font-size="14">
+      </toggle-button>
     </div>
     <div class="pannel pannel-content">
       <b>佣金自动转入余额</b>
       <p>开启后，分销商所获得佣金将直接转入账户余额;</p>
       <p>关闭后，分销商需要提交申请佣金转入余额;</p>
-      <el-switch v-model="switchValue4"
-        active-color="#13ce66" inactive-color="#ccc">
-      </el-switch>
+      <toggle-button v-model="switchValue4" :labels="{checked: '已开启', unchecked: '已关闭'}"
+        :color="{checked: '#3AB400', unchecked: '#ccc'}"
+        width="100" height="40" font-size="14">
+      </toggle-button>
     </div>
     <div class="pannel pannel-content">
       <b>会员自动生成分销商</b>
       <p>开启后，会员达到分销条件后自动成为分销商，无需提交申请</p>
-      <el-switch v-model="switchValue5"
-        active-color="#13ce66" inactive-color="#ccc">
-      </el-switch>
+      <toggle-button v-model="switchValue5" :labels="{checked: '已开启', unchecked: '已关闭'}"
+        :color="{checked: '#3AB400', unchecked: '#ccc'}"
+        width="100" height="40" font-size="14">
+      </toggle-button>
     </div>
     <div class="pannel pannel-content">
       <b>开启申请分销提醒</b>
       <p>开启后，普通用户在交易完成时如果满足有门槛的分销商申请条件，则会提示用户可以申请成为分销商</p>
-      <el-switch v-model="switchValue6"
-        active-color="#13ce66" inactive-color="#ccc">
-      </el-switch>
+      <toggle-button v-model="switchValue6" :labels="{checked: '已开启', unchecked: '已关闭'}"
+        :color="{checked: '#3AB400', unchecked: '#ccc'}"
+        width="100" height="40" font-size="14">
+      </toggle-button>
     </div>
     <div class="pannel pannel-content">
       <b>分销商门槛条件</b>
       <p class="tip">关闭后，会员无门槛成为分销商</p>
-      <el-switch v-model="switchValue7"
-        active-color="#13ce66" inactive-color="#ccc">
-      </el-switch>
+      <toggle-button v-model="switchValue7" :labels="{checked: '已开启', unchecked: '已关闭'}"
+        :color="{checked: '#3AB400', unchecked: '#ccc'}"
+        width="100" height="40" font-size="14">
+      </toggle-button>
       <div class="condition" v-if="switchValue7">
         <div>
           <label>
@@ -141,7 +148,7 @@ export default {
     content: '*';
     color: #ff0000;
   }
-  .el-switch{
+  .vue-js-switch{
     position: absolute;
     right: 10px;
     top: 10px;

@@ -3,9 +3,9 @@
     <p class="page-title">注册送优惠卷设置</p>
     <el-form class="form-box" size="mini" label-width="140px" style="margin-left: 120px">
       <el-form-item label="开启注册送优惠卷：">
-        <el-switch v-model="form.switch"
-          active-color="#005BCC" inactive-color="#ECECEC">
-        </el-switch>
+        <toggle-button v-model="form.switch" :labels="true" :color="{checked: '#0067CC', unchecked: '#BFCBD9'}"
+          :width="80" :height="30" :font-size="16">
+        </toggle-button>
       </el-form-item>
       <el-form-item label="送优惠卷：" v-if="form.switch">
         <el-select v-model="form.name">

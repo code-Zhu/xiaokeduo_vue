@@ -123,7 +123,11 @@
       <el-form label-width="140px">
         <el-form-item label="使用分类佣金设置：">
           <div class="form-item-box first-child">
-            <el-switch v-model="commision.open" active-color="#0053CC" inactive-color="#aaa"></el-switch>
+            <div>
+              <toggle-button v-model="commision.open" :labels="true" :color="{checked: '#0067CC', unchecked: '#BFCBD9'}"
+                :width="80" :height="30" :font-size="16">
+              </toggle-button>
+            </div>
             <i class="iconfont icon-shop1" type="success"></i>
             <b>平台总店</b>
           </div>
@@ -334,7 +338,7 @@ export default {
 .form-item-box{
   display: flex;
   align-items: center;
-  & :first-child{
+  &>:first-child{
     width: 110px;
   }
   >i{

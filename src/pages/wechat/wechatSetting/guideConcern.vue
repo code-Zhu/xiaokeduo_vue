@@ -4,23 +4,26 @@
     <div class="pannel pannel-content">
       <b>强制关注公众号</b>
       <p>会员必须关注公众号才能进入店铺</p>
-      <el-switch v-model="switch1"
-        active-color="#13ce66" inactive-color="#ccc">
-      </el-switch>
+      <toggle-button v-model="switch1" :labels="{checked: '已开启', unchecked: '已关闭'}"
+        :color="{checked: '#3AB400', unchecked: '#ccc'}"
+        :width="100" :height="40" :font-size="14">
+      </toggle-button>
     </div>
     <div class="pannel pannel-content">
       <b>开启引导关注</b>
       <p>开启后，会引导用户关注公众号</p>
-      <el-switch v-model="switch2"
-        active-color="#13ce66" inactive-color="#ccc">
-      </el-switch>
+      <toggle-button v-model="switch2" :labels="{checked: '已开启', unchecked: '已关闭'}"
+        :color="{checked: '#3AB400', unchecked: '#ccc'}"
+        :width="100" :height="40" :font-size="14">
+      </toggle-button>
     </div>
     <div class="pannel pannel-content">
       <b>自动弹出/跳转</b>
       <p>开启后，自动弹出公众号二维码或者跳转到关注引导页面</p>
-      <el-switch v-model="switch3"
-        active-color="#13ce66" inactive-color="#ccc">
-      </el-switch>
+      <toggle-button v-model="switch3" :labels="{checked: '已开启', unchecked: '已关闭'}"
+        :color="{checked: '#3AB400', unchecked: '#ccc'}"
+        :width="100" :height="40" :font-size="14">
+      </toggle-button>
     </div>
     <div class="pannel pannel-content">
       <b>关注方式</b>
@@ -73,7 +76,7 @@ export default {
 .pannel-content{
   position: relative;
   line-height: 20px;
-  .el-switch{
+  .vue-js-switch{
     position: absolute;
     right: 10px;
     top: 10px;

@@ -5,7 +5,9 @@
       <el-tab-pane label="签到送积分" name="sign_integral">
         <el-form label-width="180px">
           <el-form-item label="是否开启">
-            <el-switch v-model="signData.open"></el-switch>
+            <toggle-button v-model="signData.open" :labels="true" :color="{checked: '#0067CC', unchecked: '#BFCBD9'}"
+              :width="80" :height="30" :font-size="16">
+            </toggle-button>
           </el-form-item>
           <el-form-item label="签到一次奖励" required v-if="signData.open">
             <el-input size="small" v-model="signData.one_sign" style="width: 200px"></el-input>
@@ -28,7 +30,9 @@
       <el-tab-pane label="购物送积分" name="purchase_integral">
         <el-form label-width="180px">
           <el-form-item label="是否开启">
-            <el-switch v-model="shopData.open"></el-switch>
+            <toggle-button v-model="shopData.open" :labels="true" :color="{checked: '#0067CC', unchecked: '#BFCBD9'}"
+              :width="80" :height="30" :font-size="16">
+            </toggle-button>
           </el-form-item>
           <el-form-item label="购物成功每" v-if="shopData.open">
             <el-input size="small" v-model="shopData.each" style="width: 110px"></el-input>

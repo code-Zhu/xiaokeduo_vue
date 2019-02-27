@@ -47,7 +47,7 @@
   border-color: #C9302C;
 }
 /* 重置开关 */
-.el-switch{
+/* .el-switch{
   width: 110px;
   height: 40px;
   position: relative;
@@ -63,7 +63,7 @@
 }
 .el-switch.is-checked .el-switch__core::after{
   margin-left: -34px;
-}
+} */
 .el-form-item__label{
   color: #333;
 }

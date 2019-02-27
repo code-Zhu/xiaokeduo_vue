@@ -5,16 +5,18 @@
         <div class="pannel-content">
           <b>账户余额支付</b>
           <p>开通账户余额支付，所有会员在店铺的消费可以直接使用余额付款</p>
-          <el-switch v-model="switch1"
-            active-color="#13ce66" inactive-color="#ccc">
-          </el-switch>
+          <toggle-button v-model="switch1" :labels="{checked: '已开启', unchecked: '已关闭'}"
+            :color="{checked: '#3AB400', unchecked: '#ccc'}"
+            :width="100" :height="40" :font-size="14">
+          </toggle-button>
         </div>
         <div class="pannel-content">
           <b>账户余额申请提现</b>
           <p>关闭账户余额申请提现功能，会员账户内的余额只能用于店铺消费</p>
-          <el-switch v-model="switch2"
-            active-color="#13ce66" inactive-color="#ccc">
-          </el-switch>
+          <toggle-button v-model="switch2" :labels="{checked: '已开启', unchecked: '已关闭'}"
+            :color="{checked: '#3AB400', unchecked: '#ccc'}"
+            :width="100" :height="40" :font-size="14">
+          </toggle-button>
         </div>
       </el-tab-pane>
       <el-tab-pane label="微信支付" name="wpay">
@@ -25,9 +27,10 @@
             <a target="_blank" href="https://mp.weixin.qq.com/cgi-bin/readtemplate?t=news/open-app-apply-guide_tmpl&lang=zh_CN">立即免费申请开通微信支付接口</a>
           </p>
           <p>微信支付只支持会员在微信客户端购买付款，如需支持客户在其他浏览器上购买，请设置其他收款方式。</p>
-          <el-switch v-model="switch5"
-            active-color="#13ce66" inactive-color="#ccc">
-          </el-switch>
+          <toggle-button v-model="switch5" :labels="{checked: '已开启', unchecked: '已关闭'}"
+            :color="{checked: '#3AB400', unchecked: '#ccc'}"
+            :width="100" :height="40" :font-size="14">
+          </toggle-button>
         </div>
         <div class="pannel" v-if="switch5">
           <el-form class="form-box" label-width="140px">
@@ -58,9 +61,10 @@
           <b>线下支付收款设置</b>
           <p>线下支付提供：银行卡转账、支付宝转账或其他方式供您选择，请认真填写并核对相关信息，</p>
           <p>如若因手动填写错误而造成的一切损失，本平台概不负责！</p>
-          <el-switch v-model="switch2"
-            active-color="#13ce66" inactive-color="#ccc">
-          </el-switch>
+          <toggle-button v-model="switch2" :labels="{checked: '已开启', unchecked: '已关闭'}"
+            :color="{checked: '#3AB400', unchecked: '#ccc'}"
+            :width="100" :height="40" :font-size="14">
+          </toggle-button>
         </div>
         <div v-if="switch2" class="pannel" style="width: 670px;margin-top: 20px;">
           <vue-ueditor-wrap v-model="richContent" :config="richConfig" style="width:100%"></vue-ueditor-wrap>
@@ -70,9 +74,10 @@
         <div class="pannel-content">
           <b>货到付款设置</b>
           <p>启用后买家可选择货到付款下单，您需自行通过合作快递安排配送和收款。</p>
-          <el-switch v-model="switch2"
-            active-color="#13ce66" inactive-color="#ccc">
-          </el-switch>
+          <toggle-button v-model="switch2" :labels="{checked: '已开启', unchecked: '已关闭'}"
+            :color="{checked: '#3AB400', unchecked: '#ccc'}"
+            :width="100" :height="40" :font-size="14">
+          </toggle-button>
         </div>
       </el-tab-pane>
     </el-tabs>
@@ -132,7 +137,7 @@ export default {
 .pannel-content{
   position: relative;
   line-height: 20px;
-  .el-switch{
+  .vue-js-switch{
     position: absolute;
     right: 10px;
     top: 10px;

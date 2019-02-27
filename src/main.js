@@ -15,7 +15,7 @@ import VeBar from 'v-charts/lib/bar.common'
 import VeHistogram from 'v-charts/lib/histogram.common'
 import VeHeatmap from 'v-charts/lib/heatmap.common'
 import VeMap from 'v-charts/lib/map.common'
-
+import ToggleButton from 'vue-js-toggle-button'
 import 'animate.css'
 
 Vue.config.productionTip = false
@@ -27,6 +27,7 @@ Vue.component(VeHistogram.name, VeHistogram)
 Vue.component(VeMap.name, VeMap)
 Vue.component(VeHeatmap.name, VeHeatmap)
 Vue.use(AreaSelect)
+Vue.use(ToggleButton)
 
 /* eslint-disable no-new */
 new Vue({

@@ -3,9 +3,10 @@
     <div class="pannel pannel-content">
       <b>积分抵现</b>
       <p>开启以后，会员下单时可使用账户的积分来抵扣订单金额。</p>
-      <el-switch v-model="switchValue"
-        active-color="#3AB400" inactive-color="#ECECEC">
-      </el-switch>
+      <toggle-button v-model="switchValue" :labels="{checked: '已开启', unchecked: '已关闭'}"
+        :color="{checked: '#3AB400', unchecked: '#ccc'}"
+        :width="100" :height="40" :font-size="14">
+      </toggle-button>
     </div>
     <div class="pannel" v-if="switchValue">
       <el-tabs value="first" type="card">
@@ -47,7 +48,7 @@ export default {
 .pannel-content{
   position: relative;
   line-height: 20px;
-  .el-switch{
+  .vue-js-switch{
     position: absolute;
     right: 10px;
     top: 10px;

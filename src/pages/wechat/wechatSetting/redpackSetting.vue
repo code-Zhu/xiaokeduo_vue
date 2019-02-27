@@ -5,9 +5,10 @@
       <b>提示</b>
       <p>还没开通微信支付？<a target="_blank" href="https://mp.weixin.qq.com/cgi-bin/readtemplate?t=news/open-app-apply-guide_tmpl&lang=zh_CN">立即免费申请开通微信支付接口</a></p>
       <p>设置好微信证书以后，才能使用微信红包和微信批量放款相关功能。</p>
-      <el-switch v-model="switch1"
-        active-color="#13ce66" inactive-color="#ccc">
-      </el-switch>
+      <toggle-button v-model="switch1" :labels="{checked: '已开启', unchecked: '已关闭'}"
+        :color="{checked: '#3AB400', unchecked: '#ccc'}"
+        :width="100" :height="40" :font-size="14">
+      </toggle-button>
     </div>
     <div class="pannel"><el-button size="mini" type="success" @click="$router.push('/wechat/weixin_pay')">微信支付收款设置</el-button></div>
     <div class="pannel">
@@ -41,7 +42,7 @@ export default {
 .pannel-content{
   position: relative;
   line-height: 20px;
-  .el-switch{
+  .vue-js-switch{
     position: absolute;
     right: 10px;
     top: 10px;

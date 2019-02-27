@@ -5,16 +5,20 @@
       <div class="pannel-content-top">
         <p><b>开启首页浮动导航</b></p>
         <p>开启后，首页左侧会显示浮动导航</p>
-        <el-switch v-model="switch_val1" active-color="#13ce66" inactive-color="#CCCCCC"
-          @change="handleSwitchChange1">
-        </el-switch>
+        <toggle-button v-model="switch_val1" :labels="{checked: '已开启', unchecked: '已关闭'}"
+          :color="{checked: '#3AB400', unchecked: '#ccc'}"
+          @change="handleSwitchChange1" :width="100" :height="40" :font-size="14">
+        </toggle-button>
       </div>
     </div>
     <div class="pannel-content pannel" type="border">
       <div class="pannel-content-top">
         <p><b>底部文字链接</b></p>
         <p>关闭后，底部将不显示文字链接</p>
-        <el-switch @change="handleSwitchChange2" v-model="switch_val2" active-color="#13ce66" inactive-color="#CCCCCC"></el-switch>
+        <toggle-button v-model="switch_val2" :labels="{checked: '已开启', unchecked: '已关闭'}"
+          :color="{checked: '#3AB400', unchecked: '#ccc'}"
+          @change="handleSwitchChange2" :width="100" :height="40" :font-size="14">
+        </toggle-button>
       </div>
       <div class="form-box" v-show="switch_val2">
         <el-form label-width="160px">
@@ -36,7 +40,10 @@
       <div class="pannel-content-top">
         <p><b>底部版权信息</b></p>
         <p>关闭后，底部将不显示版权信息文字</p>
-        <el-switch @change="handleSwitchChange3" v-model="switch_val3" active-color="#13ce66" inactive-color="#ccc"></el-switch>
+        <toggle-button v-model="switch_val3" :labels="{checked: '已开启', unchecked: '已关闭'}"
+          :color="{checked: '#3AB400', unchecked: '#ccc'}"
+          @change="handleSwitchChange3" :width="100" :height="40" :font-size="14">
+        </toggle-button>
       </div>
       <div class="form-box" v-show="switch_val3">
         <el-form label-width="160px">

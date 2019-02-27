@@ -8,7 +8,9 @@
       <el-tab-pane label="奖励设置">
         <el-form label-width="85px">
           <el-form-item label="开启奖励：">
-            <el-switch v-model="rewardSet.rewardOpen" active-color="#004ACC" inactive-color="#E6E6E6"></el-switch>
+            <toggle-button v-model="rewardSet.rewardOpen" :labels="true" :color="{checked: '#0067CC', unchecked: '#BFCBD9'}"
+              :width="80" :height="30" :font-size="16">
+            </toggle-button>
           </el-form-item>
           <el-form-item label="有效时间：" v-if="rewardSet.rewardOpen">
             <el-date-picker v-model="rewardSet.time"
