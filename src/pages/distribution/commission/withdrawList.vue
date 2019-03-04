@@ -24,8 +24,8 @@
         <el-tab-pane label="待发放" name="first">
           <el-table border>
             <el-table-column label="店铺名称/手机"></el-table-column>
-            <el-table-column label="申请时间" width="160"></el-table-column>
-            <el-table-column label="提现金额">
+            <el-table-column label="申请时间" width="160" sortable></el-table-column>
+            <el-table-column label="提现金额" sortable>
               <template slot-scope="scope">
                 <span>￥{{scope.row.withdraw}}</span>
               </template>
@@ -38,7 +38,7 @@
         <el-tab-pane label="发放异常" name="second">
           <el-table border>
             <el-table-column label="店铺名称/手机"></el-table-column>
-            <el-table-column label="提现金额">
+            <el-table-column label="提现金额" sortable>
               <template slot-scope="scope">
                 <span>￥{{scope.row.withdraw}}</span>
               </template>

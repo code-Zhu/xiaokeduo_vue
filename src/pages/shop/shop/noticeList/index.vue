@@ -41,16 +41,17 @@
             <div class="table-header">
               <el-button type="danger" size="mini">批量删除</el-button>
               <el-button type="success" size="mini" @click="$router.push('/shop/notice_list/add')">创建新的公告</el-button>
+              <el-button size="mini" type="primary">导出Excel</el-button>
             </div>
             <div class="table-body">
               <el-table :data="list1" border>
                 <el-table-column type="selection" width="35"></el-table-column>
                 <el-table-column prop="title" label="标题"></el-table-column>
                 <el-table-column prop="c_user" label="创建用户" width="80"></el-table-column>
-                <el-table-column prop="c_time" label="创建时间" width="160"></el-table-column>
+                <el-table-column prop="c_time" label="创建时间" width="160" sortable></el-table-column>
                 <el-table-column prop="send_to" label="发送对象" width="80"></el-table-column>
                 <el-table-column prop="send_status" label="发送状态" width="80"></el-table-column>
-                <el-table-column prop="last_send_time" label="最后发布时间" width="160"></el-table-column>
+                <el-table-column prop="last_send_time" label="最后发布时间" width="160" sortable></el-table-column>
                 <el-table-column label="操作" width="90">
                   <template slot-scope="scope">
                     <div class="table-ctr">
@@ -64,7 +65,7 @@
             <div class="table-footer">
               <el-pagination
                 :page-size="100"
-                layout="total, prev, pager, next, jumper"
+                layout="sizes, total, prev, next, jumper"
                 :total="400">
               </el-pagination>
             </div>
@@ -108,16 +109,17 @@
             <div class="table-header">
               <el-button type="danger" size="mini">批量删除</el-button>
               <el-button type="success" size="mini">发布新消息</el-button>
+              <el-button size="mini" type="primary">导出Excel</el-button>
             </div>
             <div class="table-body">
               <el-table :data="list2" border>
                 <el-table-column type="selection"></el-table-column>
                 <el-table-column prop="title" label="标题"></el-table-column>
                 <el-table-column prop="c_user" label="创建用户" width="80"></el-table-column>
-                <el-table-column prop="c_time" label="创建时间" width="160"></el-table-column>
+                <el-table-column prop="c_time" label="创建时间" width="160" sortable></el-table-column>
                 <el-table-column prop="send_to" label="发送对象" width="80"></el-table-column>
                 <el-table-column prop="send_status" label="发送状态" width="80"></el-table-column>
-                <el-table-column prop="last_send_time" label="最后发布时间" width="160"></el-table-column>
+                <el-table-column prop="last_send_time" label="最后发布时间" width="160" sortable></el-table-column>
                 <el-table-column label="操作" width="90">
                   <template slot-scope="scope">
                     <div class="table-ctr">
@@ -131,7 +133,7 @@
             <div class="table-footer">
               <el-pagination
                 :page-size="100"
-                layout="total, prev, pager, next, jumper"
+                layout="sizes, total, prev, next, jumper"
                 :total="400">
               </el-pagination>
             </div>

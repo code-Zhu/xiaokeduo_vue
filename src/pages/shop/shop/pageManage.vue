@@ -24,9 +24,9 @@
         <el-tab-pane label="店铺页面" name="first">
           <div class="table-body">
             <el-table :data="list1" header-row-class-name="table-header">
-              <el-table-column label="页面名称" prop="name"></el-table-column>
+              <el-table-column label="页面名称" prop="name" width="160"></el-table-column>
               <el-table-column label="页面地址" prop="url"></el-table-column>
-              <el-table-column label="浏览量" prop="browse" width="70" align="center"></el-table-column>
+              <el-table-column label="浏览量" prop="browse" width="90" align="center" sortable></el-table-column>
               <el-table-column label="操作" width="225" align="center">
                 <template slot-scope="scope">
                   <div class="table-ctr">
@@ -42,7 +42,7 @@
           <div class="table-footer">
             <el-pagination
               :page-size="100"
-              layout="total, prev, pager, next, jumper"
+              layout="sizes, total, prev, next, jumper"
               :total="400">
             </el-pagination>
           </div>
@@ -52,7 +52,7 @@
             <el-table :data="list2">
               <el-table-column label="页面名称" prop="name"></el-table-column>
               <el-table-column label="页面地址" prop="url"></el-table-column>
-              <el-table-column label="浏览量" prop="browse" width="70" align="center"></el-table-column>
+              <el-table-column label="浏览量" prop="browse" width="90" sortable align="center"></el-table-column>
               <el-table-column label="操作" width="130" align="center">
                 <template slot-scope="scope">
                   <div class="table-ctr">
@@ -68,7 +68,7 @@
           <div class="table-footer">
             <el-pagination
               :page-size="100"
-              layout="total, prev, pager, next, jumper"
+              layout="sizes, total, prev, next, jumper"
               :total="400">
             </el-pagination>
           </div>

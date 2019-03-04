@@ -35,6 +35,7 @@
         <el-form-item label="快速查看">
           <span class="mini-btn" plain>最近7天</span>
           <span class="mini-btn" plain>最近一个月</span>
+          <span class="mini-btn" type="primary">导出EXCEL</span>
         </el-form-item>
       </el-form>
     </div>
@@ -49,14 +50,14 @@
     <div class="table-body">
       <el-table :data="list">
         <el-table-column label="流水号" prop="num" width="150"></el-table-column>
-        <el-table-column label="交易金额">
+        <el-table-column label="交易金额" sortable>
           <template slot-scope="scope">
             <span :style="{color: scope.row.sum>0?'#3BB134':'#FF0000'}">
               <span v-if="scope.row.sum>0">+</span>{{scope.row.sum}}
             </span>
           </template>
         </el-table-column>
-        <el-table-column label="账户余额">
+        <el-table-column label="账户余额" sortable>
           <template slot-scope="scope">
             <span>￥{{scope.row.balance}}</span>
           </template>
@@ -68,7 +69,7 @@
           </template>
         </el-table-column>
         <el-table-column label="交易方式" prop="method"></el-table-column>
-        <el-table-column label="交易时间" prop="time" width="150"></el-table-column>
+        <el-table-column label="交易时间" prop="time" width="150" sortable></el-table-column>
         <el-table-column label="备注" prop="remark" width="140"></el-table-column>
       </el-table>
     </div>

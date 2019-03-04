@@ -64,7 +64,6 @@
     </div>
     <div class="pannel order-table">
       <div class="pannel order-table-btn">
-        <slot name="btn"></slot>
         <!-- <label>
           <input type="checkbox">
           <span>全选</span>
@@ -84,11 +83,19 @@
         <b>订单来源</b>
         <b>操作</b>
       </div>
-      <ul class="order-table-body">
+      <div>
+        <label>
+          <input type="checkbox" v-model="selectAll" @change="chooseAll">
+          <span>全选</span>
+        </label>
+        <slot name="btn"></slot>
+      </div>
+      <!-- 自定义表格 -->
+      <ul class="order-table-body" style="margin-top:15px">
         <li class="order-table-item" v-for="(v, index) in tableList" :key="index">
           <p class="order-table-item-header">
             <label>
-              <input type="checkbox">
+              <input type="checkbox" v-model="selection" :value="v.id">
               <span>订单编号：{{v.orderNumber}}</span>
             </label>
             <span>{{v.time}}</span>
@@ -183,6 +190,8 @@ export default {
   props: ['formStyle'],
   data () {
     return {
+      selection: [],
+      selectAll: false,
       dialogVisible: false,
       pcaa,
       query: {
@@ -197,6 +206,7 @@ export default {
       },
       tableList: [
         {
+          id: 1,
           img: './static/img/none.gif',
           name: '测试苹果',
           orderNumber: '190121163525990',
@@ -211,6 +221,7 @@ export default {
           source: 'admin'
         },
         {
+          id: 2,
           img: './static/img/none.gif',
           name: '测试苹果',
           orderNumber: '190121163525990',
@@ -225,6 +236,7 @@ export default {
           source: 'admin'
         },
         {
+          id: 3,
           img: './static/img/none.gif',
           name: '测试苹果',
           orderNumber: '190121163525990',
@@ -239,6 +251,7 @@ export default {
           source: 'admin'
         },
         {
+          id: 4,
           img: './static/img/apple.jpg',
           name: '测试苹果',
           orderNumber: '190121163525990',
@@ -253,6 +266,7 @@ export default {
           source: 'admin'
         },
         {
+          id: 5,
           img: './static/img/none.gif',
           name: '测试苹果',
           orderNumber: '190121163525990',
@@ -267,6 +281,7 @@ export default {
           source: 'admin'
         },
         {
+          id: 6,
           img: './static/img/apple.jpg',
           name: '测试苹果',
           orderNumber: '190121163525990',
@@ -281,6 +296,7 @@ export default {
           source: 'admin'
         },
         {
+          id: 7,
           img: './static/img/none.gif',
           name: '测试苹果',
           orderNumber: '190121163525990',
@@ -295,6 +311,7 @@ export default {
           source: 'admin'
         },
         {
+          id: 8,
           img: './static/img/apple.jpg',
           name: '测试苹果',
           orderNumber: '190121163525990',
@@ -309,6 +326,7 @@ export default {
           source: 'admin'
         },
         {
+          id: 9,
           img: './static/img/none.gif',
           name: '测试苹果',
           orderNumber: '190121163525990',
@@ -323,6 +341,7 @@ export default {
           source: 'admin'
         },
         {
+          id: 10,
           img: './static/img/apple.jpg',
           name: '测试苹果',
           orderNumber: '190121163525990',
@@ -339,27 +358,23 @@ export default {
       ]
     }
   },
+  methods: {
+    chooseAll () {
+      if (this.selectAll) {
+        this.selection = this.tableList.map(item => {
+          return item.id
+        })
+      } else {
+        this.selection = []
+      }
+    }
+  },
   mounted () {
     console.log(this.formStyle)
   }
 }
 </script>
 <style lang="scss">
-.area-select{
-  height: 28px;
-  padding-top: 0;
-}
-.area-select-wrap .area-select{
-  margin-left: 0!important;
-  margin-right: 10px;
-}
-.area-select-wrap{
-  margin-top: 5px;
-}
-.area-select .area-selected-trigger{
-  padding: 0 20px 7px 12px;
-  line-height: 30px;
-}
 .el-form--inline .el-form-item{
   margin-bottom: 0;
 }

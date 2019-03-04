@@ -76,9 +76,9 @@
             </div>
           </template>
         </el-table-column>
-        <el-table-column prop="total" label="库存"></el-table-column>
-        <el-table-column prop="old_price" label="原价"></el-table-column>
-        <el-table-column prop="new_price" label="现价"></el-table-column>
+        <el-table-column prop="total" label="库存" sortable></el-table-column>
+        <el-table-column prop="old_price" label="原价" sortable></el-table-column>
+        <el-table-column prop="new_price" label="现价" sortable></el-table-column>
         <el-table-column label="操作">
           <template slot-scope="scope">
             <el-button type="primary" size="mini">不导出</el-button>

@@ -6,14 +6,10 @@
         <el-tab-pane label="所有订单" name="1"></el-tab-pane>
       </el-tabs>
       <order-table :formStyle="'recycle'">
-        <div slot="btn">
-          <label>
-            <input type="checkbox">
-            <span>全选</span>
-          </label>
+        <span slot="btn">
           <el-button size="mini" type="primary">批量还原</el-button>
           <el-button size="mini" type="danger">彻底删除</el-button>
-        </div>
+        </span>
       </order-table>
     </div>
   </div>

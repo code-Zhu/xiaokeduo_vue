@@ -71,7 +71,7 @@
               <span>{{scope.row.reward}}元</span>
             </template>
           </el-table-column>
-          <el-table-column label="奖励时间" prop="time"></el-table-column>
+          <el-table-column label="奖励时间" prop="time" sortable></el-table-column>
           <el-table-column label="奖励原因" prop="reason"></el-table-column>
         </el-table>
         <div class="pannel table-footer">

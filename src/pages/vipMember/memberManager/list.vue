@@ -50,6 +50,7 @@
       <el-button size="mini" type="danger">批量删除</el-button>
       <el-button size="mini" type="primary" @click="dialogVisible5=true">设置密码</el-button>
       <el-button size="mini" type="primary">批量设为分销商</el-button>
+      <el-button size="mini" type="primary">导出Excel</el-button>
     </div>
     <div class="pannel table-body">
       <el-table :data="list" border="">
@@ -68,7 +69,7 @@
         <el-table-column label="用户名" prop="username" align="center"></el-table-column>
         <el-table-column label="会员等级" prop="grade" align="center"></el-table-column>
         <el-table-column label="上级" prop="superior" align="center"></el-table-column>
-        <el-table-column label="订单数/消费额" align="center" width="120">
+        <el-table-column label="订单数/消费额" align="center" width="140" sortable>
           <template slot-scope="scope">
             <div style="color:#ff0000">
               <router-link to="/trade/all_order">{{scope.row.orderNum}}</router-link>
@@ -76,14 +77,14 @@
             </div>
           </template>
         </el-table-column>
-        <el-table-column label="账户余额" prop="balance" align="center">
+        <el-table-column label="账户余额" prop="balance" align="center" sortable>
           <template slot-scope="scope">
             <div style="color:#ff0000">
               <p>{{scope.row.balance}}</p>
             </div>
           </template>
         </el-table-column>
-        <el-table-column label="注册时间" prop="time" align="center" width="110"></el-table-column>
+        <el-table-column label="注册时间" prop="time" align="center" width="110" sortable></el-table-column>
         <el-table-column label="操作" align="center">
           <template slot-scope="scope">
             <div class="table-ctr">

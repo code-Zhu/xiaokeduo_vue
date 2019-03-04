@@ -28,6 +28,7 @@
         </el-form-item>
         <el-form-item>
           <span class="mini-btn" type="primary">查询</span>
+          <span class="mini-btn" type="primary">导出EXCEL</span>
         </el-form-item>
       </el-form>
     </div>
@@ -40,9 +41,9 @@
         <el-table-column label="昵称"></el-table-column>
         <el-table-column label="手机号"></el-table-column>
         <el-table-column label="活动标题" width="250" align="center"></el-table-column>
-        <el-table-column label="结束时间"></el-table-column>
+        <el-table-column label="结束时间" sortable width="110"></el-table-column>
         <el-table-column label="支付类型"></el-table-column>
-        <el-table-column label="金额"></el-table-column>
+        <el-table-column label="金额" sortable></el-table-column>
         <el-table-column label="退款流水号"></el-table-column>
         <el-table-column label="退款状态"></el-table-column>
         <el-table-column label="操作"></el-table-column>

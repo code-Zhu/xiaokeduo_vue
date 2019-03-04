@@ -73,20 +73,3 @@ export default {
   }
 }
 </script>
-<style>
-.area-select{
-  height: 28px;
-  padding-top: 0;
-}
-.area-select-wrap .area-select{
-  margin-left: 0!important;
-  margin-right: 10px;
-}
-.area-select-wrap{
-  margin-top: 5px;
-}
-.area-select .area-selected-trigger{
-  padding: 0 20px 7px 12px;
-  line-height: 30px;
-}
-</style>

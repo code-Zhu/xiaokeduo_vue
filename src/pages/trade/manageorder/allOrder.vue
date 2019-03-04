@@ -12,16 +12,12 @@
         <el-tab-pane label="交易关闭" name="closed"></el-tab-pane>
       </el-tabs>
       <order-table>
-        <div slot="btn">
-          <label>
-            <input type="checkbox">
-            <span>全选</span>
-          </label>
+        <span slot="btn">
           <el-button size="mini" type="primary">批量备注</el-button>
           <el-button size="mini" type="danger">批量删除</el-button>
           <span>|</span>
           <el-button size="mini" type="primary">导出Excel</el-button>
-        </div>
+        </span>
       </order-table>
     </div>
   </div>

@@ -12,10 +12,57 @@
       <span class="mini-btn" plain>最近7天</span>
       <span class="mini-btn" plain>最近1个月</span>
     </div>
-    <p class="pannel">
+    <div class="pannel">
       <i class="iconfont icon-top red-text"></i>
-      <b>导出数据</b>
-    </p>
+      <b @click="isExport = !isExport">导出数据</b>
+    </div>
+    <div class="pannel animated bounceIn" v-if="isExport">
+      <el-form size="mini" label-width="200px">
+        <el-form-item label="请选择需要导出的信息：">
+          <label>
+            <input type="checkbox">
+            <span>排名</span>
+          </label>
+          <label>
+            <input type="checkbox">
+            <span>手机号</span>
+          </label>
+          <label>
+            <input type="checkbox">
+            <span>用户名</span>
+          </label>
+          <label>
+            <input type="checkbox">
+            <span>注册日期</span>
+          </label>
+          <label>
+            <input type="checkbox">
+            <span>订单数</span>
+          </label>
+          <label>
+            <input type="checkbox">
+            <span>消费额</span>
+          </label>
+          <label>
+            <input type="checkbox">
+            <span>客单价</span>
+          </label>
+        </el-form-item>
+        <el-form-item label="请选择导出格式：">
+          <label>
+            <input type="radio">
+            <span>CSV格式</span>
+          </label>
+          <label>
+            <input type="radio">
+            <span>TXT格式</span>
+          </label>
+        </el-form-item>
+      </el-form>
+      <div class="table-footer">
+        <el-button size="small" type="success">导出</el-button>
+      </div>
+    </div>
     <div class="pannel">
       <el-table :data="list">
         <el-table-column label="排名" width="55" align="center">
@@ -29,27 +76,27 @@
           </template>
         </el-table-column>
         <el-table-column prop="name" label="商品名称"></el-table-column>
-        <el-table-column label="销售量" align="center">
+        <el-table-column label="销售量" align="center" sortable>
           <template slot-scope="scope">
             <span class="red-text">{{scope.row.sale_count}}</span>
           </template>
         </el-table-column>
-        <el-table-column label="销售额" align="center">
+        <el-table-column label="销售额" align="center" sortable>
           <template slot-scope="scope">
             <span class="red-text">{{scope.row.sum}}</span>
           </template>
         </el-table-column>
-        <el-table-column label="访问次数" align="center">
+        <el-table-column label="访问次数" align="center" sortable>
           <template slot-scope="scope">
             <span class="red-text">{{scope.row.visited}}</span>
           </template>
         </el-table-column>
-        <el-table-column label="购买人数" align="center">
+        <el-table-column label="购买人数" align="center" sortable>
           <template slot-scope="scope">
             <span class="red-text">{{scope.row.buy}}</span>
           </template>
         </el-table-column>
-        <el-table-column label="转化率" align="center">
+        <el-table-column label="转化率" align="center" sortable>
           <template slot-scope="scope">
             <span class="red-text">{{scope.row.conversion}}%</span>
           </template>
@@ -59,7 +106,7 @@
     <div class="pannel table-footer">
       <el-pagination
         :page-size="10"
-        layout="total, prev, next, jumper"
+        layout="sizes, total, prev, next, jumper"
         :total="1000">
       </el-pagination>
     </div>
@@ -69,6 +116,7 @@
 export default {
   data () {
     return {
+      isExport: false,
       query: {
         time: []
       },

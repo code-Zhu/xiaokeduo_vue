@@ -41,6 +41,13 @@
         </div>
       </li>
     </ul>
+    <div class="pannel table-footer">
+      <el-pagination
+        :page-size="10"
+        layout="sizes, total, prev, next, jumper"
+        :total="1000">
+      </el-pagination>
+    </div>
   </div>
 </template>
 <script>

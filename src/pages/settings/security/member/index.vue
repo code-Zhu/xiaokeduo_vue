@@ -34,7 +34,7 @@
     <div class="pannel table-footer">
       <el-pagination
         :page-size="10"
-        layout="total, prev, next, jumper"
+        layout="sizes, total, prev, next, jumper"
         :total="1000">
       </el-pagination>
     </div>

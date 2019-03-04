@@ -15,18 +15,25 @@
         <el-tab-pane label="领取/使用记录">
           <el-table :data="recode">
             <el-table-column prop="name" label="优惠卷名称" align="center"></el-table-column>
-            <el-table-column label="面值" align="center">
+            <el-table-column label="面值" align="center" sortable>
               <template slot-scope="scope">
                 <span>￥{{scope.row.value}}</span>
               </template>
             </el-table-column>
             <el-table-column prop="condition" label="使用条件" align="center"></el-table-column>
             <el-table-column prop="user" label="领取人" align="center"></el-table-column>
-            <el-table-column prop="sendTime" label="领取时间" width="150" align="center"></el-table-column>
-            <el-table-column prop="useTime" label="使用时间" width="150" align="center"></el-table-column>
+            <el-table-column prop="sendTime" label="领取时间" width="150" align="center" sortable></el-table-column>
+            <el-table-column prop="useTime" label="使用时间" width="150" align="center" sortable></el-table-column>
             <el-table-column prop="order" label="订单编号" width="150" align="center"></el-table-column>
             <el-table-column prop="status" label="状态" align="center"></el-table-column>
           </el-table>
+          <div class="pannel table-footer">
+            <el-pagination
+              :page-size="10"
+              layout="sizes, total, prev, next, jumper"
+              :total="1000">
+            </el-pagination>
+          </div>
         </el-tab-pane>
       </el-tabs>
     </div>

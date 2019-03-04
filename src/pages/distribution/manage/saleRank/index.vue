@@ -13,6 +13,7 @@
           <span>快速查看</span>
           <span class="mini-btn" plain>最近7天</span>
           <span class="mini-btn" plain>最近一个月</span>
+          <span class="mini-btn" type="primary">导出EXCEL</span>
         </el-form-item>
       </el-form>
     </div>
@@ -44,19 +45,19 @@
             </div>
           </template>
         </el-table-column>
-        <el-table-column label="销售额" align="center">
+        <el-table-column label="销售额" align="center" sortable>
           <template slot-scope="scope">
             <i style="color:#ff0000">￥{{scope.row.sale}}</i>
           </template>
         </el-table-column>
-        <el-table-column label="订单数" align="center" prop="order"></el-table-column>
-        <el-table-column label="成交用户" align="center" prop="deal"></el-table-column>
-        <el-table-column label="客户单价" align="center">
+        <el-table-column label="订单数" align="center" prop="order" sortable></el-table-column>
+        <el-table-column label="成交用户" align="center" prop="deal" sortable></el-table-column>
+        <el-table-column label="客户单价" align="center" sortable>
           <template slot-scope="scope">
             <span>￥{{scope.row.each}}</span>
           </template>
         </el-table-column>
-        <el-table-column label="佣金收入" align="center">
+        <el-table-column label="佣金收入" align="center" sortable>
           <template slot-scope="scope">
             <i style="color:#ff0000">￥{{scope.row.commIn}}</i>
           </template>

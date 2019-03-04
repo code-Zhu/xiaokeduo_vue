@@ -63,7 +63,8 @@
               </label>
               <p class="name">{{v.title}}</p>
               <div class="ctr">
-                <i v-if="currentIndex==-1" class="el-icon-picture"></i>
+                <!-- <a :href="v.img" target="_blank" v-if="currentIndex==-1" class="el-icon-picture" style="color:#fff"></a> -->
+                <i @click="$imgView.show(index, list)" v-if="currentIndex==-1" class="el-icon-picture"></i>
                 <i v-if="currentIndex==-1" class="el-icon-edit" @click="currentIndex=index"></i>
                 <i v-if="currentIndex==-1" class="el-icon-delete"></i>
                 <el-input v-model="v.title" v-if="currentIndex==index" size="mini" style="width:70px"></el-input>
@@ -78,7 +79,7 @@
         <div class="table-footer" style="text-align:center">
           <el-pagination
             :page-size="100"
-            layout="total, prev, pager, next, jumper"
+            layout="sizes, total, prev, next, jumper"
             :total="400">
           </el-pagination>
         </div>
@@ -114,7 +115,7 @@ export default {
         {
           id: 2,
           title: '测试',
-          img: './static/img/waitupload.png'
+          img: './static/img/apple.jpg'
         },
         {
           id: 3,

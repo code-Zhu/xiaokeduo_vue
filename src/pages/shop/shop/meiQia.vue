@@ -5,7 +5,7 @@
       <el-form label-width="180px">
         <el-form-item label="开启在线客服：">
           <toggle-button v-model="onLine" :labels="true" :color="{checked: '#0067CC', unchecked: '#EDEDED'}"
-            width="80" height="30" font-size="16">
+            :width="80" :height="30" :font-size="16">
           </toggle-button>
         </el-form-item>
         <el-form-item label="企业ID：" v-show="onLine">

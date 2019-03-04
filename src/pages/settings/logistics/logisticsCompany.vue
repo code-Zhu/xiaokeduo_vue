@@ -34,6 +34,13 @@
           </template>
         </el-table-column>
       </el-table>
+      <div class="pannel table-footer">
+        <el-pagination
+          :page-size="10"
+          layout="sizes, total, prev, next, jumper"
+          :total="1000">
+        </el-pagination>
+      </div>
     </div>
     <el-dialog title="添加物流公司" :visible.sync="dialogVisible"
       width="500px">

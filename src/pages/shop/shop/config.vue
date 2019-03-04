@@ -4,7 +4,7 @@
     <div class="pannel form-box">
       <el-form label-width="170px" class="form-box">
         <el-form-item label="店铺LOGO：">
-          <input type="file" style="display:none" id="shop_logo">
+          <input type="file" style="display:none" id="shop_logo" @change="upload">
           <label for="shop_logo" class="shop_logo">
             <span>logo</span>
             <span>修改</span>
@@ -30,6 +30,21 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  data () {
+    return {
+    }
+  },
+  methods: {
+    upload ($e) {
+      let file = new FormData()
+      file.append('file', $e.target.files[0]) // 上传该对象
+    }
+  }
+}
+</script>
+
 <style lang="scss" scoped>
 .form-box{
   width: 500px;

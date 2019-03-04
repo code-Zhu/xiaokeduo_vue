@@ -13,7 +13,7 @@
             <span>{{scope.row.obj.join(',')}}</span>
           </template>
         </el-table-column>
-        <el-table-column label="活动商品" align="center">
+        <el-table-column label="活动商品" align="center" sortable>
           <template slot-scope="scope">
             <span>已加入{{scope.row.good_num}}</span>
           </template>

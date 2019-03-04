@@ -47,7 +47,7 @@
           </template>
         </el-table-column>
         <el-table-column label="会员等级" prop="grade" align="center"></el-table-column>
-        <el-table-column label="会员可用积分" prop="integral" align="center"></el-table-column>
+        <el-table-column label="会员可用积分" prop="integral" align="center" sortable></el-table-column>
         <el-table-column align="center">
           <template slot-scope="scope">
             <router-link to="/member/integral/1">积分明细</router-link>

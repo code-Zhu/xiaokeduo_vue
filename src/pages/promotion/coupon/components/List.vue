@@ -23,6 +23,7 @@
           <el-option value="3" label="活动赠送"></el-option>
         </el-select>
         <span class="mini-btn" type="primary">查询</span>
+        <span class="mini-btn" type="primary">导出EXCEL</span>
       </el-form-item>
     </el-form>
     <div style="margin-top:15px">
@@ -32,7 +33,7 @@
       <el-table :data="list1" size="mini">
         <el-table-column type="selection" width="50" align="center"></el-table-column>
         <el-table-column prop="name" label="优惠卷名称" align="center"></el-table-column>
-        <el-table-column label="面值" align="center">
+        <el-table-column label="面值" align="center" sortable>
           <template slot-scope="scope">
             <span>￥{{scope.row.value}}</span>
           </template>
@@ -40,17 +41,17 @@
         <el-table-column prop="use_condition" label="使用条件" align="center"></el-table-column>
         <el-table-column prop="time" label="使用期限" align="center" width="155"></el-table-column>
         <el-table-column prop="get_condition" label="领取限制" align="center"></el-table-column>
-        <el-table-column label="发放总量" align="center">
+        <el-table-column label="发放总量" width="100" align="center" sortable>
           <template slot-scope="scope">
             <span>{{scope.row.total}}张</span>
           </template>
         </el-table-column>
-        <el-table-column label="已领取" align="center">
+        <el-table-column label="已领取" align="center" sortable>
           <template slot-scope="scope">
             <span>{{scope.row.sended}}张</span>
           </template>
         </el-table-column>
-        <el-table-column label="已使用" align="center">
+        <el-table-column label="已使用" align="center" sortable>
           <template slot-scope="scope">
             <span>{{scope.row.used}}张</span>
           </template>

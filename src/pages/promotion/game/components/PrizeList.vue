@@ -73,7 +73,7 @@
                   <span class="mini-btn" type="light" @click="$router.push('/promotion/game_prize_list/1')">查看详情</span>
                 </p>
                 <p v-if="tabName!=='five'">
-                  <span class="mini-btn" type="light" style="margin-top:5px">修改地址</span>
+                  <span class="mini-btn" type="light" style="margin-top:5px" @click="dialogVisible = true">修改地址</span>
                 </p>
               </div>
             </div>
@@ -88,6 +88,29 @@
         :total="1000">
       </el-pagination>
     </div>
+    <el-dialog title="修改奖品收货地址" :visible.sync="dialogVisible"
+      width="600px">
+      <el-form label-width="120px">
+        <el-form-item required label="收货人姓名：">
+          <el-input></el-input>
+        </el-form-item>
+        <el-form-item required label="联系电话：">
+          <el-input></el-input>
+        </el-form-item>
+        <el-form-item required label="选择所在地：">
+          <area-select :level="2" type="text" v-model="query.area" :data="pcaa" size="small"
+            :placeholders="['-请选择省-', '-请选择市-', '-请选择区-']">
+          </area-select>
+        </el-form-item>
+        <el-form-item required label="详细地址：">
+          <el-input type="textarea" :rows="3"></el-input>
+        </el-form-item>
+      </el-form>
+      <span slot="footer" class="dialog-footer">
+        <el-button type="primary" @click="dialogVisible = false">确定修改</el-button>
+        <el-button @click="dialogVisible = false">取&nbsp;消</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 <script>
@@ -96,6 +119,7 @@ export default {
   props: ['tabName'],
   data () {
     return {
+      dialogVisible: false,
       pcaa,
       query: {
         actName: '',
@@ -109,21 +133,6 @@ export default {
 }
 </script>
 <style lang="scss">
-.area-select{
-  height: 28px;
-  padding-top: 0;
-}
-.area-select-wrap .area-select{
-  margin-left: 0!important;
-  margin-right: 10px;
-}
-/* .area-select-wrap{
-  margin-top: 5px;
-} */
-.area-select .area-selected-trigger{
-  padding: 0 20px 7px 12px;
-  line-height: 30px;
-}
 // 自定义表格
 .diy-table{
   box-sizing: border-box;

@@ -16,6 +16,21 @@ export default {
 </script>
 
 <style lang='scss'>
+.area-select{
+  height: 28px!important;
+  padding-top: 0;
+}
+.area-select-wrap .area-select{
+  margin-left: 0!important;
+  margin-right: 10px!important;
+}
+.area-select-wrap{
+  margin-top: 5px!important;
+}
+.area-select .area-selected-trigger{
+  padding: 0 20px 7px 12px!important;
+  line-height: 30px!important;
+}
 ._primary-text{color:#0077DD;}
 #app {
   font-family: 'Microsoft YaHei', Helvetica, Arial, sans-serif;

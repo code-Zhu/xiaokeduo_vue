@@ -17,6 +17,7 @@ import VeHeatmap from 'v-charts/lib/heatmap.common'
 import VeMap from 'v-charts/lib/map.common'
 import ToggleButton from 'vue-js-toggle-button'
 import 'animate.css'
+import imgView from './lib/imgOverView/index'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
@@ -28,6 +29,7 @@ Vue.component(VeMap.name, VeMap)
 Vue.component(VeHeatmap.name, VeHeatmap)
 Vue.use(AreaSelect)
 Vue.use(ToggleButton)
+Vue.use(imgView)
 
 /* eslint-disable no-new */
 new Vue({

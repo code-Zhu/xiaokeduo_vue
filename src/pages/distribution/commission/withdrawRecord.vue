@@ -22,8 +22,8 @@
     <div class="pannel">
       <el-table :data="list" border>
         <el-table-column label="分销商店铺" prop="shopname"></el-table-column>
-        <el-table-column label="申请日期" prop="applytime" width="160"></el-table-column>
-        <el-table-column label="提现金额">
+        <el-table-column label="申请日期" prop="applytime" width="160" sortable></el-table-column>
+        <el-table-column label="提现金额" sortable>
           <template slot-scope="scope">
             <span>￥{{scope.row.withdraw}}</span>
           </template>
@@ -31,7 +31,7 @@
         <el-table-column label="账号类型" prop="type"></el-table-column>
         <el-table-column label="账号" prop="number"></el-table-column>
         <el-table-column label="收款人" prop="reciver"></el-table-column>
-        <el-table-column label="支付日期" prop="paytime" width="160"></el-table-column>
+        <el-table-column label="支付日期" prop="paytime" width="160" sortable></el-table-column>
       </el-table>
     </div>
     <div class="pannel table-footer">

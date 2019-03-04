@@ -30,19 +30,19 @@
             </div>
           </template>
         </el-table-column>
-        <el-table-column label="初始价格" align="center">
+        <el-table-column label="初始价格" align="center" width="100" sortable>
           <template slot-scope="scope">
             <span>￥{{scope.row.defaultValue}}</span>
           </template>
         </el-table-column>
-        <el-table-column label="商品低价" align="center">
+        <el-table-column label="商品低价" align="center" width="100" sortable>
           <template slot-scope="scope">
             <span>￥{{scope.row.min}}</span>
           </template>
         </el-table-column>
         <el-table-column prop="time" label="活动时间" width="180"></el-table-column>
         <el-table-column prop="total" label="活动库存" align="center"></el-table-column>
-        <el-table-column prop="deal" label="成交数量" align="center"></el-table-column>
+        <el-table-column prop="deal" label="成交数量" align="center" sortable width="100"></el-table-column>
         <el-table-column label="活动状态">
           <template slot-scope="scope">
             <span v-if="scope.row.status == 1">进行中</span>

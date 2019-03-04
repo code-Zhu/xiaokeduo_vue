@@ -87,27 +87,27 @@
             </div>
           </template>
         </el-table-column>
-        <el-table-column label="销售额" align="center">
+        <el-table-column label="销售额" align="center" sortable>
           <template slot-scope="scope">
             <span class="red-text">￥{{scope.row.sale}}</span>
           </template>
         </el-table-column>
-        <el-table-column label="订单数" align="center">
+        <el-table-column label="订单数" align="center" sortable>
           <template slot-scope="scope">
             <span class="red-text">{{scope.row.order}}</span>
           </template>
         </el-table-column>
-        <el-table-column label="成交用户" align="center">
+        <el-table-column label="成交用户" align="center" sortable>
           <template slot-scope="scope">
             <span class="red-text">{{scope.row.deal}}</span>
           </template>
         </el-table-column>
-        <el-table-column label="客户单价" align="center">
+        <el-table-column label="客户单价" align="center" sortable>
           <template slot-scope="scope">
             <span class="red-text">￥{{scope.row.each}}</span>
           </template>
         </el-table-column>
-        <el-table-column label="佣金收入" align="center">
+        <el-table-column label="佣金收入" align="center" sortable>
           <template slot-scope="scope">
             <span class="red-text">￥{{scope.row.commIn}}</span>
           </template>

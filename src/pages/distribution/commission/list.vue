@@ -19,6 +19,7 @@
           <span>快速查看</span>
           <span class="mini-btn" plain>最近7天</span>
           <span class="mini-btn" plain>最近一个月</span>
+          <span class="mini-btn" type="primary">导出EXCEL</span>
         </el-form-item>
       </el-form>
     </div>
@@ -31,10 +32,10 @@
           </template>
         </el-table-column>
         <el-table-column label="买家昵称" prop="buyerName"></el-table-column>
-        <el-table-column label="时间" prop="time"></el-table-column>
+        <el-table-column label="时间" prop="time" sortable></el-table-column>
         <el-table-column label="类型" prop="type"></el-table-column>
         <el-table-column label="分佣店铺" prop="commShop"></el-table-column>
-        <el-table-column label="分佣店铺">
+        <el-table-column label="佣金" sortable>
           <template slot-scope="scope">
             <span>￥{{scope.row.commission}}</span>
           </template>

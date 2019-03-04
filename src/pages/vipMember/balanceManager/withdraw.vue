@@ -27,6 +27,7 @@
       <span>|</span>
       <el-button type="primary" size="mini">支付宝批量发放</el-button>
       <el-button type="primary" size="mini">微信支付批量发放</el-button>
+      <el-button size="mini" type="primary">导出Excel</el-button>
     </div>
     <div class="table-body">
       <el-table :data="list" border>
@@ -37,8 +38,8 @@
             <p>{{scope.row.phone}}</p>
           </template>
         </el-table-column>
-        <el-table-column label="申请时间" prop="time" width="160" align="center"></el-table-column>
-        <el-table-column label="提现金额" align="center">
+        <el-table-column label="申请时间" prop="time" width="160" align="center" sortable></el-table-column>
+        <el-table-column label="提现金额" align="center" sortable>
           <template slot-scope="scope">
             <p style="color: #ff0000">￥{{scope.row.sum}}</p>
           </template>

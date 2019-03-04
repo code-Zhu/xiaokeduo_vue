@@ -7,9 +7,9 @@
       <el-table size="mini" :data="list">
         <el-table-column type="selection" width="50" align="center"></el-table-column>
         <el-table-column prop="name" label="活动名称" align="center"></el-table-column>
-        <el-table-column prop="good_num" label="可兑换商品(件)" align="center"></el-table-column>
-        <el-table-column prop="send_num" label="可兑换商品发放总量" align="center"></el-table-column>
-        <el-table-column prop="sended" label="已兑换商品总数" align="center"></el-table-column>
+        <el-table-column prop="good_num" label="可兑换商品(件)" align="center" sortable></el-table-column>
+        <el-table-column prop="send_num" label="可兑换商品发放总量" align="center" width="160" sortable></el-table-column>
+        <el-table-column prop="sended" label="已兑换商品总数" align="center" sortable></el-table-column>
         <el-table-column prop="status" label="状态" align="center">
           <template slot-scope="scope">
             <span v-if="scope.row.status==1">进行中</span>

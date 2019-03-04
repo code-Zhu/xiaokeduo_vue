@@ -7,17 +7,13 @@
         <el-tab-pane label="货到付款订单" name="1"></el-tab-pane>
       </el-tabs>
       <order-table>
-        <div slot="btn">
-          <label>
-            <input type="checkbox">
-            <span>全选</span>
-          </label>
+        <span slot="btn">
           <el-button size="mini" type="primary">打印快递单</el-button>
           <el-button size="mini" type="primary">打印发货单</el-button>
           <span>|</span>
           <el-button size="mini" type="warning">批量确认收货</el-button>
           <el-button size="mini" type="primary">导出Excel</el-button>
-        </div>
+        </span>
       </order-table>
     </div>
   </div>

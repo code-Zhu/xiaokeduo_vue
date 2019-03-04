@@ -24,6 +24,13 @@
         <span class="addr-type" v-if="v.addr_type == 2">默认发货地址</span>
       </li>
     </ul>
+    <div class="pannel table-footer" style="text-align:center">
+      <el-pagination
+        :page-size="10"
+        layout="sizes, total, prev, next, jumper"
+        :total="1000">
+      </el-pagination>
+    </div>
     <el-dialog title="新增地址" :visible.sync="dialogVisible"
       width="560px">
       <el-form label-width="100px" size="small">
@@ -102,21 +109,6 @@ export default {
 <style lang="scss">
 .logistics-addr{
   ._300px{width: 300px}
-  .area-select{
-    height: 28px;
-    padding-top: 0;
-  }
-  .area-select-wrap .area-select{
-    margin-left: 0!important;
-    margin-right: 10px;
-  }
-  .area-select-wrap{
-    margin-top: 5px;
-  }
-  .area-select .area-selected-trigger{
-    padding: 0 20px 7px 12px;
-    line-height: 30px;
-  }
   .addr-list{
     display: flex;
     li{

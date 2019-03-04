@@ -38,6 +38,7 @@
       <el-button size="small" type="primary" @click="dialogVisible1 = true">批量设置等级</el-button>
       <span>|</span>
       <el-button size="small" type="primary" @click="dialogVisible2 = true">批量设置密码</el-button>
+      <el-button size="small" type="primary">导出Excel</el-button>
     </div>
     <div class="pannel">
       <el-table :data="list" size="small">
@@ -61,17 +62,17 @@
           </template>
         </el-table-column>
         <el-table-column label="分销商等级" prop="grade"></el-table-column>
-        <el-table-column label="总销售额">
+        <el-table-column label="总销售额" sortable>
           <template slot-scope="scope">
             <i style="color: #ff0000">￥{{scope.row.saleTotal}}</i>
           </template>
         </el-table-column>
-        <el-table-column label="佣金总额">
+        <el-table-column label="佣金总额" sortable>
           <template slot-scope="scope">
             <i style="color: #ff0000">￥{{scope.row.commTotal}}</i>
           </template>
         </el-table-column>
-        <el-table-column label="申请时间" prop="time"></el-table-column>
+        <el-table-column label="申请时间" prop="time" sortable></el-table-column>
         <el-table-column label="操作" width="95">
           <template slot-scope="scope">
             <div class="table-ctr">

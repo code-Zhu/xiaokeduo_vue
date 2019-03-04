@@ -34,7 +34,7 @@
         <el-table-column label="用户" prop="username" align="center" width="100"></el-table-column>
         <el-table-column label="IP" prop="ip" align="center" width="200"></el-table-column>
         <el-table-column label="详情" prop="detail"></el-table-column>
-        <el-table-column label="操作时间" prop="time" align="center" width="160"></el-table-column>
+        <el-table-column label="操作时间" prop="time" align="center" width="160" sortable></el-table-column>
         <el-table-column label="操作" width="55" align="center">
           <template slot-scope="scope">
             <a href="javascript:;">删除</a>

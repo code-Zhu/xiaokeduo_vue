@@ -7,8 +7,8 @@
       <el-table size="mini" :data="list">
         <el-table-column type="selection" width="50" align="center"></el-table-column>
         <el-table-column prop="name" label="活动名称" align="center"></el-table-column>
-        <el-table-column prop="condition" label="发券需订单金额满" align="center"></el-table-column>
-        <el-table-column prop="send_num" label="发券满额送券" align="center"></el-table-column>
+        <el-table-column prop="condition" label="发券需订单金额满" align="center" sortable></el-table-column>
+        <el-table-column prop="send_num" label="发券满额送券" align="center" sortable></el-table-column>
         <el-table-column prop="time" label="有效期" align="center" width="280"></el-table-column>
         <el-table-column label="操作" align="center" width="160">
           <template slot-scope="scope">

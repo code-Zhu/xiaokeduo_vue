@@ -7,6 +7,7 @@
         </el-form-item>
         <el-form-item>
           <span class="mini-btn" type="primary">搜索</span>
+          <span class="mini-btn" type="primary">导出EXCEL</span>
         </el-form-item>
       </el-form>
     </div>
@@ -15,7 +16,7 @@
         <el-table-column prop="title" label="投票标题" width="250"></el-table-column>
         <el-table-column prop="type" label="参与方式" align="center"></el-table-column>
         <el-table-column prop="time" label="有效期限" width="180" align="center"></el-table-column>
-        <el-table-column prop="num" label="参与人数" align="center"></el-table-column>
+        <el-table-column prop="num" label="参与人数" align="center" sortable></el-table-column>
         <el-table-column width="70">
           <template slot-scope="scope">
             <div class="icon-style">

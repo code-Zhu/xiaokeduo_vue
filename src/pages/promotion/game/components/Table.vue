@@ -7,14 +7,14 @@
           <a href="javascript:;">{{scope.row.name}}</a>
         </template>
       </el-table-column>
-      <el-table-column label="每人参与次数" align="center">
+      <el-table-column label="每人参与次数" align="center" sortable>
         <template slot-scope="scope">
           <span>每天参与{{scope.row.times}}次</span>
         </template>
       </el-table-column>
       <el-table-column prop="time" label="有效期" align="center" width="180"></el-table-column>
-      <el-table-column prop="number" label="参与人数" align="center"></el-table-column>
-      <el-table-column prop="win" label="中奖人数" align="center"></el-table-column>
+      <el-table-column prop="number" label="参与人数" align="center" sortable></el-table-column>
+      <el-table-column prop="win" label="中奖人数" align="center" sortable></el-table-column>
       <el-table-column width="70">
         <template slot-scope="scope">
           <div class="icon-style">
