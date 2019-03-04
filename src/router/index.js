@@ -142,6 +142,7 @@ const settingsLogs = () => import('@/pages/settings/security/logs')
 const statistics = () => import('@/pages/statistics/index')
 const statisticsDefault = () => import('@/pages/statistics/default')
 const statisticsOrder = () => import('@/pages/statistics/sale/order')
+const statisticsOrderDetail = () => import('@/pages/statistics/sale/saleDetail')
 const statisticsReturn = () => import('@/pages/statistics/sale/return')
 const statisticsRank = () => import('@/pages/statistics/sale/rank')
 const statisticsMemberRank = () => import('@/pages/statistics/member/memberRank')
@@ -740,6 +741,10 @@ export default new Router({
         {
           path: '/statistics/order',
           component: statisticsOrder
+        },
+        {
+          path: '/statistics/order/:id',
+          component: statisticsOrderDetail
         },
         {
           path: '/statistics/return',

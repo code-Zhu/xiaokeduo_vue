@@ -114,7 +114,7 @@
         </el-table-column>
         <el-table-column label="操作">
           <template slot-scope="scope">
-            <a href="javascript:;" @click="test(scope)">查看详情</a>
+            <router-link to="/statistics/order/1">查看详情</router-link>
           </template>
         </el-table-column>
       </el-table>
