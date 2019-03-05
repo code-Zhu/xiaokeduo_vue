@@ -199,7 +199,7 @@
                 </el-form-item>
                 <el-form-item label="奖品图片：" v-if="item.type==4">
                   <label class="prize-img">
-                    <input type="file" class="hide">
+                    <input type="file" class="hide" accept="image/png, image/jpeg, image/gif">
                     <i class="el-icon-plus"></i>
                   </label>
                   <p class="tip">仅支持jpg、 png、gif，尺寸60*60px,不超过1M</p>

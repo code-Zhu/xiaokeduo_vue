@@ -8,7 +8,7 @@
         </el-form-item>
         <el-form-item label="选择上级分类：">
           <el-select v-model="form.parent">
-            <el-option value="" label=""></el-option>
+            <el-option value="" label="--请选择--"></el-option>
             <el-option value="1" label="网络设备"></el-option>
             <el-option value="2" label="监控设备"></el-option>
             <el-option value="3" label="服装"></el-option>

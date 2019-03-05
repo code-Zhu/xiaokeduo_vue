@@ -1,12 +1,12 @@
 <template>
   <div>
     <div class="page-title">
-      <p>添加新的商品类型</p>
+      <p>{{id ? '编辑' : '添加新的'}}商品类型</p>
       <span>商品类型是一系属性的组合，可以用来向顾客展示某些商品具有的特有的属性，一个商品类型下可添加多种属性.一种是供客户查看的扩展属性,如图书类型商品的作者，出版社等，一种是供客户可选的规格,如服装类型商品的颜色、尺码。</span>
     </div>
     <div class="pannel">
       <el-tabs v-model="tabName" type="card">
-        <el-tab-pane label="第一步：添加类型名称" name="first" disabled>
+        <el-tab-pane :label="id?'基本设置':'第一步：添加类型名称'" name="first" :disabled="!id">
           <el-form size="small" class="form-box" label-width="180px" style="width: 560px">
             <el-form-item label="商品类型名称：" required>
               <el-input v-model="step1Value.typeName"></el-input>
@@ -27,7 +27,7 @@
             </el-form-item>
           </el-form>
         </el-tab-pane>
-        <el-tab-pane label="第二步：添加扩展属性" name="second" disabled>
+        <el-tab-pane :label="id?'扩展属性':'第二步：添加扩展属性'" name="second" :disabled="!id">
           <div class="pannel">
             <el-table :data="step2Value" size="small" border>
               <el-table-column label="属性名称" align="center" width="150">
@@ -73,7 +73,7 @@
             <el-button type="primary" size="small" @click="tabName = 'third'" style="margin-left:350px">下一步</el-button>
           </div>
         </el-tab-pane>
-        <el-tab-pane label="第三步：添加规格" name="third" disabled>
+        <el-tab-pane :label="id?'规格':'第三步：添加规格'" name="third" :disabled="!id">
           <div class="pannel">
             <el-table :data="step3Value" size="small" border>
               <el-table-column label="规格名称" align="center" width="150">
@@ -204,6 +204,11 @@ export default {
         name: '',
         valueList: ''
       }
+    }
+  },
+  computed: {
+    id () {
+      return this.$route.params.id
     }
   },
   methods: {

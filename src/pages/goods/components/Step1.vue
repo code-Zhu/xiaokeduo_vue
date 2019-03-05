@@ -94,10 +94,11 @@ export default {
   background-color: #EFF8FF;
   padding: 5px;
   .step-list{
-    min-height: 250px;
+    height: 250px;
     background-color: #E5F0FF;
     border: 1px solid #B1D2FF;
     display: flex;
+    overflow: scroll;
     .list{
       width: 190px;
       background-color: #fff;

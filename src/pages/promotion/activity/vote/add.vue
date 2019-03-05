@@ -11,7 +11,7 @@
       </el-form-item>
       <el-form-item label="活动封面：" required>
         <label class="img-box">
-          <input type="file" class="hide">
+          <input type="file" class="hide" accept="image/png, image/jpeg, image/gif">
           <span>选择封面</span>
         </label>
         <p class="tip">建议尺寸：640 x 400 像素，小于300KB，支持jpg、gif、png格式</p>

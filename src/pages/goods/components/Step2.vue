@@ -63,7 +63,7 @@
               </li>
               <li>
                 <label>
-                  <input type="file" class="hide">
+                  <input type="file" class="hide" accept="image/png, image/jpeg, image/gif">
                   <i class="iconfont icon-add"></i>
                 </label>
               </li>
@@ -88,26 +88,67 @@
     </div>
     <div class="pannel-content">
       <p class="content-title">库存/规格</p>
-      <div v-if="false" class="pannel" style="margin-top:10px">
+      <div v-if="baseInfo.good_type==1" class="pannel" style="margin-top:10px">
         <el-button type="info" size="small" @click="multipleStandard = true" v-if="!multipleStandard">开启多商品规格</el-button>
         <div class="default-btn" v-else>
-          <button>生成部分规格</button>
-          <button>怎加一个规格</button>
+          <!-- <button @click="dialogVisible1=true">生成部分规格</button> -->
+          <button @click="tableAddStander">增加一个规格</button>
           <button @click="multipleStandard = false">关闭规格</button>
-          <button>生成所有规格</button>
+          <!-- <button>生成所有规格</button> -->
         </div>
       </div>
+      <div class="pannel" v-if="multipleStandard">
+        <a @click="ctrlTableStander('add',index)" style="margin-right:10px" href="javascript:;" v-for="(v, index) in standardListNotInTable" :key="index">{{v.name}}+</a>
+      </div>
+      <el-table v-if="multipleStandard" border size="small" :data="standardTable">
+        <el-table-column v-for="(v, index) in standardList" :key="index" align="center">
+          <template slot="header">
+            <span>{{v.name}}</span>
+            <b style="color:#ff0000" @click="ctrlTableStander('del',index)">×</b>
+          </template>
+          <template slot-scope="scope">
+            <el-popover placement="bottom" width="200" trigger="click">
+              <label v-for="(val, i) in v.valueList" :key="i">
+                <input v-model="scope.row[v.name]" type="radio" :value="val">
+                <span>{{val}}</span>
+              </label>
+              <span class="noValue" :class="{checked:scope.row[v.name]}" slot="reference" size="mini">{{scope.row[v.name]?scope.row[v.name]:'请选择'}}</span>
+            </el-popover>
+          </template>
+        </el-table-column>
+        <el-table-column label="商品编码" align="center">
+          <template slot-scope="scope">
+            <el-input size="mini" v-model="scope.row.goodID"></el-input>
+          </template>
+        </el-table-column>
+        <el-table-column label="*现价(元)" align="center" width="200">
+          <template slot-scope="scope">
+            <el-input size="mini" v-model="scope.row.price" style="width:100px"></el-input>
+            <button>会员价</button>
+          </template>
+        </el-table-column>
+        <el-table-column label="*库存" align="center" width="100">
+          <template slot-scope="scope">
+            <el-input size="mini" v-model="scope.row.store"></el-input>
+          </template>
+        </el-table-column>
+        <el-table-column label="操作" align="center" width="100">
+          <template slot-scope="scope">
+            <b style="color:#ff0000;cursor: pointer;" @click="standardTable.splice(scope.$index,1)">×</b>
+          </template>
+        </el-table-column>
+      </el-table>
       <el-form label-width="140px">
         <el-form-item label="原价：" required>
           <el-input class="_110px" size="small" v-model="stock.old_price"></el-input>
           <span>元</span>
         </el-form-item>
-        <el-form-item label="现价：" required>
+        <el-form-item v-if="!multipleStandard" label="现价：" required>
           <el-input class="_110px" size="small" v-model="stock.new_price"></el-input>
           <span>元</span>
-          <el-button type="info" size="small" style="margin-left:20px">设置会员价格</el-button>
+          <el-button type="info" size="small" style="margin-left:20px" @click="dialogVisible = true">设置会员价格</el-button>
         </el-form-item>
-        <el-form-item label="总库存：" required>
+        <el-form-item v-if="!multipleStandard" label="总库存：" required>
           <el-input class="_110px" size="small" v-model="stock.total"></el-input>
         </el-form-item>
         <el-form-item label="商品编码：">
@@ -124,8 +165,8 @@
         <el-form-item label="使用分类佣金设置：">
           <div class="form-item-box first-child">
             <div>
-              <toggle-button v-model="commision.open" :labels="true" :color="{checked: '#0067CC', unchecked: '#BFCBD9'}"
-                :width="80" :height="30" :font-size="16">
+              <toggle-button v-model="commision.open" :labels="{checked: '已开启', unchecked: '已关闭'}"
+                :color="{checked: '#3AB400', unchecked: '#ccc'}" :width="100" :height="35" :font-size="14">
               </toggle-button>
             </div>
             <i class="iconfont icon-shop1" type="success"></i>
@@ -134,21 +175,27 @@
         </el-form-item>
         <el-form-item label="上二级佣金比例：">
           <div class="form-item-box">
-            <el-input class="_110px" v-model="commision.second_ratio" :disabled="!commision.open"></el-input>
+            <el-input class="_110px" v-model="commision.second_ratio" :disabled="!commision.open">
+              <span slot="suffix">%</span>
+            </el-input>
             <i class="el-icon-arrow-left" type="success"></i>
             <b>一级分销</b>
           </div>
         </el-form-item>
         <el-form-item label="上一级佣金比例：">
           <div class="form-item-box">
-            <el-input class="_110px" v-model="commision.first_ratio" :disabled="!commision.open"></el-input>
+            <el-input class="_110px" v-model="commision.first_ratio" :disabled="!commision.open">
+              <span slot="suffix">%</span>
+            </el-input>
             <i class="el-icon-arrow-left"></i>
             <b>二级分销</b>
           </div>
         </el-form-item>
         <el-form-item label="成交店铺佣金比例：">
           <div class="form-item-box">
-            <el-input class="_110px" v-model="commision.deal_ratio" :disabled="!commision.open"></el-input>
+            <el-input class="_110px" v-model="commision.deal_ratio" :disabled="!commision.open">
+              <span slot="suffix">%</span>
+            </el-input>
             <i class="el-icon-arrow-left"></i>
             <b>三级分销</b>
             <span class="iconfont icon-arrow-up"></span>
@@ -171,16 +218,19 @@
         <el-form-item label="运费设置：" required>
           <p>
             <label>
-              <input type="radio" name="freight" v-model="logistics.freight">
+              <input type="radio" v-model="logistics.freight" value="1">
               <span>包邮</span>
             </label>
           </p>
           <p>
             <label>
-              <input type="radio" name="freight" v-model="logistics.freight">
+              <input type="radio" v-model="logistics.freight" value="2">
               <span>运费模板</span>
             </label>
           </p>
+          <el-select value="" size="mini" v-if="logistics.freight==2">
+            <el-option label="--请选择运费模板--" value=""></el-option>
+          </el-select>
         </el-form-item>
         <el-form-item label="是否上架：" required>
           <p>
@@ -198,20 +248,93 @@
         </el-form-item>
       </el-form>
     </div>
+    <el-dialog title="编辑会员价" :visible.sync="dialogVisible" width="600px">
+      <el-table :data="vipPrice" size="small" border>
+        <el-table-column prop="grade" label="会员等级" align="center"></el-table-column>
+        <el-table-column label="价格" align="center">
+          <template slot-scope="scope">
+            <el-input size="mini" v-model="scope.row.price"></el-input>
+          </template>
+        </el-table-column>
+        <el-table-column prop="blank" label="留空默认" align="center"></el-table-column>
+      </el-table>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible = false" size="small">关&nbsp;闭</el-button>
+        <el-button type="primary" @click="dialogVisible = false" size="small">提&nbsp;交</el-button>
+      </span>
+    </el-dialog>
+    <el-dialog title="选择要生成的规格" :visible.sync="dialogVisible1" width="600px">
+      <div v-for="(v, index) in standardList" :key="index" style="margin-bottom:10px">
+        <p style="border-bottom:1px dashed #ccc;padding-bottom:5px">
+          <b>{{v.name}}：</b>
+        </p>
+        <label v-for="(item,ind) in v.valueList" :key="ind">
+          <input type="checkbox">
+          <span>{{item}}</span>
+        </label>
+        <span v-if="addNewStander==index">
+          <el-input v-model="newStander" size="mini" style="width:100px"></el-input>
+          <span class="mini-btn" type="success" @click="handleAddNewStander(index)">保存</span>
+        </span>
+        <span v-else class="mini-btn" type="primary" @click="addNewStander=index">添加规格值</span>
+      </div>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible1 = false" size="small">关&nbsp;闭</el-button>
+        <el-button type="primary" @click="dialogVisible1 = false" size="small">提&nbsp;交</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 <script>
 export default {
   data () {
     return {
+      addNewStander: -1,
+      newStander: '',
+      dialogVisible1: false,
+      dialogVisible: false,
       multipleStandard: false,
+      standardList: [
+        {
+          name: '测试规格名qqqq',
+          valueList: ['a', 'b']
+        }
+      ],
+      standardListNotInTable: [
+        {
+          name: '测试规格名a',
+          valueList: ['a', 'b']
+        },
+        {
+          name: '测试规格名1',
+          valueList: ['1', '2']
+        }
+      ],
+      standardTable: [],
       add_attr: false,
       add_tag: false,
       diy_tag: '',
       selectValue: '',
+      vipPrice: [
+        {
+          grade: '代理商',
+          price: '',
+          blank: '￥0.00'
+        },
+        {
+          grade: '合伙人',
+          price: '',
+          blank: '￥0.00'
+        },
+        {
+          grade: '创客',
+          price: '',
+          blank: '￥0.00'
+        }
+      ],
       baseInfo: {
         group_name: '',
-        good_type: '',
+        good_type: '1',
         brand: '',
         good_name: '',
         order: 0,
@@ -249,11 +372,50 @@ export default {
         deal_ratio: '16'
       }
     }
+  },
+  methods: {
+    ctrlTableStander (type, index) {
+      if (type === 'del') {
+        this.standardListNotInTable = this.standardListNotInTable.concat(this.standardList.splice(index, 1))
+      } else if (type === 'add') {
+        this.standardList.push(this.standardListNotInTable[index])
+        this.standardListNotInTable.splice(index, 1)
+      }
+    },
+    tableAddStander () {
+      if (this.standardList.length < 1) {
+        this.$message.error('增加一个规格前必须先选择一个规格名！')
+        return
+      }
+      let data = {
+        goodID: 'XT-asd',
+        price: 0,
+        store: 0
+      }
+      this.standardList.forEach(item => {
+        this.$set(data, item, '')
+      })
+      this.standardTable.push(data)
+    },
+    handleAddNewStander (index) {
+      this.standardList[index].valueList.push(this.newStander)
+      this.addNewStander = -1
+      this.newStander = ''
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+.noValue{
+  cursor: pointer;
+  padding: 0 20px;
+  border:1px dashed #333;
+  &.checked{
+    background: #FFFFCC;
+    border: 1px solid #99CCFF;
+  }
+}
 ._110px{ width:110px}
 .content-title{
   font-size: 16px;

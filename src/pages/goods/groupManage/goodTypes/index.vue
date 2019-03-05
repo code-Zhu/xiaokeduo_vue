@@ -26,7 +26,7 @@
         <el-table-column label="操作" align="center">
           <template slot-scope="scope">
             <div class="ctr">
-              <a href="javascript:;">编辑</a>
+              <router-link to="/goods/good_types/1">编辑</router-link>
               <a href="javascript:;">删除</a>
             </div>
           </template>

@@ -11,7 +11,7 @@
       <el-form-item label="品牌Logo" required>
         <label class="logo">
           <i class="iconfont icon-add"></i>
-          <input type="file" class="hide">
+          <input type="file" class="hide" accept="image/png, image/jpeg, image/gif">
         </label>
         <p class="tip">建议尺寸：650 x 200 像素，小于300KB，支持.jpg、.gif、.png格式</p>
       </el-form-item>

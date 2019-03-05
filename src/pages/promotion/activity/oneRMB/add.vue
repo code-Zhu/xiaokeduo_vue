@@ -39,7 +39,7 @@
             </el-form-item>
             <el-form-item label="活动封面：" required>
               <label class="act-img-box">
-                <input type="file" class="hide">
+                <input type="file" class="hide" accept="image/png, image/jpeg, image/gif">
                 <i class="iconfont icon-add"></i>
               </label>
               <p class="tip">点击上传，建议尺寸：640 x 200 像素，小于300KB</p>

@@ -73,7 +73,7 @@
             </el-form-item>
             <el-form-item label="朋友圈显示图片：">
               <label class="img-box">
-                <input type="file" class="hide">
+                <input type="file" class="hide" accept="image/png, image/jpeg, image/gif">
                 <span>选择图片</span>
               </label>
               <p class="tip">建议尺寸：200 x 200 像素，小于300KB，支持jpg、gif、png格式</p>

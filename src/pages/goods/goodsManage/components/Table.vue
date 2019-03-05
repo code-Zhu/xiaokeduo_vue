@@ -1,6 +1,6 @@
 <template>
   <div class="pannel goods-table">
-    <div class="pannel-content">
+    <div class="pannel-content" style="padding-top: 5px;margin-top:0">
       <div class="table-find-box">
         <div class="find-item">
           <span>商品名称：</span>
@@ -73,8 +73,8 @@
                 <div>
                   <a href="javascript:;">{{scope.row.name}}</a>
                   <p>
-                    <i class="iconfont icon-ico" title="点击查看商品二维码"></i>
-                    <i class="iconfont icon-icon-link" title="点击复制商品链接"></i>
+                    <i class="iconfont icon-ico" title="点击查看商品二维码" @click="dialogVisible3 = true"></i>
+                    <i class="iconfont icon-icon-link" title="点击复制商品链接" @click="copySuccess"></i>
                   </p>
                 </div>
               </div>
@@ -287,6 +287,12 @@
         <el-button type="success" @click="moreOperation = ''" size="small">保存配置</el-button>
       </span>
     </el-dialog>
+    <el-dialog title="商品二维码" :visible.sync="dialogVisible3" width="350px">
+      <img src="asd.jpg" alt="">
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible3 = false" size="small">关&nbsp;闭</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 <script>
@@ -298,6 +304,7 @@ export default {
       currentDialog: 'offset',
       dialogVisible1: false,
       dialogVisible2: false,
+      dialogVisible3: false,
       dialog: {
         offset: {
           title: '下架商品',
@@ -350,6 +357,11 @@ export default {
           hasChildren: false
         }
       ]
+    }
+  },
+  methods: {
+    copySuccess () {
+      this.$message.success('复制成功，复制内容为：http://47.93.12.216/ProductDetails.aspx?productId=2188')
     }
   }
 }

@@ -57,16 +57,16 @@
                 <span>{{v.name}}</span>
               </b>
               <p class="type-icon">
-                <i class="iconfont icon-ico" title="点击图标下载二维码"></i>
-                <i class="iconfont icon-icon-link" title="点击复制该类别网址"></i>
+                <i class="iconfont icon-ico" title="点击图标下载二维码" @click="dialogVisible3 = true"></i>
+                <i class="iconfont icon-icon-link" title="点击复制该类别网址" @click="copySuccess"></i>
               </p>
             </div>
             <div v-if="all_show">
               <div class="column child-column" v-for="item in v.children" :key="item.id">
                 <span>{{item.name}}</span>
                 <p class="type-icon">
-                  <i class="iconfont icon-ico" title="点击图标下载二维码"></i>
-                  <i class="iconfont icon-icon-link" title="点击复制该类别网址"></i>
+                  <i class="iconfont icon-ico" title="点击图标下载二维码" @click="dialogVisible3 = true"></i>
+                  <i class="iconfont icon-icon-link" title="点击复制该类别网址" @click="copySuccess"></i>
                 </p>
               </div>
             </div>
@@ -83,15 +83,15 @@
           </td>
           <td>
             <div class="column">
-              <a href="javascript:;">转移商品</a>
-              <a href="javascript:;">编辑</a>
+              <a href="javascript:;" @click="dialogVisible2 = true">转移商品</a>
+              <router-link to="/goods/manage_categories/1">编辑</router-link>
               <a href="javascript:;">删除</a>
-              <a href="javascript:;">类目佣金</a>
+              <a href="javascript:;" @click="dialogVisible1 = true">类目佣金</a>
             </div>
             <div v-if="all_show">
               <div class="column" v-for="item in v.children" :key="item.id">
-                <a href="javascript:;">转移商品</a>
-                <a href="javascript:;">编辑</a>
+                <a href="javascript:;" @click="dialogVisible2 = true">转移商品</a>
+                <router-link to="/goods/manage_categories/1">编辑</router-link>
                 <a href="javascript:;">删除</a>
               </div>
             </div>
@@ -99,12 +99,69 @@
         </tr>
       </table>
     </div>
+    <el-dialog title="商品二维码" :visible.sync="dialogVisible3" width="350px">
+      <img src="asd.jpg" alt="">
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible3 = false" size="small" type="success">下&nbsp;载</el-button>
+        <el-button @click="dialogVisible3 = false" size="small">关&nbsp;闭</el-button>
+      </span>
+    </el-dialog>
+    <el-dialog title="将指定分类下的商品转移到其他分类" :visible.sync="dialogVisible2" width="600px">
+      <el-form size="small" label-width="220px">
+        <el-form-item label="需要转移商品的分类：">
+          <el-select value="">
+            <el-option label="网络设备" value=""></el-option>
+          </el-select>
+        </el-form-item>
+        <el-form-item label="转移至：">
+          <el-select value="">
+            <el-option label="--请选择--" value=""></el-option>
+            <el-option label="网络设备" value=""></el-option>
+          </el-select>
+        </el-form-item>
+      </el-form>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible2 = false" size="small" type="success">确&nbsp;定</el-button>
+      </span>
+    </el-dialog>
+    <el-dialog title="修改类目佣金" :visible.sync="dialogVisible1" width="600px">
+      <el-form size="small" label-position="top">
+        <el-form-item label="上二级佣金比例">
+          <div style="margin-left:50px">
+            <span>分佣设置</span>
+            <el-input style="width:200px"></el-input>
+            <span>%</span>
+          </div>
+        </el-form-item>
+        <el-form-item label="上一级佣金比例">
+          <div style="margin-left:50px">
+            <span>分佣设置</span>
+            <el-input style="width:200px"></el-input>
+            <span>%</span>
+          </div>
+        </el-form-item>
+        <el-form-item label="成交店铺佣金比例">
+          <div style="margin-left:50px">
+            <span>分佣设置</span>
+            <el-input style="width:200px"></el-input>
+            <span>%</span>
+          </div>
+        </el-form-item>
+      </el-form>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="dialogVisible1 = false" size="small" type="success">保&nbsp;存</el-button>
+        <el-button @click="dialogVisible1 = false" size="small">关&nbsp;闭</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 <script>
 export default {
   data () {
     return {
+      dialogVisible1: false,
+      dialogVisible2: false,
+      dialogVisible3: false,
       all_show: true,
       list: [
         {
@@ -152,6 +209,11 @@ export default {
           hasChildren: false
         }
       ]
+    }
+  },
+  methods: {
+    copySuccess () {
+      this.$message.success('复制成功，复制内容为：http://47.93.12.216/ProductDetails.aspx?productId=2188')
     }
   }
 }

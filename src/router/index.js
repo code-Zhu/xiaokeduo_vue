@@ -32,6 +32,7 @@ const importData = () => import('@/pages/goods/goodsManage/importData')
 const exportData = () => import('@/pages/goods/goodsManage/exportData') //
 const manageCategories = () => import('@/pages/goods/groupManage/manageCategories/index')
 const manageCategoriesAdd = () => import('@/pages/goods/groupManage/manageCategories/add')
+const manageCategoriesEdit = () => import('@/pages/goods/groupManage/manageCategories/edit')
 const goodTypes = () => import('@/pages/goods/groupManage/goodTypes/index')
 const goodTypesAdd = () => import('@/pages/goods/groupManage/goodTypes/add')
 const goodTags = () => import('@/pages/goods/groupManage/goodTags')
@@ -291,11 +292,19 @@ export default new Router({
           component: manageCategoriesAdd
         },
         {
+          path: '/goods/manage_categories/:id',
+          component: manageCategoriesEdit
+        },
+        {
           path: '/goods/good_types',
           component: goodTypes
         },
         {
           path: '/goods/good_types/add',
+          component: goodTypesAdd
+        },
+        {
+          path: '/goods/good_types/:id',
           component: goodTypesAdd
         },
         {

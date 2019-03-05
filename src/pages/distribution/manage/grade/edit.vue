@@ -4,7 +4,7 @@
     <el-form class="form-box" label-width="180px">
       <el-form-item label="等级图标：">
         <label class="avatar">
-          <input type="file" class="hide">
+          <input type="file" class="hide" accept="image/png, image/jpeg, image/gif">
           <span>上传新图片</span>
         </label>
         <p class="tip">（建议上传PNG背景透明的图片，大小50px * 50px）</p>

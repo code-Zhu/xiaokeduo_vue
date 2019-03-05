@@ -16,7 +16,7 @@
     <div class="pannel step-footer">
       <p v-show="step===1">你当前选择的是：{{selectStr}}</p>
       <p>
-        <el-button v-if="step===1" type="success" size="mini" :disabled="!this.continue" @click="nextStep">已选好分类，进入下一步'</el-button>
+        <el-button v-if="step===1" type="success" size="mini" :disabled="!this.continue" @click="nextStep">已选好分类，进入下一步&gt;&gt;&gt;</el-button>
         <el-button v-if="step===2" type="success" size="mini" :disabled="!this.continue" @click="nextStep">下一步，编辑商品详情</el-button>
       </p>
     </div>

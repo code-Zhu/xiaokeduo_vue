@@ -4,8 +4,8 @@
     <div class="pannel form-box">
       <el-form label-width="180px">
         <el-form-item label="开启在线客服：">
-          <toggle-button v-model="onLine" :labels="true" :color="{checked: '#0067CC', unchecked: '#EDEDED'}"
-            :width="80" :height="30" :font-size="16">
+          <toggle-button v-model="onLine" :labels="{checked: '已开启', unchecked: '已关闭'}"
+            :color="{checked: '#3AB400', unchecked: '#ccc'}" :width="100" :height="35" :font-size="14">
           </toggle-button>
         </el-form-item>
         <el-form-item label="企业ID：" v-show="onLine">
@@ -20,7 +20,7 @@
             <a href="#"> 如何获取企业ID >></a>
           </p>
           <div>
-            <el-button type="success" size="small">保存</el-button>
+            <el-button type="success" size="mini">保存</el-button>
           </div>
         </el-form-item>
       </el-form>
